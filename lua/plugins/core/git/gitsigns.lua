@@ -1,11 +1,17 @@
 local gitsigns = require("gitsigns")
 gitsigns.setup({
 	signs = {
-		add = { text = "▎" },
-		change = { text = "▎" },
-		delete = { text = "_" },
-		topdelete = { text = "‾" },
-		changedelete = { text = "~" },
+		-- add = { text = "▎" },
+		-- change = { text = "▎" },
+		-- delete = { text = "_" },
+		-- topdelete = { text = "‾" },
+		-- changedelete = { text = "~" },
+		add = { text = "+" },
+		change = { text = "|" },
+		delete = { text = "-" },
+		topdelete = { text = "-" },
+		changedelete = { text = "|" },
+
 		untracked = { text = "┆" }, -- TODO change these
 	},
 	signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
@@ -42,6 +48,23 @@ gitsigns.setup({
 	},
 })
 
--- TODO change the colours
--- https://github.com/LunarVim/Neovim-from-scratch/blob/11-gitsigns/lua/user/gitsigns.lua
--- docs https://github.com/lewis6991/gitsigns.nvim/blob/e5edefd9976039f5352e0c900f35206770b33a2d/doc/gitsigns.txt
+-- Green
+vim.api.nvim_set_hl(0, "GitSignsChange", {
+	fg = "#a6da95",
+})
+-- Yellow
+vim.api.nvim_set_hl(0, "GitSignsAdd", {
+	fg = "#eed49f",
+})
+-- Red
+vim.api.nvim_set_hl(0, "GitSignsDelete", {
+	fg = "#ed8796",
+})
+-- Rosewater
+vim.api.nvim_set_hl(0, "GitSignsUntracked", {
+	fg = "#f4dbd6",
+})
+-- Mauve
+vim.api.nvim_set_hl(0, "GitSignsChangedelete", {
+	fg = "#c6a0f6",
+})

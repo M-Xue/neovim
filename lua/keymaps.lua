@@ -40,6 +40,7 @@ vim.keymap.set("n", "<leader>hb", gitsigns.blame_line, { desc = "Git blame line"
 vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview hunk" })
 vim.keymap.set("n", "<leader>hP", gitsigns.preview_hunk_inline, { desc = "Preview hunk inline" })
 vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage hunk" })
+vim.keymap.set("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage buffer" })
 vim.keymap.set("n", "<leader>hu", gitsigns.reset_buffer_index, { desc = "Unstage all hunks in file" })
 
 vim.keymap.set("n", "<leader>hk", gitsigns.next_hunk, { desc = "Next hunk" })
