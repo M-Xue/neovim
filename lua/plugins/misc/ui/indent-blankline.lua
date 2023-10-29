@@ -1,3 +1,6 @@
 require("ibl").setup({
-	-- 	show_current_context = true,
+	scope = {
+		show_start = false,
+		show_end = false,
+	},
 })
