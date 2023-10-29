@@ -1,0 +1,245 @@
+- figureout what the hell the lightbulb thing does
+- add in jump paths and the other one (tab paths?)
+
+add session support?
+- look into if i even need it
+session management: https://github.com/rmagatti/auto-session
+
+rearrange alpha vim
+
+fix indentline
+
+add git Support
+- add git supporti nto nvim tree too
+fugitive, lazygit
+merging
+gitsigns
+What do you want in git
+- easily see diffs
+- fix conflicts easily
+- see previous commits easily
+- rebasing\
+
+- be able to diff with another branch of choice
+- be able to diff current changes
+- stage chunks while seeing the diffs
+
+figure out fugitive
+- https://www.youtube.com/watch?v=IyBAuDPzdFY
+https://www.youtube.com/watch?v=9E3Mo8TM6Jo
+https://www.youtube.com/watch?v=uUrKrYCAl1Y
+
+
+merge conflicts: https://www.youtube.com/watch?v=vpwJ7fqD1CE
+git work trees
+- https://www.youtube.com/watch?v=IK_mjDqGUYE
+- https://www.youtube.com/watch?v=2uEqYw-N8uE
+
+
+
+
+
+
+nvim tree
+- stop showing .git
+- show what is gitignored by making those files a different colour
+https://www.reddit.com/r/neovim/comments/vg1oli/env_file_not_shown_by_nvim_tree/
+https://github.com/nvim-tree/nvim-tree.lua/issues/1191
+FIX GITIGNORE FILES
+- make them appear in nvim tree but have indicator that they are ignored
+NvimTreeGitIgnored highlight group
+
+fix nvim tree symbols
+figure out how to create, delete and move files (or groups of files)
+
+
+
+
+
+
+look into linting and formatting again?
+- nvim lint? https://github.com/mfussenegger/nvim-lint
+https://www.youtube.com/watch?v=ybUE4D80XSk
+https://www.reddit.com/r/neovim/comments/uu6096/lintingformatting_with_lsp_diagnostics_or_null_ls/
+
+better go development plugins
+- note: golangcli-lint doesnt mean it lints the cli, it means the linter is executed from the cli normally
+- symbol tree?
+- fix up go linters and formatting?
+https://hackernoon.com/my-neovim-setup-for-go-7f7b6e805876
+https://www.getman.io/posts/programming-go-in-neovim/
+https://freshman.tech/linting-golang/
+
+add debugging
+-https://www.youtube.com/watch?v=RziPWdTzSV8&t=146s
+
+get a better way to exit with unsaved files
+
+
+
+
+
+
+
+harpoon, marks, jump list and tab list
+-- :help jump_list - jump list is for movements e.g. ctrl o
+-- :help tag_list - tag stack is moving between defintions
+https://www.youtube.com/watch?v=GYVbYCST_Yc
+
+figureout searching and highlighting of searched words
+
+learn motions better
+https://www.youtube.com/watch?v=CEMPq_r8UYQ&t=93s
+https://www.youtube.com/watch?v=GJno0l_nAyg
+https://www.youtube.com/watch?v=XT_kFia3Ua4
+https://www.youtube.com/watch?v=GYVbYCST_Yc&t=7s
+https://www.youtube.com/watch?v=HkY3LoQqKVA
+https://www.youtube.com/watch?v=EsGSwNySNMU
+https://www.youtube.com/watch?v=qZO9A5F6BZs
+
+fill out cheatsheet
+- the cheatsheet should cover stuff not in whichkey and should show the base commands in normal mode like shift k or whatever
+
+add readme
+
+
+
+
+
+
+
+reconsider keymaps
+- think abiout more lsp and formatting information
+
+
+
+
+
+
+
+
+
+TODO when experiencing editor
+
+autocompletion of html elements always results in a closing bracket, even for components
+
+indentation isnt working properly fix indenting
+- sometimes it doesnt indent properly
+
+add more to lualine
+- think abiout more lsp and formatting information
+
+add spell check that is togglable
+
+fix spell check, doesnt work on variables
+
+
+
+
+
+later
+
+figure out lazy.vim
+- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
+https://www.youtube.com/watch?v=28FmViFye2I&t=154s
+
+figure out autocmds
+
+add rust support?
+
+get different "same word highlighting/underlining"
+
+
+
+general vim
+https://www.youtube.com/watch?v=ST_DZ6yIiXY&t=377s
+https://www.youtube.com/watch?v=ixJWAP1L6jc
+https://www.youtube.com/watch?v=G7aWxK4395Y
+https://www.youtube.com/watch?v=HhZJ1kbzkj0
+
+https://www.youtube.com/watch?v=vdn_pKJUda8
+
+
+
+
+lsp
+- ui
+    - lspsaga
+    - https://github.com/jinzhongjia/LspUI.nvim TODO: check this out
+    - https://github.com/rmagatti/goto-preview
+
+Editing Support
+https://github.com/HiPhish/rainbow-delimiters.nvim
+
+Comments
+- https://github.com/danymat/neogen
+
+The real tokyo night: https://github.com/crivotz/nv-ide
+
+Formatting
+- If formatting cant help these issues
+    - https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-trailspace.md
+    - maybe https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-move.md
+    - https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-splitjoin.md
+
+    - https://github.com/mfussenegger/nvim-lint
+
+
+figure out wtf lazy.nvim does
+https://www.youtube.com/watch?v=6mxWayq-s9I
+
+
+fix up linting and formatting
+https://www.youtube.com/watch?v=ybUE4D80XSk
+
+
+
+GET GOOD Key Binding
+
+Motion
+
+Telescope
+https://github.com/debugloop/telescope-undo.nvim
+-- TODO: check out builtins https://github.com/nvim-telescope/telescope.nvim#pickers
+
+
+
+git
+https://www.youtube.com/watch?v=Ir3WD7a4MwI lazygit
+
+cheatsheet: https://github.com/sudormrfbin/cheatsheet.nvim
+- add cheatsheet hints
+- search cheatsheets and learn internsing vim operations
+- https://github.com/sudormrfbin/cheatsheet.nvim/blob/master/cheatsheets/cheatsheet-default.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sql autocompletion
+
+
+
+check out these
+https://github.com/rockerBOO/awesome-neovim
+https://www.youtube.com/watch?v=NL8D8EkphUw
+
+Nvim autocmds:
+https://www.youtube.com/watch?v=ekMIIAqTZ34
+https://www.youtube.com/watch?v=HR1dKKrOmDs
+https://www.youtube.com/watch?v=HlfjpstqXwE
+https://www.youtube.com/watch?v=9gUatBHuXE0
+https://www.youtube.com/watch?v=F6GNPOXpfwU
