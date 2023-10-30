@@ -81,7 +81,7 @@ local plugins = {
 	{ "williamboman/mason.nvim", dependencies = "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
 	{ "mhartington/formatter.nvim" },
-	-- {'mfussenegger/nvim-lint'},
+	{ "mfussenegger/nvim-lint" },
 	{ "stevearc/conform.nvim" },
 
 	-- * ========================================
