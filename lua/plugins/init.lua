@@ -82,6 +82,7 @@ local plugins = {
 	{ "neovim/nvim-lspconfig" },
 	{ "mhartington/formatter.nvim" },
 	-- {'mfussenegger/nvim-lint'},
+	{ "stevearc/conform.nvim" },
 
 	-- * ========================================
 	-- * GIT
