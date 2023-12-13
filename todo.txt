@@ -1,190 +1,251 @@
-fix lazygit
-figure out how to confiugure lazygit
-- the esc key doesnt cancel action but instead moves to normal mode (just turn this esc behaviour off in lazygit)
-https://github.com/kdheepak/lazygit.nvim/issues/7
-- https://github.com/jesseduffield/lazygit/discussions/1966
+DO TOMORROW
+symbol tree
+https://github.com/simrat39/symbols-outline.nvim
 
-
-fix completion not selecting first option everytime 
-- usually occurs after first time you use cmp to complete smth
-https://github.com/hrsh7th/nvim-cmp/issues/209
-
-
-get a better way to exit with unsaved files
-
-
-
-telescope plugins and extensions
-- grep stuff??
-- undo tree
-- zoxide
-look at that vid of best telescope extensions
-nvim current buffer fuzzy finder
-telescope git support
-telescope-dap
-
-
-
-
-
-
-add session support?
-- look into if i even need it
-session management: https://github.com/rmagatti/auto-session
-
-rearrange alpha vim
-
-fix indentline
-
-add git Support
-- add git supporti nto nvim tree too
-fugitive, lazygit
-merging
-gitsigns
-What do you want in git
-- easily see diffs
-- fix conflicts easily
-- see previous commits easily
-- rebasing\
-
-- be able to diff with another branch of choice
-- be able to diff current changes
-- stage chunks while seeing the diffs
-
-figure out fugitive
-- https://www.youtube.com/watch?v=IyBAuDPzdFY
-https://www.youtube.com/watch?v=9E3Mo8TM6Jo
-https://www.youtube.com/watch?v=uUrKrYCAl1Y
-
-
-merge conflicts: https://www.youtube.com/watch?v=vpwJ7fqD1CE
-git work trees
-- https://www.youtube.com/watch?v=IK_mjDqGUYE
-- https://www.youtube.com/watch?v=2uEqYw-N8uE
-
-
-
-
-
-
-nvim tree
-- stop showing .git
-- show what is gitignored by making those files a different colour
-https://www.reddit.com/r/neovim/comments/vg1oli/env_file_not_shown_by_nvim_tree/
-https://github.com/nvim-tree/nvim-tree.lua/issues/1191
-FIX GITIGNORE FILES
-- make them appear in nvim tree but have indicator that they are ignored
-NvimTreeGitIgnored highlight group
-
-fix nvim tree symbols
-figure out how to create, delete and move files (or groups of files)
-
-
-
-
-
-
-look into linting and formatting again?
-- nvim lint? https://github.com/mfussenegger/nvim-lint
-https://www.youtube.com/watch?v=ybUE4D80XSk
-https://www.reddit.com/r/neovim/comments/uu6096/lintingformatting_with_lsp_diagnostics_or_null_ls/
-
-better go development plugins
-- note: golangcli-lint doesnt mean it lints the cli, it means the linter is executed from the cli normally
-- symbol tree?
-- fix up go linters and formatting?
-https://hackernoon.com/my-neovim-setup-for-go-7f7b6e805876
-https://www.getman.io/posts/programming-go-in-neovim/
-https://freshman.tech/linting-golang/
-
-add debugging
--https://www.youtube.com/watch?v=RziPWdTzSV8&t=146s
-
-get a better way to exit with unsaved files
-
-
-
-
-
-
-
-harpoon, marks, jump list and tab list
+JUMP LIST
 -- :help jump_list - jump list is for movements e.g. ctrl o
+https://www.youtube.com/watch?v=R_VxVuR1X6Y
+
+TAG LIST
 -- :help tag_list - tag stack is moving between defintions
-https://www.youtube.com/watch?v=GYVbYCST_Yc
 
-figureout searching and highlighting of searched words
+figureout multiselect and multicursor
+https://github.com/mg979/vim-visual-multi
+- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
 
-learn motions better
+TREESITTER OBJECTS
 https://www.youtube.com/watch?v=CEMPq_r8UYQ&t=93s
+https://www.youtube.com/watch?v=FuYQ7M73bC0
+
+https://www.youtube.com/watch?v=GYVbYCST_Yc
+check out telescope mark and loc list pickers 
+- https://github.com/nvim-telescope/telescope.nvim#vim-pickers
+
+--------------------------
+
+Very good plugins to consdier
+https://github.com/justinmk/vim-sneak
+https://github.com/unblevable/quick-scope#advantages
+https://github.com/ggandor/leap.nvim
+https://github.com/folke/flash.nvim
+https://github.com/abecodes/tabout.nvim
+
+
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-jump2d.md
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
+
+
+
+https://github.com/rockerBOO/awesome-neovim#motion
+https://github.com/rockerBOO/awesome-neovim#treesitter-based
+
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+
+search
+https://github.com/rockerBOO/awesome-neovim#search
+best ways to search in nvim
+searching in nvim
+
+---------
+
+BUFFERS
 https://www.youtube.com/watch?v=GJno0l_nAyg
-https://www.youtube.com/watch?v=XT_kFia3Ua4
-https://www.youtube.com/watch?v=GYVbYCST_Yc&t=7s
-https://www.youtube.com/watch?v=HkY3LoQqKVA
-https://www.youtube.com/watch?v=EsGSwNySNMU
-https://www.youtube.com/watch?v=qZO9A5F6BZs
 
-fill out cheatsheet
-- the cheatsheet should cover stuff not in whichkey and should show the base commands in normal mode like shift k or whatever
+TABS
 
-add readme
+WINDOWS
 
+
+--------
+
+MACROS
 
 
 
 
 
-
-reconsider keymaps
-- think abiout more lsp and formatting information
-
-
-
-
-
-
-
-
-
-TODO when experiencing editor
-
-autocompletion of html elements always results in a closing bracket, even for components
-
-indentation isnt working properly fix indenting
-- sometimes it doesnt indent properly
-
-add more to lualine
-- think abiout more lsp and formatting information
-
-add spell check that is togglable
-
-fix spell check, doesnt work on variables
-
-
-
-
-
-later
-
-figure out lazy.vim
-- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
-https://www.youtube.com/watch?v=28FmViFye2I&t=154s
-
-figure out autocmds
-
-add rust support?
-
-get different "same word highlighting/underlining"
-
-
-
+TIPS AND TRICKS
+https://www.youtube.com/watch?v=FrMRyXtiJkc
+https://www.youtube.com/watch?v=X35yfs3yvKw
+https://www.youtube.com/watch?v=yMs97o_TdBU
+https://www.youtube.com/watch?v=Z1o3-PxGa5s
 general vim
 https://www.youtube.com/watch?v=ST_DZ6yIiXY&t=377s
 https://www.youtube.com/watch?v=ixJWAP1L6jc
 https://www.youtube.com/watch?v=G7aWxK4395Y
 https://www.youtube.com/watch?v=HhZJ1kbzkj0
+https://www.youtube.com/watch?v=futay9NjOac
 
 https://www.youtube.com/watch?v=vdn_pKJUda8
+
+https://www.youtube.com/watch?v=AuXZA-xCv04
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+https://www.youtube.com/watch?v=p4D8-brdrZo
+
+VIM CHEAT SHEETS 
+https://vim.rtorr.com/
+- figure out what all operators are and how to use them with other things
+https://neovim.io/doc/user/motion.html
+
+
+<C-w>T to make new tab on current buffer??
+
+fill out cheatsheet
+- the cheatsheet should cover stuff not in whichkey and should show the base commands in normal mode like shift k or whatever
+- add telescope binding in cheat sheet too (look at telescope file)
+- add tailwind to cheatsheet
+cheatsheet: https://github.com/sudormrfbin/cheatsheet.nvim
+- add cheatsheet hints
+- search cheatsheets and learn internsing vim operations
+- https://github.com/sudormrfbin/cheatsheet.nvim/blob/master/cheatsheets/cheatsheet-default.txt
+- bindings for nvim tree: https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L138
+
+
+
+
+
+
+
+
+---------------ENDDDDDD 
+
+
+:nmap
+:nmap <leader>
+:verbose nmap <leader>
+- shows where the keymap is last called
+:Telescope keymaps
+
+
+Nvim autocmds:
+https://www.youtube.com/watch?v=ekMIIAqTZ34
+https://www.youtube.com/watch?v=HR1dKKrOmDs
+https://www.youtube.com/watch?v=HlfjpstqXwE
+https://www.youtube.com/watch?v=9gUatBHuXE0
+https://www.youtube.com/watch?v=F6GNPOXpfwU
+
+figure out what this stuff is for remapping keys
+{ noremap = true, silent = true, buffer = bufnr, desc = "Symbols tree" }
+
+fix formatting on save bug when there is an lsp error in the file
+
+fix vale linter
+- vale is currently running on markdown files. However, it still runs when vale is not configured. Change the autocmd in the linter.lua file so that it only runs if it sees the vale config file in the root dir.
+
+Can also specify a custom path to vale config
+https://www.reddit.com/r/vim/comments/my8eqw/why_does_my_function_work_with_one_external/
+
+
+
+
+FIX AS YOU GO
+
+
+cherry picking 
+
+git work trees
+- https://www.youtube.com/watch?v=IK_mjDqGUYE
+- https://www.youtube.com/watch?v=2uEqYw-N8uE
+- https://github.com/ThePrimeagen/git-worktree.nvim
+
+- Rebasing with lazygit: https://www.youtube.com/watch?v=4XaToVut_hs
+
+make the mergetool meld but only use it when you really need to. diffget is sufficient for most cases
+
+
+fix alpha vim new file 
+let user rename the new file immediatley as they enter the buffer
+https://vi.stackexchange.com/questions/305/how-can-i-rename-the-file-im-editing
+
+
+fix up lsp configs for each lsp in configuration page
+
+add spell check that is togglable
+better spell checks via linter
+- https://github.com/client9/misspell
+- https://github.com/codespell-project/codespell
+- https://github.com/streetsidesoftware/cspell
+proselint and vale are good too
+- https://github.com/amperser/proselint
+- https://vale.sh/
+
+
+add file specific keymaps (like the dap go test keymaps)
+- do this for go.nvim commands
+- if a file type doesnt have a dap debugger, throw an error message
+
+
+reconsider keymaps
+- think abiout more lsp and formatting information
+- moving windows more easily
+    - move buffers into new tabs and get better tab navigations 
+- learn more about windows, buffers and tabs
+- figureout how to move dap windows adn buffers around
+
+figure out lazy.vim
+- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
+https://www.youtube.com/watch?v=28FmViFye2I&t=154s
+https://www.youtube.com/watch?v=ybUE4D80XSk
+- this one shows events on when to lazy load formatters and linters
+
+add debugging
+https://www.youtube.com/watch?v=5KQK2id3JtI
+add labels to debugging windows
+
+
+
+
+
+
+UNNEEDED BUT GOOD FEATURES. ADD LATER MAYBE
+
+lsp codelense
+https://www.youtube.com/watch?v=J-0_c6KScCU
+https://github.com/ray-x/navigator.lua
+
+add more to lualine
+- think abiout more lsp and formatting information
+- https://www.reddit.com/r/neovim/comments/11kumh3/what_else_to_put_in_lualine/
+
+add native nvim postman
+https://www.youtube.com/watch?v=TLOl8h0jSyk
+- probs dont add this since you want to keep nvim as minimal as possible
+
+obsidian and vim: https://www.youtube.com/watch?v=lVcvBginu2U
+
+add colour scheme select with gruvbox and tokyo night
+- rose pine too 
+- catpuccin 
+- tokyo night 
+- gruv box
+
+colour schemes:
+https://www.reddit.com/r/neovim/comments/sihuq7/psa_now_you_can_set_global_highlight_groups_ie/
+https://github.com/numToStr/Sakura.nvim/commit/392a5d5a2e6097b816314b38d727e641a5bde7c9
+
+https://www.reddit.com/r/neovim/comments/vg1oli/env_file_not_shown_by_nvim_tree/
+NvimTreeGitIgnored highlight group
+NvimTreeModifiedFile highlight group 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -231,13 +292,6 @@ https://github.com/debugloop/telescope-undo.nvim
 
 
 
-git
-https://www.youtube.com/watch?v=Ir3WD7a4MwI lazygit
-
-cheatsheet: https://github.com/sudormrfbin/cheatsheet.nvim
-- add cheatsheet hints
-- search cheatsheets and learn internsing vim operations
-- https://github.com/sudormrfbin/cheatsheet.nvim/blob/master/cheatsheets/cheatsheet-default.txt
 
 
 
@@ -256,7 +310,7 @@ cheatsheet: https://github.com/sudormrfbin/cheatsheet.nvim
 
 
 
-sql autocompletion
+
 
 
 
@@ -264,9 +318,68 @@ check out these
 https://github.com/rockerBOO/awesome-neovim
 https://www.youtube.com/watch?v=NL8D8EkphUw
 
-Nvim autocmds:
-https://www.youtube.com/watch?v=ekMIIAqTZ34
-https://www.youtube.com/watch?v=HR1dKKrOmDs
-https://www.youtube.com/watch?v=HlfjpstqXwE
-https://www.youtube.com/watch?v=9gUatBHuXE0
-https://www.youtube.com/watch?v=F6GNPOXpfwU
+
+confirmOnQuit: true
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+#    useConfig: true
+#keybinding:
+#    universal:
+#        return: '`'
+#    files:
+#        toggleTreeView: '<esc>'
+
+
+
+
+
+
+
+[core]
+	pager = delta
+	editor = nvim
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    side-by-side = true
+	line-numbers = true
+
+[merge]
+    ; conflictstyle = diff3
+	; tool = nvim
+	tool = meld
+
+[mergetool]
+  prompt = false
+
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
+
+; [mergetool "nvim"]
+	; cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+	; cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[diff]
+    colorMoved = default
+
+[commit]
+	template = /Users/maxxue/.config/git/commit_template
+
+
+
+
+commit_template
+# If applied, this commit will...
+
+
+# Explain why this change is being made
+
+
+# Provide links to any relevant tickets, articles or other resources

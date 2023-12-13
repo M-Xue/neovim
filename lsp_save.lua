@@ -1,9 +1,4 @@
-
-
-vim.keymap.set('n', '<leader>pm', ':Mason<Enter>', { noremap = true, desc = 'Open Mason' })
-
-
-
+vim.keymap.set("n", "<leader>pm", ":Mason<Enter>", { noremap = true, desc = "Open Mason" })
 
 -- * GOES IN HANDLERS FOR LSP
 -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -29,8 +24,6 @@ M.on_attach = function(client, bufnr)
 	lsp_diagnostic_keymaps(bufnr)
 end
 
-
-
 local opts = {}
 for _, server in pairs(lsp_servers) do
 	opts = {
@@ -44,13 +37,10 @@ for _, server in pairs(lsp_servers) do
 	lspconfig[server].setup(opts)
 end
 
-
-
-
 -- Pretty good article: https://levelup.gitconnected.com/a-step-by-step-guide-to-configuring-lsp-in-neovim-for-coding-in-next-js-a052f500da2#5f44
 -- Good article: https://dev.to/craftzdog/my-neovim-setup-for-react-typescript-tailwind-css-etc-58fb
 -- Good reop: https://github.com/craftzdog/dotfiles-public/blob/master/.config/nvim/plugin/lspconfig.lua
-lspconfig.lua_ls.setup {
+lspconfig.lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -61,33 +51,35 @@ lspconfig.lua_ls.setup {
 			workspace = {
 				-- Make the server aware of Neovim runtime files
 				library = vim.api.nvim_get_runtime_file("", true),
-				checkThirdParty = false
+				checkThirdParty = false,
 			},
 		},
-	}
-}
-lspconfig.tsserver.setup {
+	},
+})
+lspconfig.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "javascript", "javascriptreact", "javascript.tsx", "typescript", "typescriptreact", "typescript.tsx" },
 	cmd = { "typescript-language-server", "--stdio" },
-	root_dir = function() return vim.loop.cwd() end, -- https://levelup.gitconnected.com/a-step-by-step-guide-to-configuring-lsp-in-neovim-for-coding-in-next-js-a052f500da2#5f44: lets LSP attach to any javascript file
-}
+	root_dir = function()
+		return vim.loop.cwd()
+	end, -- https://levelup.gitconnected.com/a-step-by-step-guide-to-configuring-lsp-in-neovim-for-coding-in-next-js-a052f500da2#5f44: lets LSP attach to any javascript file
+})
 
-lspconfig.tailwindcss.setup {
+lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
-	capabilities = capabilities
-}
+	capabilities = capabilities,
+})
 
-lspconfig.cssls.setup {
+lspconfig.cssls.setup({
 	on_attach = on_attach,
-	capabilities = capabilities
-}
+	capabilities = capabilities,
+})
 
-lspconfig.html.setup {
+lspconfig.html.setup({
 	on_attach = on_attach,
-	capabilities = capabilities
-}
+	capabilities = capabilities,
+})
 
 -- TODO:
 -- DAP
@@ -100,7 +92,6 @@ lspconfig.html.setup {
 -- gitsigns
 -- wrap the telescope git searches in a error catcher and if the current directory is not a git repo, catch the error and print another message
 
-
 -- TODO search :h lsp to check what other stuff they have and to read documentation `
 
 -- Some CMP Stuff
@@ -108,8 +99,6 @@ lspconfig.html.setup {
 -- https://www.youtube.com/watch?v=JyDe4Zzesx0
 -- https://www.youtube.com/watch?v=h4g0m0Iwmys
 -- https://www.youtube.com/watch?v=_DnmphIwnjo&t=1406s
-
-
 
 -- Some more stuff to look into
 -- https://www.youtube.com/watch?v=stqUbv-5u2s
