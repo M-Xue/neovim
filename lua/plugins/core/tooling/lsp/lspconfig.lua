@@ -1,6 +1,5 @@
 local lsp_servers = {
 	"tsserver",
-	"eslint",
 	"html",
 	"emmet_language_server",
 	"cssls",
@@ -8,10 +7,10 @@ local lsp_servers = {
 	"tailwindcss",
 	"jsonls",
 	"gopls",
-	"golangci_lint_ls",
 	-- "postgres_lsp",
 	"sqlls",
 	"lua_ls",
+	"marksman",
 }
 
 require("mason-lspconfig").setup({
@@ -30,11 +29,11 @@ lspconfig.tsserver.setup({
 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
 })
 
-lspconfig.eslint.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
-})
+-- lspconfig.eslint.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
+-- })
 
 lspconfig.html.setup({
 	on_attach = on_attach,
@@ -63,7 +62,19 @@ lspconfig.cssmodules_ls.setup({
 lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
+	root_dir = lspconfig.util.root_pattern(
+		"tailwind.config.js",
+		"tailwind.config.cjs",
+		"tailwind.config.mjs",
+		"tailwind.config.ts",
+		"postcss.config.js",
+		"postcss.config.cjs",
+		"postcss.config.mjs",
+		"postcss.config.ts",
+		"package.json",
+		"node_modules",
+		".git"
+	),
 })
 
 lspconfig.jsonls.setup({
@@ -83,18 +94,20 @@ lspconfig.gopls.setup({
 			analyses = {
 				unusedvariable = true,
 				unusedparams = true,
+				nilness = true,
 			},
+			staticcheck = true, -- https://staticcheck.dev/docs/checks/
 		},
 	},
 
 	root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
 })
 
-lspconfig.golangci_lint_ls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
-})
+-- lspconfig.golangci_lint_ls.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- 	root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
+-- })
 
 -- lspconfig.postgres_lsp.setup({
 lspconfig.sqlls.setup({
@@ -119,4 +132,13 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
+})
+
+-- lspconfig.vale_ls.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
+lspconfig.marksman.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })

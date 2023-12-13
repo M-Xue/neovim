@@ -3,10 +3,11 @@ vim.opt.shiftwidth = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes:1"
--- vim.o.showtabline = 2
--- vim.opt.termguicolors = true
---
+vim.opt.linebreak = true
 
-vim.opt.spelllang = "en_us"
-vim.opt.spell = true
--- To add to dictionary, use "zg"
+vim.cmd("set colorcolumn=80")
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		vim.cmd("SignatureToggle")
+	end,
+})

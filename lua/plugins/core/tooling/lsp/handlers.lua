@@ -26,7 +26,6 @@ local setup_diagnostics = function()
 			active = signs,
 		},
 		update_in_insert = true,
-		underline = true,
 		severity_sort = true,
 		float = {
 			focusable = false,
@@ -112,33 +111,47 @@ local function lsp_diagnostic_keymaps(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>ga",
-		require("actions-preview").code_actions,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "List code actions" }
+		-- vim.lsp.buf.code_action,
+		":CodeActionMenu<cr>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "List code actions for line" }
+	)
+	vim.keymap.set(
+		"v",
+		"<leader>ga",
+		":CodeActionMenu<cr>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "List code actions for range" }
+	)
+
+	vim.keymap.set(
+		"n",
+		"<leader>gs",
+		":SymbolsOutline<cr>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Symbols tree" }
 	)
 
 	-- For documentationm, use the following command -> :help vim.diagnostic
 	-- Diagnostics
 	vim.keymap.set(
 		"n",
-		"<leader>dj",
+		"<leader>ej",
 		vim.diagnostic.goto_next,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to next diagnostic" }
 	)
 	vim.keymap.set(
 		"n",
-		"<leader>dk",
+		"<leader>ek",
 		vim.diagnostic.goto_prev,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to previous diagnostic" }
 	)
 	vim.keymap.set(
 		"n",
-		"<leader>dl",
+		"<leader>el",
 		require("telescope.builtin").diagnostics,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "List diagnostics" }
 	)
 	vim.keymap.set(
 		"n",
-		"<leader>di",
+		"<leader>ei",
 		vim.diagnostic.open_float,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Get diagnostic info" }
 	)
@@ -160,7 +173,7 @@ M.on_attach = function(client, bufnr)
 	}
 	local mappings = {
 		["<leader>"] = {
-			d = { name = "Diagnostics" },
+			e = { name = "Diagnostics" },
 			g = { name = "LSP" },
 		},
 	}

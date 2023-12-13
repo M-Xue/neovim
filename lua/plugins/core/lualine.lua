@@ -1,13 +1,12 @@
-local lualine = require('lualine')
-
-lualine.setup {
+local lualine = require("lualine")
+lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = 'auto',
-		component_separators = { left = '', right = '' },
-		section_separators = { left = '', right = '' },
+		theme = "auto",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
-			statusline = { "NvimTree", 'alpha' },
+			statusline = { "NvimTree", "alpha" },
 			winbar = {},
 		},
 		ignore_focus = {},
@@ -17,30 +16,30 @@ lualine.setup {
 			statusline = 1000,
 			tabline = 1000,
 			winbar = 1000,
-		}
+		},
 	},
 	sections = {
-		lualine_a = { 'mode' },
+		lualine_a = { "mode" },
 		lualine_b = {
-			'branch',
+			"branch",
 			{
-				'diagnostics',
-				sources = { 'nvim_diagnostic' },
-				symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+				"diagnostics",
+				sources = { "nvim_diagnostic" },
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 				diagnostics_color = {
 					-- color_error = { fg = colors.red },
 					-- color_warn = { fg = colors.yellow },
 					-- color_info = { fg = colors.cyan },
-				}
+				},
 			},
 		},
-		lualine_c = { 'filename' },
+		lualine_c = { "filename" },
 		lualine_x = {
 			{
-				'diff',
+				"diff",
 				-- Is it me or the symbol for modified us really weird
 				-- icon = ' ',
-				symbols = { added = ' ', modified = ' ', removed = ' ' },
+				symbols = { added = " ", modified = " ", removed = " " },
 				diff_color = {
 					-- added = { fg = colors.green },
 					-- -- modified = { fg = colors.orange },
@@ -48,10 +47,10 @@ lualine.setup {
 				},
 				-- cond = conditions.hide_in_width,
 			},
-			'filetype'
+			"filetype",
 		},
-		lualine_y = { 'progress' },
-		lualine_z = { 'location' }
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -59,15 +58,14 @@ lualine.setup {
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = {}
+		lualine_z = {},
 	},
-
 
 	tabline = {},
 	winbar = {},
 	inactive_winbar = {},
-	extensions = {}
-}
+	extensions = {},
+})
 
 --      section_separators = { left = '', right = '' },
 --

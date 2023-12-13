@@ -1,5 +1,5 @@
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 
 local has_words_before = function()
@@ -8,64 +8,62 @@ local has_words_before = function()
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-
 -- TODO Look at NvChad, LunarVim and Lazy Vim and see what icons and colors they use for their color schemes
-local kind_icons = {
-	Text = "",
+-- local kind_icons = {
+-- 	Text = "",
+-- 	Method = "m",
+-- 	Function = "",
+-- 	Constructor = "",
+-- 	Field = "",
+-- 	Variable = "",
+-- 	Class = "",
+-- 	Interface = "",
+-- 	Module = "",
+-- 	Property = "",
+-- 	Unit = "",
+-- 	Value = "",
+-- 	Enum = "",
+-- 	Keyword = "",
+-- 	Snippet = "",
+-- 	Color = "",
+-- 	File = "",
+-- 	Reference = "",
+-- 	Folder = "",
+-- 	EnumMember = "",
+-- 	Constant = "",
+-- 	Struct = "",
+-- 	Event = "",
+-- 	Operator = "",
+-- 	TypeParameter = "",
+-- }
+
+local symbol_map = {
+	Text = "󰉿",
 	Method = "m",
-	Function = "",
+	Function = "󰊕",
 	Constructor = "",
 	Field = "",
-	Variable = "",
-	Class = "",
+	Variable = "󰀫",
+	Class = "󰠱",
 	Interface = "",
 	Module = "",
-	Property = "",
-	Unit = "",
-	Value = "",
+	Property = "󰜢",
+	Unit = "󰑭",
+	Value = "󰎠",
 	Enum = "",
-	Keyword = "",
-	Snippet = "",
-	Color = "",
-	File = "",
+	Keyword = "󰌋",
+	Snippet = "",
+	Color = "󰏘",
+	File = "󰈙",
 	Reference = "",
-	Folder = "",
+	Folder = "󰉋",
 	EnumMember = "",
-	Constant = "",
-	Struct = "",
+	Constant = "󰏿",
+	Struct = "󰙅",
 	Event = "",
-	Operator = "",
-	TypeParameter = "",
+	Operator = "󰆕",
+	TypeParameter = "",
 }
-
-
--- symbol_map = {
---       Text = "󰉿",
---       Method = "󰆧",
---       Function = "󰊕",
---       Constructor = "",
---       Field = "󰜢",
---       Variable = "󰀫",
---       Class = "󰠱",
---       Interface = "",
---       Module = "",
---       Property = "󰜢",
---       Unit = "󰑭",
---       Value = "󰎠",
---       Enum = "",
---       Keyword = "󰌋",
---       Snippet = "",
---       Color = "󰏘",
---       File = "󰈙",
---       Reference = "󰈇",
---       Folder = "󰉋",
---       EnumMember = "",
---       Constant = "󰏿",
---       Struct = "󰙅",
---       Event = "",
---       Operator = "󰆕",
---       TypeParameter = "",
---     },
 
 local source_icons = {
 	nvim_lsp = "",
@@ -79,59 +77,61 @@ local source_icons = {
 -- All config options are here: https://github.com/hrsh7th/nvim-cmp/blob/main/doc/cmp.txt#L429
 -- Line 429
 cmp.setup({
+	-- completion = {
+	-- 	completeopt = "menu,menuone,noinsert",
+	-- },
 	enabled = function()
 		-- disable in Telescope
-		if vim.bo.buftype == 'prompt' then
+		if vim.bo.buftype == "prompt" then
 			return false
 		end
 		-- disable completion in comments
-		local context = require 'cmp.config.context'
+		local context = require("cmp.config.context")
 		-- keep command mode completion enabled when cursor is in a comment
-		if vim.api.nvim_get_mode().mode == 'c' then
+		if vim.api.nvim_get_mode().mode == "c" then
 			return true
 		else
-			return not context.in_treesitter_capture("comment")
-				and not context.in_syntax_group("Comment")
+			return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
 		end
 	end,
 	performance = {
-		max_view_entries = 15
+		max_view_entries = 15,
 	},
 	snippet = {
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
-	sources = cmp.config.sources(
-		{
-			{ name = "nvim_lsp" },
-			{ name = "luasnip" },
-			{ name = "nvim_lua" }, -- For nvim Lua API autocomplete
-			{ name = "path" },
-		},
-		{
-			{ name = "buffer" },
-		}
-	),
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "nvim_lua" }, -- For nvim Lua API autocomplete
+		{ name = "path" },
+	}, {
+		{ name = "buffer" },
+	}),
 	mapping = cmp.mapping.preset.insert({
-		['<C-k>'] = cmp.mapping.select_prev_item(),
-		['<C-j>'] = cmp.mapping.select_next_item(),
-		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-		['<C-e>'] = cmp.mapping.abort(),
-		['<CR>'] = cmp.mapping.confirm({ select = false }),
+		["<C-k>"] = cmp.mapping.select_prev_item(),
+		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<C-e>"] = cmp.mapping.abort(),
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif luasnip.jumpable() then
-				luasnip.jump(1)
+			-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+			-- that way you will only jump inside the snippet region
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
 			elseif has_words_before() then
-				cmp.complete() -- cmp.complete() means to manually bring up completion.
+				cmp.complete()
 			else
 				fallback()
 			end
 		end, { "i", "s" }),
+
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -145,7 +145,7 @@ cmp.setup({
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
-			vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+			vim_item.kind = string.format("%s  %s", symbol_map[vim_item.kind], vim_item.kind)
 			vim_item.menu = source_icons[entry.source.name]
 			-- vim_item.menu = string.format("[%s]", (entry.source.name:gsub("^%l", string.upper)))
 			return vim_item
@@ -157,26 +157,23 @@ cmp.setup({
 	},
 })
 
-
 -- `/` cmdline setup.
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
-	}
+		{ name = "buffer" },
+	},
 })
 
 -- `:` cmdline setup.
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = 'path' }
+		{ name = "path" },
 	}, {
-		{ name = 'cmdline' }
-	})
+		{ name = "cmdline" },
+	}),
 })
-
-
 
 -- TODO Set up the autocomplete and snippets for each file type manually
 -- TODO Look at NvChads formatting and other styping ui choices after all base functionality is done
@@ -187,28 +184,6 @@ cmp.setup.cmdline(':', {
 -- Might not need this. Just need some config file or smth
 -- https://www.reddit.com/r/neovim/comments/tqw05z/what_lsp_are_you_using_for_reactjs_projects_and/
 -- "Yeah I had to create a jsconfig.json file to get tsserver to work with Javascript files."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 --[[
 
@@ -261,11 +236,6 @@ local source_names = {
 -- vim.api.nvim_set_hl(0, 'cmp_normal', {fg = '', bg = ''})
 -- vim.api.nvim_set_hl(0, 'cmp_float_boarder', {fg = '', bg = ''})
 -- vim.api.nvim_set_hl(0, 'cmp_cursor_line', {fg = '', bg = ''})
-
-
-
-
-
 
 --[[
 local options = {

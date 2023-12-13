@@ -9,25 +9,32 @@ vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close buffer" }) -- TODO d
 vim.keymap.set("n", "<leader>p", ":Format<CR>", { desc = "Format" })
 vim.keymap.set("n", "<leader>o", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
 vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
+vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
+
+vim.keymap.set("n", "<leader>m", ":SignatureToggle<cr>", { desc = "Toggle marks indicator" })
+
+vim.keymap.set("n", "<leader>'", require("harpoon.mark").add_file, { desc = "Harpoon mark file" })
 
 -- Telescope
-vim.keymap.set("n", "<leader>f", "", { desc = "Telescope" })
 local telescope = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Find files" })
 vim.keymap.set("n", "<leader>fr", telescope.registers, { desc = "See registers" })
 vim.keymap.set("n", "<leader>fB", telescope.buffers, { desc = "See buffers" })
-vim.keymap.set("n", "<leader>fg", telescope.live_grep, { desc = "Live grep" })
+vim.keymap.set("n", "<leader>fg", telescope.live_grep, { desc = "Live grep in working directory" })
+vim.keymap.set("n", "<leader>fG", telescope.grep_string, { desc = "Search working directory for string/selection" })
 vim.keymap.set("n", "<leader>fs", telescope.treesitter, { desc = "Find treesitter symbols" })
 vim.keymap.set("n", "<leader>fS", telescope.lsp_document_symbols, { desc = "Find lsp buffer symbols" })
 
-vim.keymap.set("n", "<leader>ft", ":Telescope toggleterm<CR>", { desc = "Find terminal" })
 vim.keymap.set(
 	"n",
 	"<leader>fb",
 	":Telescope file_browser path=%:p:h select_buffer=true<CR> <ESC>",
 	{ desc = "File browser current buffer" }
 )
+vim.keymap.set("n", "<leader>fu", ":Telescope undo<CR>", { desc = "Undo history" })
+vim.keymap.set("n", "<leader>ft", ":Telescope toggleterm<CR>", { desc = "Find terminal" })
 vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>", { desc = "Find projects" })
+vim.keymap.set("n", "<leader>f'", ":Telescope harpoon marks<cr>", { desc = "Find harpoon file" })
 
 -- Git
 local gitsigns = require("gitsigns")
@@ -48,6 +55,8 @@ vim.keymap.set("n", "<leader>hj", gitsigns.prev_hunk, { desc = "Prev hunk" })
 
 vim.keymap.set("n", "<leader>hrb", gitsigns.reset_buffer, { desc = "Git reset buffer" })
 vim.keymap.set("n", "<leader>hrh", gitsigns.reset_hunk, { desc = "Git reset hunk" })
+
+vim.keymap.set("n", "<leader>hi", ":diffget ", { desc = "Diffget" })
 
 -- https://www.reddit.com/r/neovim/comments/vlc9sc/how_to_define_a_user_command_to_partially_stage/?sort=new
 -- Comment by andrewfz
@@ -84,13 +93,44 @@ mapping = cmp.mapping.preset.insert({
 }),
 ]]
 
+-- Debug
+local dap = require("dap")
+local dapgo = require("dap-go")
+vim.keymap.set("n", "<leader>dd", dap.continue, { desc = "Continue" })
+vim.keymap.set("n", "<leader>dq", dap.terminate, { desc = "Terminate" })
+vim.keymap.set("n", "<leader>dr", "<cmd>lua require('dapui').open({reset = true})<cr>", { desc = "Reset DAP UI" })
+vim.keymap.set("n", "<leader>dR", dap.repl.toggle, { desc = "Toggle REPL" })
+vim.keymap.set("n", "<leader>dL", dap.set_log_level, { desc = "Set log level" })
+
+vim.keymap.set("n", "<leader>dt", dapgo.debug_test, { desc = "Debug test" })
+vim.keymap.set("n", "<leader>dT", dapgo.debug_last_test, { desc = "Debug last test" })
+
+vim.keymap.set("n", "<leader>dj", dap.down, { desc = "Go down stacktrace" })
+vim.keymap.set("n", "<leader>dk", dap.up, { desc = "Go up stacktrace" })
+
+vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "Step over (next line)" })
+vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step into" })
+vim.keymap.set("n", "<leader>dO", dap.step_out, { desc = "Step out" })
+
+vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
+vim.keymap.set("n", "<leader>dc", dap.clear_breakpoints, { desc = "Clear breakpoints" })
+vim.keymap.set("n", "<leader>dl", dap.list_breakpoints, { desc = "List breakpoints" })
+
+vim.keymap.set("n", "<leader>de", function()
+	dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, { desc = "Set breakpoint with condition" })
+vim.keymap.set("n", "<leader>ds", function()
+	dap.set_breakpoint(vim.fn.input(nil, nil, "Log point message: "))
+end, { desc = "Set breakpoint with log" })
+
 -- Window Movement
-vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>ss", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>sd", "<C-w>l", { desc = "Move cursor to right window" })
 vim.keymap.set("n", "<leader>sa", "<C-w>h", { desc = "Move cursor to left window" })
-vim.keymap.set("n", "<leader>ss", "<C-w>j", { desc = "Move cursor to window below" })
+vim.keymap.set("n", "<leader>sx", "<C-w>j", { desc = "Move cursor to window below" })
 vim.keymap.set("n", "<leader>sw", "<C-w>k", { desc = "Move cursor to window above" })
+vim.keymap.set("n", "<leader>sq", ":close<cr>", { desc = "Close window" })
 
 -- Tab Movement
 vim.keymap.set("n", "<leader>ll", ":tabnew %<CR>", { desc = "Create new tab" })
@@ -112,6 +152,7 @@ vim.keymap.set(
 	":ToggleTerm size=vim.o.columns * 0.4 direction=vertical<cr>",
 	{ desc = "Open vertical terminal" }
 )
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm <cr>", { desc = "Open terminal" })
 vim.keymap.set("n", "<leader>th", ":ToggleTerm size=15 direction=horizontal<cr>", { desc = "Open horizontal terminal" })
 vim.keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<cr>", { desc = "Open block terminal" }) -- full size temrinals
 vim.keymap.set("n", "<leader>tp", ":ToggleTerm dir=%:p:h<cr>", { desc = "Open terminal for current buffer directory" })

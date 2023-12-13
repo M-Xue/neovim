@@ -5,10 +5,12 @@ require("telescope").setup({
 		},
 	},
 	defaults = {
-		prompt_prefix = "  ",
+		prompt_prefix = " 󰍉 ",
 		selection_caret = "   ",
 		entry_prefix = "   ",
-		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		-- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+		-- https://www.w3.org/TR/xml-entity-names/025.html
 		initial_mode = "insert",
 		selection_strategy = "reset",
 		sorting_strategy = "ascending",
@@ -33,9 +35,34 @@ require("telescope").setup({
 			-- disables netrw and use telescope-file-browser in its place
 			hijack_netrw = true,
 		},
+		undo = {
+			-- https://github.com/debugloop/telescope-undo.nvim#configuration
+			side_by_side = true,
+			layout_strategy = "vertical",
+			layout_config = {
+				preview_height = 0.8,
+			},
+		},
 	},
 })
 
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("toggleterm")
 require("telescope").load_extension("projects")
+-- require("telescope").load_extension("fzf")
+require("telescope").load_extension("undo")
+require("telescope").load_extension("harpoon")
+
+-- base telescope mappings
+-- <C-x> 	Go to file selection as a split
+-- <C-v> 	Go to file selection as a vsplit
+-- <C-t> 	Go to a file in a new tab
+-- <C-u> 	Scroll up in preview window
+-- <C-d> 	Scroll down in preview window
+-- <C-f> 	Scroll left in preview window
+-- <C-k> 	Scroll right in preview window
+
+-- Telescope undo mappings
+-- ["<cr>"] = require("telescope-undo.actions").yank_additions,
+-- ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+-- ["<C-cr>"] = require("telescope-undo.actions").restore,

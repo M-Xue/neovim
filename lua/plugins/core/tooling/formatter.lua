@@ -1,49 +1,19 @@
-local util = require("formatter.util")
+local conform = require("conform")
 
-require("formatter").setup({
-	logging = true,
-	log_level = vim.log.levels.WARN,
-	-- https://github.com/mhartington/formatter.nvim/tree/master/lua/formatter/filetypes
-	filetype = {
-		lua = {
-			require("formatter.filetypes.lua").stylua,
-		},
-		javascript = {
-			require("formatter.filetypes.javascript").prettierd,
-		},
-		javascriptreact = {
-			require("formatter.filetypes.javascriptreact").prettierd,
-		},
-		typescript = {
-			require("formatter.filetypes.typescript").prettierd,
-		},
-		typescriptreact = {
-			require("formatter.filetypes.typescriptreact").prettierd,
-		},
-		html = {
-			require("formatter.filetypes.html").prettierd,
-		},
-		css = {
-			require("formatter.filetypes.css").prettierd,
-		},
-		go = {
-			require("formatter.filetypes.go").gofumpt,
-			require("formatter.filetypes.go").golines,
-			require("formatter.filetypes.go").goimports,
-		},
-		-- svelte = {
-		-- -- 	NOTE: svelte uses prettier not prettierd
-		-- 	require("formatter.filetypes.svelte").prettier,
-		-- },
-		-- rust = {
-		-- 	require("formatter.filetypes.rust").rustfmt,
-		-- },
-		["*"] = {
-			require("formatter.filetypes.any").remove_trailing_whitespace,
-		},
+conform.setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		javascript = { "prettierd" },
+		javascriptreact = { "prettierd" },
+		typescript = { "prettierd" },
+		typescriptreact = { "prettierd" },
+		html = { "prettierd" },
+		css = { "prettierd" },
+		go = { "goimports-reviser", "golines", "gofumpt" },
 	},
-})
-
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	command = "FormatWriteLock",
+	format_on_save = {
+		lsp_fallback = true,
+		timeout_ms = 500,
+	},
+	log_level = vim.log.levels.ERROR,
 })

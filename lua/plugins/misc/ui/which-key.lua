@@ -16,6 +16,7 @@ local mappings = {
 		c = { name = "Comment" },
 		y = { name = "File Tree" },
 		h = { name = "Git" },
+		d = { name = "Debug" },
 	},
 }
 wk.register(mappings)

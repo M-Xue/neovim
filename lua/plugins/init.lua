@@ -41,6 +41,17 @@ local plugins = {
 		},
 		event = "TermOpen",
 	},
+	-- {
+	-- 	"nvim-telescope/telescope-fzf-native.nvim",
+	-- 	build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	-- },
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"debugloop/telescope-undo.nvim",
+		},
+	},
 
 	{
 		"goolord/alpha-nvim",
@@ -74,15 +85,44 @@ local plugins = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 
 	-- * ========================================
 	-- * TOOLING
 	-- * ========================================
-	{ "williamboman/mason.nvim", dependencies = "williamboman/mason-lspconfig.nvim" },
-	{ "neovim/nvim-lspconfig" },
-	{ "mhartington/formatter.nvim" },
-	{ "mfussenegger/nvim-lint" },
-	{ "stevearc/conform.nvim" },
+	{ "williamboman/mason.nvim" },
+	{ "neovim/nvim-lspconfig", dependencies = { "williamboman/mason-lspconfig.nvim" } }, -- LSP
+	{ "mfussenegger/nvim-lint" }, -- Linting
+	{ "stevearc/conform.nvim" }, -- Formatting
+
+	-- Debugging
+	{ "mfussenegger/nvim-dap" },
+	{ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } },
+	{ "theHamsta/nvim-dap-virtual-text" },
+	{ "nvim-telescope/telescope-dap.nvim" },
+
+	{ "leoluz/nvim-dap-go" },
+	{
+		"ray-x/go.nvim",
+		dependencies = { -- optional packages
+			"ray-x/guihua.lua",
+			"neovim/nvim-lspconfig",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		-- config = function()
+		-- 	require("go").setup()
+		-- end,
+		event = { "CmdlineEnter" },
+		ft = { "go", "gomod" },
+		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+	},
 
 	-- * ========================================
 	-- * GIT
@@ -96,14 +136,20 @@ local plugins = {
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	-- { "tpope/vim-fugitive" }, -- This is a vim plugin, not Lua. Not customized.
+	{ "tpope/vim-fugitive" }, -- This is a vim plugin, not Lua. Not customized.
 
 	-- * ========================================
 	-- * EXTRA LSP PLUGINS
 	-- * ========================================
 	{ "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach" },
 	{ "kosayoda/nvim-lightbulb" },
-	{ "aznhe21/actions-preview.nvim" },
+	{ "weilbith/nvim-code-action-menu" },
+	{ "simrat39/symbols-outline.nvim" },
+
+	-- * ========================================
+	-- * MOTIONS
+	-- * ========================================
+	{ "ThePrimeagen/harpoon" },
 
 	-- * ========================================
 	-- * UI PLUGINS
@@ -118,14 +164,6 @@ local plugins = {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
 	},
 	{
 		"sudormrfbin/cheatsheet.nvim",
@@ -144,6 +182,7 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons", -- optional dependency
 		},
 	},
+	{ "kshenoy/vim-signature" },
 
 	-- * ========================================
 	-- * EDITING PLUGINS
@@ -163,33 +202,41 @@ local plugins = {
 	},
 	{ "numToStr/Comment.nvim", lazy = false },
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+	{ "mbbill/undotree" },
 }
 
 require("lazy").setup(plugins)
 
+-- CORE
 require("plugins.core.telescope")
 require("plugins.core.lualine")
 require("plugins.core.cmp")
 require("plugins.core.treesitter")
 require("plugins.core.git.gitsigns")
--- require('plugins.core.git.lazygit')
 require("plugins.core.toggleterm")
 require("plugins.core.alpha")
 require("plugins.core.project")
 require("plugins.core.tooling")
+require("plugins.core.nvim-tree")
 
+-- MISC
+
+-- lsp
 require("plugins.misc.lsp.fidget")
 require("plugins.misc.lsp.nvim-lightbulb")
-require("plugins.misc.lsp.actions-preview")
+require("plugins.misc.lsp.symbols-outline")
 
--- require("plugins.misc.ui.illuminate")
+-- motions
+require("plugins.misc.motions.harpoon")
+
+-- ui
 require("plugins.misc.ui.indent-blankline")
 require("plugins.misc.ui.tabby")
 require("plugins.misc.ui.which-key")
-require("plugins.misc.ui.nvim-tree")
 require("plugins.misc.ui.cheatsheet")
 require("plugins.misc.ui.barbecue")
 
+-- editing
 require("plugins.misc.editing.numb")
 -- require("plugins.misc.editing.nvim-ts-autotag")
 require("plugins.misc.editing.nvim-autopairs")

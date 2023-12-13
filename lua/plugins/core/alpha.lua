@@ -21,13 +21,15 @@ dashboard.section.header.val = {
 
 dashboard.section.buttons.val = {
 	dashboard.button("p", "󰅩   Find project", ":Telescope projects<CR>"),
-	dashboard.button("f", "   Find file", ":Telescope find_files<CR>"),
-	dashboard.button("o", "ﭯ   Recently opened files", ":Telescope oldfiles<CR>"),
-	dashboard.button("b", "   Browse files", ":Telescope file_browser<CR>"),
-	dashboard.button("e", "   New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("r", "   Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
+	dashboard.button("r", "   Recently opened files", ":Telescope oldfiles<CR>"),
+	dashboard.button("d", "   Change directories", ":cd "),
+	dashboard.button("b", "   Browse files", ":Telescope file_browser<CR><esc>"),
+	dashboard.button("f", "󰈞   Find file", ":Telescope find_files<CR>"),
+	-- dashboard.button("e", "   New file", ":ene <BAR> startinsert <CR>"),
+	dashboard.button("w", "󰬴   Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
 	dashboard.button("t", "   Find todo", ":TodoTelescope<CR>"),
-	dashboard.button("`", "   Quit NVIM", ":qa<CR>"),
+	dashboard.button("s", "   Settings", ":cd ~/.config/nvim<cr>:Telescope find_files<cr>"),
+	dashboard.button("`", "   Quit NVIM", ":qa<CR>"),
 }
 
 -- local date = os.date("┏   Today is %a %d %b ┓")

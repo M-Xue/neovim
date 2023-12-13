@@ -1,4 +1,5 @@
 require("plugins.core.tooling.mason")
 require("plugins.core.tooling.lsp")
-require("plugins.core.tooling.conform")
-require("plugins.core.tooling.nvim-lint")
+require("plugins.core.tooling.formatter")
+require("plugins.core.tooling.linter")
+require("plugins.core.tooling.dap")
