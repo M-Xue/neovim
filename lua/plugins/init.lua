@@ -127,7 +127,6 @@ local plugins = {
 	-- * ========================================
 	-- * GIT
 	-- * ========================================
-
 	{ "lewis6991/gitsigns.nvim" },
 	{
 		"kdheepak/lazygit.nvim",
@@ -210,19 +209,29 @@ local plugins = {
 
 require("lazy").setup(plugins)
 
--- CORE
-require("plugins.core.telescope")
-require("plugins.core.lualine")
-require("plugins.core.cmp")
-require("plugins.core.treesitter")
+-- CORE PLUGINS
 require("plugins.core.git.gitsigns")
-require("plugins.core.toggleterm")
-require("plugins.core.alpha")
-require("plugins.core.project")
 require("plugins.core.tooling")
-require("plugins.core.nvim-tree")
 
--- MISC
+require("plugins.core.alpha")
+require("plugins.core.cmp")
+require("plugins.core.lualine")
+require("plugins.core.nvim-tree")
+require("plugins.core.project")
+require("plugins.core.telescope")
+require("plugins.core.toggleterm")
+require("plugins.core.treesitter")
+
+-- MISCELLANEOUS PLUGINS
+-- editing
+require("plugins.misc.editing.autoclose")
+require("plugins.misc.editing.comment")
+require("plugins.misc.editing.numb")
+require("plugins.misc.editing.nvim-autopairs")
+require("plugins.misc.editing.nvim-ts-autotag")
+require("plugins.misc.editing.nvim-ts-context-commentstring")
+require("plugins.misc.editing.sentiment")
+require("plugins.misc.editing.todo-comments")
 
 -- lsp
 require("plugins.misc.lsp.fidget")
@@ -235,18 +244,8 @@ require("plugins.misc.motions.harpoon")
 require("plugins.misc.motions.tabout")
 
 -- ui
+require("plugins.misc.ui.barbecue")
+require("plugins.misc.ui.cheatsheet")
 require("plugins.misc.ui.indent-blankline")
 require("plugins.misc.ui.tabby")
 require("plugins.misc.ui.which-key")
-require("plugins.misc.ui.cheatsheet")
-require("plugins.misc.ui.barbecue")
-
--- editing
-require("plugins.misc.editing.numb")
--- require("plugins.misc.editing.nvim-ts-autotag")
-require("plugins.misc.editing.nvim-autopairs")
-require("plugins.misc.editing.autoclose")
-require("plugins.misc.editing.comment")
-require("plugins.misc.editing.sentiment")
-require("plugins.misc.editing.nvim-ts-context-commentstring")
-require("plugins.misc.editing.todo-comments")

@@ -1,4 +1,11 @@
 DO TOMORROW
+make bat the telescope previewer
+lualine
+
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-jump2d.md
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
+asdfasdf asdfasfdas nvim nvim
+
 symbol tree
 https://github.com/simrat39/symbols-outline.nvim
 
@@ -9,13 +16,7 @@ https://www.youtube.com/watch?v=R_VxVuR1X6Y
 TAG LIST
 -- :help tag_list - tag stack is moving between defintions
 
-figureout multiselect and multicursor
-https://github.com/mg979/vim-visual-multi
-- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
 
-TREESITTER OBJECTS
-https://www.youtube.com/watch?v=CEMPq_r8UYQ&t=93s
-https://www.youtube.com/watch?v=FuYQ7M73bC0
 
 https://www.youtube.com/watch?v=GYVbYCST_Yc
 check out telescope mark and loc list pickers 
@@ -23,32 +24,23 @@ check out telescope mark and loc list pickers
 
 --------------------------
 
-Very good plugins to consdier
-https://github.com/justinmk/vim-sneak
-https://github.com/unblevable/quick-scope#advantages
-https://github.com/ggandor/leap.nvim
-https://github.com/folke/flash.nvim
-https://github.com/abecodes/tabout.nvim
-
-
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-jump2d.md
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
-
-
-
-https://github.com/rockerBOO/awesome-neovim#motion
-https://github.com/rockerBOO/awesome-neovim#treesitter-based
-
+search
+best ways to search in nvim
+searching in nvim
 subsitutue command 
 search replace
 https://www.youtube.com/watch?v=YzVmdJ41Xkg
 can use substitution on multiple lines with call back to stored values like sed
 - 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
-search
-https://github.com/rockerBOO/awesome-neovim#search
-best ways to search in nvim
-searching in nvim
+
+figureout multiselect and multicursor
+https://github.com/mg979/vim-visual-multi
+- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
+
+TREESITTER OBJECTS
+https://www.youtube.com/watch?v=CEMPq_r8UYQ&t=93s
+https://www.youtube.com/watch?v=FuYQ7M73bC0
 
 ---------
 
