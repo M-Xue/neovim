@@ -149,7 +149,10 @@ local plugins = {
 	-- * ========================================
 	-- * MOTIONS
 	-- * ========================================
+	{ "folke/flash.nvim" },
 	{ "ThePrimeagen/harpoon" },
+	{ "abecodes/tabout.nvim" },
+	{ "unblevable/quick-scope" },
 
 	-- * ========================================
 	-- * UI PLUGINS
@@ -227,7 +230,9 @@ require("plugins.misc.lsp.nvim-lightbulb")
 require("plugins.misc.lsp.symbols-outline")
 
 -- motions
+require("plugins.misc.motions.flash")
 require("plugins.misc.motions.harpoon")
+require("plugins.misc.motions.tabout")
 
 -- ui
 require("plugins.misc.ui.indent-blankline")

@@ -15,6 +15,13 @@ vim.keymap.set("n", "<leader>m", ":SignatureToggle<cr>", { desc = "Toggle marks 
 
 vim.keymap.set("n", "<leader>'", require("harpoon.mark").add_file, { desc = "Harpoon mark file" })
 
+-- Flash
+local flash = require("flash")
+vim.keymap.set("n", "<leader>jj", flash.jump, { desc = "Flash jump" })
+vim.keymap.set("n", "<leader>jt", flash.treesitter, { desc = "Flash treesitter" })
+vim.keymap.set("n", "<leader>js", flash.treesitter_search, { desc = "Flash treesitter search" })
+vim.keymap.set("n", "<leader>jh", flash.toggle, { desc = "Flash toggle" })
+
 -- Telescope
 local telescope = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Find files" })
