@@ -27,10 +27,11 @@ local telescope = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Find files" })
 vim.keymap.set("n", "<leader>fr", telescope.registers, { desc = "See registers" })
 vim.keymap.set("n", "<leader>fB", telescope.buffers, { desc = "See buffers" })
+
 vim.keymap.set("n", "<leader>fg", telescope.live_grep, { desc = "Live grep in working directory" })
 vim.keymap.set("n", "<leader>fG", telescope.grep_string, { desc = "Search working directory for string/selection" })
-vim.keymap.set("n", "<leader>fs", telescope.treesitter, { desc = "Find treesitter symbols" })
-vim.keymap.set("n", "<leader>fS", telescope.lsp_document_symbols, { desc = "Find lsp buffer symbols" })
+vim.keymap.set("n", "<leader>fs", telescope.current_buffer_fuzzy_find, { desc = "Fuzzy find current buffer" })
+vim.keymap.set("n", "<leader>fT", telescope.treesitter, { desc = "Find treesitter symbols" })
 
 vim.keymap.set(
 	"n",
