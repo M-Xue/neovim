@@ -1,32 +1,9 @@
-DO TOMORROW
-make bat the telescope previewer
-lualine
-
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-jump2d.md
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
-asdfasdf asdfasfdas nvim nvim
-
 symbol tree
 https://github.com/simrat39/symbols-outline.nvim
 
-JUMP LIST
--- :help jump_list - jump list is for movements e.g. ctrl o
-https://www.youtube.com/watch?v=R_VxVuR1X6Y
-
-TAG LIST
--- :help tag_list - tag stack is moving between defintions
-
-
-
-https://www.youtube.com/watch?v=GYVbYCST_Yc
-check out telescope mark and loc list pickers 
-- https://github.com/nvim-telescope/telescope.nvim#vim-pickers
 
 --------------------------
 
-search
-best ways to search in nvim
-searching in nvim
 subsitutue command 
 search replace
 https://www.youtube.com/watch?v=YzVmdJ41Xkg
@@ -44,18 +21,16 @@ https://www.youtube.com/watch?v=FuYQ7M73bC0
 
 ---------
 
-BUFFERS
-https://www.youtube.com/watch?v=GJno0l_nAyg
-
-TABS
-
-WINDOWS
-
-
---------
 
 MACROS
 
+lsp codelense
+https://github.com/ray-x/navigator.lua
+
+
+
+check out telescope mark and loc list pickers 
+- https://github.com/nvim-telescope/telescope.nvim#vim-pickers
 
 
 
@@ -195,13 +170,8 @@ add labels to debugging windows
 
 UNNEEDED BUT GOOD FEATURES. ADD LATER MAYBE
 
-lsp codelense
-https://www.youtube.com/watch?v=J-0_c6KScCU
-https://github.com/ray-x/navigator.lua
-
-add more to lualine
-- think abiout more lsp and formatting information
-- https://www.reddit.com/r/neovim/comments/11kumh3/what_else_to_put_in_lualine/
+lualine
+https://www.reddit.com/r/neovim/comments/11kumh3/what_else_to_put_in_lualine/
 
 add native nvim postman
 https://www.youtube.com/watch?v=TLOl8h0jSyk
