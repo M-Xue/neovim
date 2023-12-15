@@ -1,3 +1,5 @@
+add vale, code spell and suggested words to markdown and text files. Also add a markdown linter,
+
 symbol tree
 https://github.com/simrat39/symbols-outline.nvim
 
