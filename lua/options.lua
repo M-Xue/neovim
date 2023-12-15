@@ -6,8 +6,8 @@ vim.opt.signcolumn = "yes:1"
 vim.opt.linebreak = true
 
 vim.cmd("set colorcolumn=80")
--- vim.api.nvim_create_autocmd("BufEnter", {
--- 	callback = function()
--- 		vim.cmd("SignatureToggle")
--- 	end,
--- })
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		require("flash").toggle()
+	end,
+})

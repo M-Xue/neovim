@@ -1,3 +1,15 @@
+## jumplist
+Go back on jumplist | <c-o>
+
+## jumplist
+Go forward on jumplist | <c-i>
+
+## jumplist
+See jumplist | :jumps
+
+## jumplist
+Clear jumplist | :clearjumps
+
 ## motion
 Move to next occurence of specified character <char> | f<char>
 
@@ -99,13 +111,6 @@ Toggle marks indicator | <leader>m
 
 ## marks
 Refresh marks indicator | :SignatureRefresh
-
-## treesitter
-## harpoon
-## buffers
-## windows
-## tabs
-## lazygit
 
 ## nvim-tree 
 Rename file | u

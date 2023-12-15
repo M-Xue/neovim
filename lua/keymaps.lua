@@ -11,9 +11,11 @@ vim.keymap.set("n", "<leader>o", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
 vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
 
-vim.keymap.set("n", "<leader>m", ":SignatureToggle<cr>", { desc = "Toggle marks indicator" })
-
 vim.keymap.set("n", "<leader>'", require("harpoon.mark").add_file, { desc = "Harpoon mark file" })
+
+-- Marks
+vim.keymap.set("n", "<leader>mm", ":SignatureToggle<cr>", { desc = "Toggle marks indicator" })
+vim.keymap.set("n", "<leader>md", ":delmarks a-zA-Z0-9<cr>", { desc = "Clear all marks" })
 
 -- Flash
 local flash = require("flash")
@@ -21,6 +23,8 @@ vim.keymap.set("n", "<leader>jj", flash.jump, { desc = "Flash jump" })
 vim.keymap.set("n", "<leader>jt", flash.treesitter, { desc = "Flash treesitter" })
 vim.keymap.set("n", "<leader>js", flash.treesitter_search, { desc = "Flash treesitter search" })
 vim.keymap.set("n", "<leader>jh", flash.toggle, { desc = "Flash toggle" })
+
+vim.keymap.set("n", "<leader>jl", require("telescope.builtin").jumplist, { desc = "Telescope jumplist" })
 
 -- Telescope
 local telescope = require("telescope.builtin")
@@ -138,6 +142,10 @@ vim.keymap.set("n", "<leader>sd", "<C-w>l", { desc = "Move cursor to right windo
 vim.keymap.set("n", "<leader>sa", "<C-w>h", { desc = "Move cursor to left window" })
 vim.keymap.set("n", "<leader>sx", "<C-w>j", { desc = "Move cursor to window below" })
 vim.keymap.set("n", "<leader>sw", "<C-w>k", { desc = "Move cursor to window above" })
+
+vim.keymap.set("n", "<leader>sr", "<C-w>x", { desc = "Swap window with next" })
+vim.keymap.set("n", "<leader>st", "<C-w>T", { desc = "Open new tab with window" })
+vim.keymap.set("n", "<leader>s=", "<C-w>=", { desc = "Make all windows equal size" })
 vim.keymap.set("n", "<leader>sq", ":close<cr>", { desc = "Close window" })
 
 -- Tab Movement
