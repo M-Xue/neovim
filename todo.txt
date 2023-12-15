@@ -1,6 +1,45 @@
 symbol tree
 https://github.com/simrat39/symbols-outline.nvim
 
+move language supports into isolated folders
+
+fix formatting on save bug when there is an lsp error in the file
+
+fix vale linter
+- vale is currently running on markdown files. However, it still runs when vale is not configured. Change the autocmd in the linter.lua file so that it only runs if it sees the vale config file in the root dir.
+
+Can also specify a custom path to vale config
+https://www.reddit.com/r/vim/comments/my8eqw/why_does_my_function_work_with_one_external/
+
+
+fix alpha vim new file 
+let user rename the new file immediatley as they enter the buffer
+https://vi.stackexchange.com/questions/305/how-can-i-rename-the-file-im-editing
+
+
+fix up lsp configs for each lsp in configuration page
+
+add spell check that is togglable
+better spell checks via linter
+- https://github.com/client9/misspell
+- https://github.com/codespell-project/codespell
+- https://github.com/streetsidesoftware/cspell
+proselint and vale are good too
+- https://github.com/amperser/proselint
+- https://vale.sh/
+
+
+add file specific keymaps (like the dap go test keymaps)
+- do this for go.nvim commands
+- if a file type doesnt have a dap debugger, throw an error message
+
+
+reconsider keymaps
+- think abiout more lsp and formatting information
+- moving windows more easily
+    - move buffers into new tabs and get better tab navigations 
+- learn more about windows, buffers and tabs
+- figureout how to move dap windows adn buffers around
 
 --------------------------
 
@@ -95,13 +134,6 @@ https://www.youtube.com/watch?v=F6GNPOXpfwU
 figure out what this stuff is for remapping keys
 { noremap = true, silent = true, buffer = bufnr, desc = "Symbols tree" }
 
-fix formatting on save bug when there is an lsp error in the file
-
-fix vale linter
-- vale is currently running on markdown files. However, it still runs when vale is not configured. Change the autocmd in the linter.lua file so that it only runs if it sees the vale config file in the root dir.
-
-Can also specify a custom path to vale config
-https://www.reddit.com/r/vim/comments/my8eqw/why_does_my_function_work_with_one_external/
 
 
 
@@ -120,35 +152,6 @@ git work trees
 
 make the mergetool meld but only use it when you really need to. diffget is sufficient for most cases
 
-
-fix alpha vim new file 
-let user rename the new file immediatley as they enter the buffer
-https://vi.stackexchange.com/questions/305/how-can-i-rename-the-file-im-editing
-
-
-fix up lsp configs for each lsp in configuration page
-
-add spell check that is togglable
-better spell checks via linter
-- https://github.com/client9/misspell
-- https://github.com/codespell-project/codespell
-- https://github.com/streetsidesoftware/cspell
-proselint and vale are good too
-- https://github.com/amperser/proselint
-- https://vale.sh/
-
-
-add file specific keymaps (like the dap go test keymaps)
-- do this for go.nvim commands
-- if a file type doesnt have a dap debugger, throw an error message
-
-
-reconsider keymaps
-- think abiout more lsp and formatting information
-- moving windows more easily
-    - move buffers into new tabs and get better tab navigations 
-- learn more about windows, buffers and tabs
-- figureout how to move dap windows adn buffers around
 
 figure out lazy.vim
 - https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s

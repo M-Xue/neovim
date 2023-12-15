@@ -1,3 +1,6 @@
+## editing
+Redo | <c-r>
+
 ## jumplist
 Go back on jumplist | <c-o>
 
