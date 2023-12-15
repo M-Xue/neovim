@@ -4,7 +4,7 @@
 
 This config is split into 2 broad categories. Core plugins and miscellaneous plugins. Core plugins are necessary for this editor to work but misc plugins can be deleted the moment they break. I cannot be bothered sweating over 50+ plugins so I will only make sure the core plugins have their functionalities maintained. 
 
-Language support is split into a directory for each (all frontend for webdev is in one directory). Just comment out the languages you don't care about.
+(Not implemented yet) Language support is split into a directory for each (all frontend for webdev is in one directory). Just comment out the languages you don't care about.
 
 ## Dependencies
 
@@ -47,10 +47,10 @@ Misc is a collection of helpful quality of life features that are not super nece
 
 These are: 
 
-- Editing: a collection of plugins that help with edition, such as commenting or automatically adding the corresponding closing bracket when you type an opening bracket
-- LSP: this is just for some additional helpful features that work together with the LSP functionality form core 
-- Motions: a collection of plugins that help with moving around your windows and project 
-- UI: these plugins alter the UI for some helpful information, such as line indenting signs or winbars
+- **Editing**: a collection of plugins that help with edition, such as commenting or automatically adding the corresponding closing bracket when you type an opening bracket
+- **LSP**: this is just for some additional helpful features that work together with the LSP functionality form core 
+- **Motions**: a collection of plugins that help with moving around your windows and project 
+- **UI**: these plugins alter the UI for some helpful information, such as line indenting signs or winbars
 
 ## Keymaps
 
