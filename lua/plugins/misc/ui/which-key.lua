@@ -18,6 +18,7 @@ local mappings = {
 		h = { name = "Git" },
 		d = { name = "Debug" },
 		m = { name = "Marks" },
+		j = { name = "Motions" },
 	},
 }
 wk.register(mappings)

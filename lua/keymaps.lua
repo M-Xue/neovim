@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
 vim.keymap.set("n", "<leader>'", require("harpoon.mark").add_file, { desc = "Harpoon mark file" })
 
 -- Marks
-vim.keymap.set("n", "<leader>mm", ":SignatureToggle<cr>", { desc = "Toggle marks indicator" })
+vim.keymap.set("n", "<leader>mm", ":MarksToggleSigns<cr>", { desc = "Toggle marks indicator" })
 vim.keymap.set("n", "<leader>md", ":delmarks a-zA-Z0-9<cr>", { desc = "Clear all marks" })
 
 -- Flash

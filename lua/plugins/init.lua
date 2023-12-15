@@ -184,7 +184,7 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons", -- optional dependency
 		},
 	},
-	{ "kshenoy/vim-signature" },
+	{ "chentoast/marks.nvim" },
 
 	-- * ========================================
 	-- * EDITING PLUGINS
@@ -247,5 +247,6 @@ require("plugins.misc.motions.tabout")
 require("plugins.misc.ui.barbecue")
 require("plugins.misc.ui.cheatsheet")
 require("plugins.misc.ui.indent-blankline")
+require("plugins.misc.ui.marks")
 require("plugins.misc.ui.tabby")
 require("plugins.misc.ui.which-key")
