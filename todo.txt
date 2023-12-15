@@ -28,11 +28,8 @@ lsp codelense
 https://github.com/ray-x/navigator.lua
 
 
-
-check out telescope mark and loc list pickers 
-- https://github.com/nvim-telescope/telescope.nvim#vim-pickers
-
-
+quick fix
+https://www.youtube.com/watch?v=AuXZA-xCv04&t=18s
 
 
 TIPS AND TRICKS
@@ -184,6 +181,8 @@ add colour scheme select with gruvbox and tokyo night
 - catpuccin 
 - tokyo night 
 - gruv box
+inspo: https://www.reddit.com/r/unixporn/comments/xs0s2c/gnome_minimalistic_catppuccin_w_papirus_icons/
+icons: https://github.com/yamatsum/nvim-nonicons
 
 colour schemes:
 https://www.reddit.com/r/neovim/comments/sihuq7/psa_now_you_can_set_global_highlight_groups_ie/
