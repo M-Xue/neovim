@@ -1,4 +1,4 @@
-require("nvim-tree").setup({
+local nvim_tree_config = {
 	view = {
 		width = 35,
 	},
@@ -90,4 +90,7 @@ require("nvim-tree").setup({
 		show_on_dirs = true,
 		show_on_open_dirs = true,
 	},
-})
+}
+
+require("nvim-tree").setup(nvim_tree_config)
+return nvim_tree_config
