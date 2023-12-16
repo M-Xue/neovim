@@ -138,7 +138,7 @@ local plugins = {
 	{ "tpope/vim-fugitive" }, -- This is a vim plugin, not Lua. Not customized.
 
 	-- * ========================================
-	-- * EXTRA LSP PLUGINS
+	-- * EXTRA LSP
 	-- * ========================================
 	{ "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach" },
 	{ "kosayoda/nvim-lightbulb" },
@@ -154,7 +154,7 @@ local plugins = {
 	{ "unblevable/quick-scope" },
 
 	-- * ========================================
-	-- * UI PLUGINS
+	-- * UI
 	-- * ========================================
 	{ "RRethy/vim-illuminate" },
 	{ "lukas-reineke/indent-blankline.nvim" },
@@ -185,9 +185,10 @@ local plugins = {
 		},
 	},
 	{ "chentoast/marks.nvim" },
+	{ "folke/zen-mode.nvim" },
 
 	-- * ========================================
-	-- * EDITING PLUGINS
+	-- * EDITING
 	-- * ========================================
 	{ "nacro90/numb.nvim" },
 	{ "windwp/nvim-ts-autotag" },
@@ -250,3 +251,4 @@ require("plugins.misc.ui.indent-blankline")
 require("plugins.misc.ui.marks")
 require("plugins.misc.ui.tabby")
 require("plugins.misc.ui.which-key")
+require("plugins.misc.ui.zen-mode")

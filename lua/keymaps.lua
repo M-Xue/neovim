@@ -31,7 +31,7 @@ vim.keymap.set("n", "<leader>jl", require("telescope.builtin").jumplist, { desc 
 local telescope = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Find files" })
 vim.keymap.set("n", "<leader>fr", telescope.registers, { desc = "See registers" })
-vim.keymap.set("n", "<leader>fB", telescope.buffers, { desc = "See buffers" })
+vim.keymap.set("n", "<leader>fb", telescope.buffers, { desc = "See buffers" })
 
 vim.keymap.set("n", "<leader>fg", telescope.live_grep, { desc = "Live grep in working directory" })
 vim.keymap.set("n", "<leader>fG", telescope.grep_string, { desc = "Search working directory for string/selection" })
@@ -40,7 +40,7 @@ vim.keymap.set("n", "<leader>fT", telescope.treesitter, { desc = "Find treesitte
 
 vim.keymap.set(
 	"n",
-	"<leader>fb",
+	"<leader>fB",
 	":Telescope file_browser path=%:p:h select_buffer=true<CR> <ESC>",
 	{ desc = "File browser current buffer" }
 )

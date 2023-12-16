@@ -1,3 +1,18 @@
+add editiong mode
+- change highlighting for flash
+- add mark indicator 
+- add harpoon indicator???
+
+neotree
+fix telescope ui. Things keep gettign cut off and stuff (e.g. lsp references file names)
+inlay hints for current function
+
+
+
+
+
+
+
 add vale, code spell and suggested words to markdown and text files. Also add a markdown linter,
 
 symbol tree
