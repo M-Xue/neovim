@@ -10,6 +10,7 @@ vim.keymap.set("n", "<leader>p", ":Format<CR>", { desc = "Format" })
 vim.keymap.set("n", "<leader>o", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
 vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
+vim.keymap.set("n", "<leader>z", ":ZenMode<cr>", { desc = "Zen mode" })
 
 vim.keymap.set("n", "<leader>'", require("harpoon.mark").add_file, { desc = "Harpoon mark file" })
 
