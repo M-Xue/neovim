@@ -144,6 +144,7 @@ local plugins = {
 	{ "kosayoda/nvim-lightbulb" },
 	{ "weilbith/nvim-code-action-menu" },
 	{ "simrat39/symbols-outline.nvim" },
+	{ "folke/neodev.nvim", opts = {} },
 
 	-- * ========================================
 	-- * MOTIONS
@@ -238,6 +239,7 @@ require("plugins.misc.editing.todo-comments")
 require("plugins.misc.lsp.fidget")
 require("plugins.misc.lsp.nvim-lightbulb")
 require("plugins.misc.lsp.symbols-outline")
+require("plugins.misc.lsp.neodev")
 
 -- motions
 require("plugins.misc.motions.flash")
