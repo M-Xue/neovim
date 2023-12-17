@@ -1,11 +1,26 @@
+fix telescope ui. Things keep gettign cut off and stuff (e.g. lsp references file names)
+
+
+
+
+symbol tree
+https://github.com/simrat39/symbols-outline.nvim
+
+
+
+
+
+
+
+fix lsp configs for languages 
+- figure out what all these textDocutmer/... and code actions do
+- hwo to have better code actions
+
 add editiong mode
 - change highlighting for flash
 - add mark indicator 
 - add harpoon indicator???
 
-neotree
-fix telescope ui. Things keep gettign cut off and stuff (e.g. lsp references file names)
-inlay hints for current function
 
 
 
@@ -15,8 +30,6 @@ inlay hints for current function
 
 add vale, code spell and suggested words to markdown and text files. Also add a markdown linter,
 
-symbol tree
-https://github.com/simrat39/symbols-outline.nvim
 
 move language supports into isolated folders
 
@@ -196,21 +209,6 @@ https://www.youtube.com/watch?v=TLOl8h0jSyk
 
 obsidian and vim: https://www.youtube.com/watch?v=lVcvBginu2U
 
-add colour scheme select with gruvbox and tokyo night
-- rose pine too 
-- catpuccin 
-- tokyo night 
-- gruv box
-inspo: https://www.reddit.com/r/unixporn/comments/xs0s2c/gnome_minimalistic_catppuccin_w_papirus_icons/
-icons: https://github.com/yamatsum/nvim-nonicons
-
-colour schemes:
-https://www.reddit.com/r/neovim/comments/sihuq7/psa_now_you_can_set_global_highlight_groups_ie/
-https://github.com/numToStr/Sakura.nvim/commit/392a5d5a2e6097b816314b38d727e641a5bde7c9
-
-https://www.reddit.com/r/neovim/comments/vg1oli/env_file_not_shown_by_nvim_tree/
-NvimTreeGitIgnored highlight group
-NvimTreeModifiedFile highlight group 
 
 
 
