@@ -144,6 +144,10 @@ local plugins = {
 	{ "kosayoda/nvim-lightbulb" },
 	{ "weilbith/nvim-code-action-menu" },
 	{ "simrat39/symbols-outline.nvim" },
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+	},
 	{ "folke/neodev.nvim", opts = {} },
 
 	-- * ========================================
@@ -237,6 +241,7 @@ require("plugins.misc.editing.todo-comments")
 
 -- lsp
 require("plugins.misc.lsp.fidget")
+require("plugins.misc.lsp.lsp-signature")
 require("plugins.misc.lsp.nvim-lightbulb")
 require("plugins.misc.lsp.symbols-outline")
 require("plugins.misc.lsp.neodev")
