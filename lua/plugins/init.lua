@@ -190,7 +190,7 @@ local plugins = {
 		},
 	},
 	{ "chentoast/marks.nvim" },
-	{ "folke/zen-mode.nvim" },
+	{ "shortcuts/no-neck-pain.nvim" },
 
 	-- * ========================================
 	-- * EDITING
@@ -256,6 +256,6 @@ require("plugins.misc.ui.barbecue")
 require("plugins.misc.ui.cheatsheet")
 require("plugins.misc.ui.indent-blankline")
 require("plugins.misc.ui.marks")
+require("plugins.misc.ui.no-neck-pain")
 require("plugins.misc.ui.tabby")
 require("plugins.misc.ui.which-key")
-require("plugins.misc.ui.zen-mode")
