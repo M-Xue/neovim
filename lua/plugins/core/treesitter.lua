@@ -18,6 +18,7 @@ require("nvim-treesitter.configs").setup({
 		"regex",
 		"graphql",
 		"dockerfile",
+		"astro",
 	},
 	highlight = {
 		enable = true,

@@ -16,12 +16,7 @@ local setup_diagnostics = function()
 	end
 
 	local config = {
-		-- disable virtual text
-		-- virtual_text = {
-		-- 	prefix = " ",
-		-- },
 		virtual_text = false,
-		-- show signs
 		signs = {
 			active = signs,
 		},
@@ -41,7 +36,7 @@ local setup_diagnostics = function()
 end
 
 -- Set up handlers
-local setup_handlers = function()
+local setup_lsp_keymaps = function()
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",
 	})
@@ -52,7 +47,7 @@ local setup_handlers = function()
 end
 
 -- Keymap sources
-local function lsp_diagnostic_keymaps(bufnr)
+local function lsp_keymaps(bufnr)
 	-- For documentationm, use the following command -> :help lsp
 	-- Basic Actions
 	vim.keymap.set(
@@ -129,7 +124,6 @@ local function lsp_diagnostic_keymaps(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Symbols tree" }
 	)
 
-	-- For documentationm, use the following command -> :help vim.diagnostic
 	-- Diagnostics
 	vim.keymap.set(
 		"n",
@@ -157,16 +151,13 @@ local function lsp_diagnostic_keymaps(bufnr)
 	)
 	-- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, bufopts)
 end
--- :help jump_list - jump list is for movements e.g. ctrl o
--- :help tag_list - tag stack is moving between defintions
 
 M.setup = function()
 	setup_diagnostics()
-	setup_handlers()
+	setup_lsp_keymaps()
 end
 
 local wk = require("which-key")
--- First argument is client
 M.on_attach = function(client, bufnr)
 	local opts = {
 		buffer = bufnr,
@@ -179,7 +170,7 @@ M.on_attach = function(client, bufnr)
 	}
 	wk.register(mappings, opts)
 
-	lsp_diagnostic_keymaps(bufnr)
+	lsp_keymaps(bufnr)
 end
 
 M.capabilities = require("cmp_nvim_lsp").default_capabilities()

@@ -1,15 +1,80 @@
+print formatting error message
+- we can use a autocommant to manually trigger the formater on the particular event
+- https://www.reddit.com/r/neovim/comments/1b4oiob/how_to_print_error_message_with_conformnvim/
+- https://github.com/stevearc/conform.nvim/issues/319
+
+provide default configs for linters and formatters
+
+add ensure installed
+- https://github.com/rshkarin/mason-nvim-lint?tab=readme-ov-file
+- https://github.com/zapling/mason-conform.nvim?tab=readme-ov-file
+
+learn lazy nvim
+
+refactor plugins
+- this guy has good structure: https://www.youtube.com/watch?v=ybUE4D80XSk
+
+fix nvim cmp
+- the autocorrect keeps starting at the second option
+- https://www.youtube.com/watch?v=y1WWOaLCNyI
+
+fix webdev stuff
+
+fix keymaps that annoy you
+- figure out what the keymap api actually does
+- commenting keymaps
+- completion cancelling keycaps
+- terminal keymaps
+- keymaps should only be for plugins. if you want to do a native vim action, try put it in cheatsheet instead
+
+add watch expressions in dap
+https://www.youtube.com/watch?v=oYzZxi3SSnM
+
+figure out all the go.nvim stuff and see what you want/need
+need to add watch expressions in debugger
+
+--------------------------
+
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+
+figureout multiselect and multicursor
+https://github.com/mg979/vim-visual-multi
+- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
+
+TREESITTER OBJECTS
+https://www.youtube.com/watch?v=CEMPq_r8UYQ
+https://www.youtube.com/watch?v=FuYQ7M73bC0
+
+window manipulation keymaps
+https://vi.stackexchange.com/questions/3725/swap-the-position-of-two-windows
+https://stackoverflow.com/questions/4556184/vim-move-window-left-right/4571319#4571319
+https://stackoverflow.com/questions/1269603/to-switch-from-vertical-split-to-horizontal-split-fast-in-vim
+
+macros
+
+--------------------------
+
+change icons
+
+
 fix telescope ui. Things keep gettign cut off and stuff (e.g. lsp references file names)
+let users grep specific directory
+let ysers fuzzy find specific directory
 
 
+macros
+https://www.youtube.com/watch?v=5x3dXo8aDCI
 
 
-symbol tree
+obsidian
+https://www.youtube.com/watch?v=5ht8NYkU9wQ
+
+generic symbol tree config
 https://github.com/simrat39/symbols-outline.nvim
-
-
-
-
-
 
 
 fix lsp configs for languages 
@@ -22,26 +87,7 @@ add editiong mode
 - add harpoon indicator???
 
 
-
-
-
-
-
-
-add vale, code spell and suggested words to markdown and text files. Also add a markdown linter,
-
-
-move language supports into isolated folders
-
 fix formatting on save bug when there is an lsp error in the file
-
-fix vale linter
-- vale is currently running on markdown files. However, it still runs when vale is not configured. Change the autocmd in the linter.lua file so that it only runs if it sees the vale config file in the root dir.
-
-Can also specify a custom path to vale config
-https://www.reddit.com/r/vim/comments/my8eqw/why_does_my_function_work_with_one_external/
-
-
 fix alpha vim new file 
 let user rename the new file immediatley as they enter the buffer
 https://vi.stackexchange.com/questions/305/how-can-i-rename-the-file-im-editing
@@ -59,9 +105,6 @@ proselint and vale are good too
 - https://vale.sh/
 
 
-add file specific keymaps (like the dap go test keymaps)
-- do this for go.nvim commands
-- if a file type doesnt have a dap debugger, throw an error message
 
 
 reconsider keymaps
@@ -71,22 +114,59 @@ reconsider keymaps
 - learn more about windows, buffers and tabs
 - figureout how to move dap windows adn buffers around
 
---------------------------
-
-subsitutue command 
-search replace
-https://www.youtube.com/watch?v=YzVmdJ41Xkg
-can use substitution on multiple lines with call back to stored values like sed
-- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
 
-figureout multiselect and multicursor
-https://github.com/mg979/vim-visual-multi
-- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
 
-TREESITTER OBJECTS
-https://www.youtube.com/watch?v=CEMPq_r8UYQ&t=93s
-https://www.youtube.com/watch?v=FuYQ7M73bC0
+:nmap
+:nmap <leader>
+:verbose nmap <leader>
+- shows where the keymap is last called
+:Telescope keymaps
+
+
+Nvim autocmds:
+https://www.youtube.com/watch?v=ekMIIAqTZ34
+https://www.youtube.com/watch?v=HR1dKKrOmDs
+https://www.youtube.com/watch?v=HlfjpstqXwE
+https://www.youtube.com/watch?v=9gUatBHuXE0
+https://www.youtube.com/watch?v=F6GNPOXpfwU
+
+figure out what this stuff is for remapping keys
+{ noremap = true, silent = true, buffer = bufnr, desc = "Symbols tree" }
+
+
+
+------------------------
+
+
+rust and python and config files like yaml and docker and bash
+
+
+rust
+https://www.youtube.com/watch?v=mh_EJhH49Ms&t=463s&pp=ygUMbmVvb3ZpbSBydXN0
+https://www.youtube.com/watch?v=gihHLsClHF0&pp=ygUMbmVvb3ZpbSBydXN0
+https://www.youtube.com/watch?v=Mccy6wuq3JE&t=1052s&pp=ygUMbmVvb3ZpbSBydXN0
+https://github.com/mrcjkb/rustaceanvim
+https://github.com/Saecki/crates.nvim
+
+
+
+
+
+
+
+add vale, code spell and suggested words to markdown and text files. Also add a markdown linter,
+
+
+
+
+fix vale linter
+- vale is currently running on markdown files. However, it still runs when vale is not configured. Change the autocmd in the linter.lua file so that it only runs if it sees the vale config file in the root dir.
+
+Can also specify a custom path to vale config
+https://www.reddit.com/r/vim/comments/my8eqw/why_does_my_function_work_with_one_external/
+
+
 
 ---------
 
@@ -147,22 +227,6 @@ cheatsheet: https://github.com/sudormrfbin/cheatsheet.nvim
 ---------------ENDDDDDD 
 
 
-:nmap
-:nmap <leader>
-:verbose nmap <leader>
-- shows where the keymap is last called
-:Telescope keymaps
-
-
-Nvim autocmds:
-https://www.youtube.com/watch?v=ekMIIAqTZ34
-https://www.youtube.com/watch?v=HR1dKKrOmDs
-https://www.youtube.com/watch?v=HlfjpstqXwE
-https://www.youtube.com/watch?v=9gUatBHuXE0
-https://www.youtube.com/watch?v=F6GNPOXpfwU
-
-figure out what this stuff is for remapping keys
-{ noremap = true, silent = true, buffer = bufnr, desc = "Symbols tree" }
 
 
 

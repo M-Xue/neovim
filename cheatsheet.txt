@@ -138,3 +138,49 @@ Copy file name | c
 
 ## tailwind 
 border radius | foo
+
+## debugging
+Continue/Start | <f1>
+
+## debugging
+Toggle breakpoint | <f2>
+
+## debugging
+Clear breakpoint | <f3>
+
+## debugging
+List breakpoints | <f4>
+
+## debugging
+Step over | <f5>
+
+## debugging
+Step into | <f6>
+
+## debugging
+Step out | <f7>
+
+## debugging
+Reset DAP UI | <f8>
+
+## debugging
+Set breakpoint with condition | <f9>
+
+## debugging
+Set breakpoint with log | <f10>
+
+## debugging
+Go down stacktrace | <f11>
+
+## debugging
+Go up stacktrace | <f12>
+
+## debugging
+Terminate | <leader>dq
+
+## debugging
+Toggle REPL | <leader>dR
+
+## debugging
+Set log level | <leader>dL
+

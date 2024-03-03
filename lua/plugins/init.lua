@@ -108,6 +108,10 @@ local plugins = {
 	{ "theHamsta/nvim-dap-virtual-text" },
 	{ "nvim-telescope/telescope-dap.nvim" },
 
+	-- * ========================================
+	-- * LANGUAGES
+	-- * ========================================
+	-- Go
 	{ "leoluz/nvim-dap-go" },
 	{
 		"ray-x/go.nvim",
@@ -123,6 +127,10 @@ local plugins = {
 		ft = { "go", "gomod" },
 		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 	},
+
+	-- Rust
+	{ "mrcjkb/rustaceanvim" },
+	{ "Saecki/crates.nvim" },
 
 	-- * ========================================
 	-- * GIT
@@ -227,6 +235,9 @@ require("plugins.core.project")
 require("plugins.core.telescope")
 require("plugins.core.toggleterm")
 require("plugins.core.treesitter")
+
+-- LANGUAGE PLUGINS
+require("plugins.languages")
 
 -- MISCELLANEOUS PLUGINS
 -- editing

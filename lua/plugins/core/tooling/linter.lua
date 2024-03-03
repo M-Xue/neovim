@@ -1,13 +1,17 @@
 local lint = require("lint")
 
 lint.linters_by_ft = {
-	javascript = { "eslint_d", "cspell" },
-	javascriptreact = { "eslint_d", "cspell" },
-	typescript = { "eslint_d", "cspell" },
-	typescriptreact = { "eslint_d", "cspell" },
-	go = { "golangcilint", "cspell" },
+	javascript = { "eslint_d" },
+	javascriptreact = { "eslint_d" },
+	typescript = { "eslint_d" },
+	typescriptreact = { "eslint_d" },
+	astro = { "eslint_d" },
+	go = { "golangcilint" },
 	markdown = { "vale" },
+	lua = {},
 }
+
+IsCspellOn = true
 
 vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
 	callback = function(opts)

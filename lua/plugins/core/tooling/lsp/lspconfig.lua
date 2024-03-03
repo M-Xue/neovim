@@ -7,8 +7,7 @@ local lsp_servers = {
 	"tailwindcss",
 	"jsonls",
 	"gopls",
-	-- "postgres_lsp",
-	"sqlls",
+	"rust_analyzer",
 	"lua_ls",
 	"marksman",
 }
@@ -18,7 +17,6 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lspconfig = require("lspconfig")
 local on_attach = require("plugins.core.tooling.lsp.handlers").on_attach
 local capabilities = require("plugins.core.tooling.lsp.handlers").capabilities
@@ -28,12 +26,6 @@ lspconfig.tsserver.setup({
 	capabilities = capabilities,
 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
 })
-
--- lspconfig.eslint.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
--- })
 
 lspconfig.html.setup({
 	on_attach = on_attach,
@@ -54,6 +46,12 @@ lspconfig.cssls.setup({
 })
 
 lspconfig.cssmodules_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
+})
+
+lspconfig.astro.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
@@ -83,8 +81,12 @@ lspconfig.jsonls.setup({
 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
 })
 
+local go_keymaps = require("plugins.languages.go.keymaps")
 lspconfig.gopls.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		go_keymaps(bufnr)
+	end,
 	capabilities = capabilities,
 
 	-- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
@@ -103,18 +105,27 @@ lspconfig.gopls.setup({
 	root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
 })
 
--- lspconfig.golangci_lint_ls.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- 	root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
--- })
+local rust_keymaps = require("plugins.languages.rust.keymaps")
+vim.g.rustaceanvim = {
+	-- Plugin configuration
+	tools = {},
+	-- LSP configuration
+	server = {
+		on_attach = function(client, bufnr)
+			on_attach(client, bufnr)
+			rust_keymaps(bufnr)
+		end,
+		capabilities = capabilities,
 
--- lspconfig.postgres_lsp.setup({
-lspconfig.sqlls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
-})
+		-- https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/generated_config.adoc
+		default_settings = {
+			-- rust-analyzer language server configuration
+			["rust-analyzer"] = {},
+		},
+	},
+	-- DAP configuration
+	dap = {},
+}
 
 lspconfig.lua_ls.setup({
 	on_attach = on_attach,

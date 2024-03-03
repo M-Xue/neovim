@@ -87,3 +87,4 @@ go.setup({
 	luasnip = false, -- set true to enable included luasnip
 	iferr_vertical_shift = 4, -- defines where the cursor will end up vertically from the begining of if err statement after GoIfErr command
 })
+

@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>`", ":wa<CR>:qa<CR>", { desc = "Quit NeoVim" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
--- vim.keymap.set('n', '<leader>w', ":lua vim.lsp.buf.format()<CR>:w<CR>", { desc = 'Save file' })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close buffer" }) -- TODO dont make this close the buffer if it is the last buffer open -- <leader>q closes windows. If you only have one window, you will exit NVim
 vim.keymap.set("n", "<leader>p", ":Format<CR>", { desc = "Format" })
@@ -41,7 +40,7 @@ vim.keymap.set("n", "<leader>fT", telescope.treesitter, { desc = "Find treesitte
 
 vim.keymap.set(
 	"n",
-	"<leader>fB",
+	"<leader>fw",
 	":Telescope file_browser path=%:p:h select_buffer=true<CR> <ESC>",
 	{ desc = "File browser current buffer" }
 )
@@ -109,33 +108,28 @@ mapping = cmp.mapping.preset.insert({
 
 -- Debug
 local dap = require("dap")
-local dapgo = require("dap-go")
-vim.keymap.set("n", "<leader>dd", dap.continue, { desc = "Continue" })
-vim.keymap.set("n", "<leader>dq", dap.terminate, { desc = "Terminate" })
-vim.keymap.set("n", "<leader>dr", "<cmd>lua require('dapui').open({reset = true})<cr>", { desc = "Reset DAP UI" })
-vim.keymap.set("n", "<leader>dR", dap.repl.toggle, { desc = "Toggle REPL" })
-vim.keymap.set("n", "<leader>dL", dap.set_log_level, { desc = "Set log level" })
+vim.keymap.set("n", "<leader>da", dap.continue, { desc = "Continue" })
+vim.keymap.set("n", "<leader>ds", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
+vim.keymap.set("n", "<leader>dc", dap.clear_breakpoints, { desc = "Clear breakpoints" })
+vim.keymap.set("n", "<leader>dt", dap.list_breakpoints, { desc = "List breakpoints" })
 
-vim.keymap.set("n", "<leader>dt", dapgo.debug_test, { desc = "Debug test" })
-vim.keymap.set("n", "<leader>dT", dapgo.debug_last_test, { desc = "Debug last test" })
+vim.keymap.set("n", "<leader>dd", dap.step_over, { desc = "Step over (next line)" })
+vim.keymap.set("n", "<leader>df", dap.step_into, { desc = "Step into" })
+vim.keymap.set("n", "<leader>dg", dap.step_out, { desc = "Step out" })
+vim.keymap.set("n", "<leader>du", "<cmd>lua require('dapui').open({reset = true})<cr>", { desc = "Reset DAP UI" })
 
+vim.keymap.set("n", "<leader>dS", function()
+	dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, { desc = "Set breakpoint with condition" })
+vim.keymap.set("n", "<leader>dA", function()
+	dap.set_breakpoint(vim.fn.input(nil, nil, "Log point message: "))
+end, { desc = "Set breakpoint with log" })
 vim.keymap.set("n", "<leader>dj", dap.down, { desc = "Go down stacktrace" })
 vim.keymap.set("n", "<leader>dk", dap.up, { desc = "Go up stacktrace" })
 
-vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "Step over (next line)" })
-vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step into" })
-vim.keymap.set("n", "<leader>dO", dap.step_out, { desc = "Step out" })
-
-vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
-vim.keymap.set("n", "<leader>dc", dap.clear_breakpoints, { desc = "Clear breakpoints" })
-vim.keymap.set("n", "<leader>dl", dap.list_breakpoints, { desc = "List breakpoints" })
-
-vim.keymap.set("n", "<leader>de", function()
-	dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-end, { desc = "Set breakpoint with condition" })
-vim.keymap.set("n", "<leader>ds", function()
-	dap.set_breakpoint(vim.fn.input(nil, nil, "Log point message: "))
-end, { desc = "Set breakpoint with log" })
+vim.keymap.set("n", "<leader>dq", dap.terminate, { desc = "Terminate" })
+vim.keymap.set("n", "<leader>dR", dap.repl.toggle, { desc = "Toggle REPL" })
+vim.keymap.set("n", "<leader>dL", dap.set_log_level, { desc = "Set log level" })
 
 -- Window Movement
 vim.keymap.set("n", "<leader>ss", "<C-w>v", { desc = "Split window vertically" })
@@ -151,10 +145,10 @@ vim.keymap.set("n", "<leader>s=", "<C-w>=", { desc = "Make all windows equal siz
 vim.keymap.set("n", "<leader>sq", ":close<cr>", { desc = "Close window" })
 
 -- Tab Movement
-vim.keymap.set("n", "<leader>ll", ":tabnew %<CR>", { desc = "Create new tab" })
-vim.keymap.set("n", "<leader>lq", ":tabc<CR>", { desc = "Close tab" })
-vim.keymap.set("n", "<leader>lk", ":tabn<CR>", { desc = "Move to next tab" })
-vim.keymap.set("n", "<leader>lj", ":tabp<CR>", { desc = "Move to prev tab" })
+vim.keymap.set("n", "<leader>kl", ":tabnew %<CR>", { desc = "Create new tab" })
+vim.keymap.set("n", "<leader>kq", ":tabc<CR>", { desc = "Close tab" })
+vim.keymap.set("n", "<leader>kk", ":tabn<CR>", { desc = "Move to next tab" })
+vim.keymap.set("n", "<leader>kj", ":tabp<CR>", { desc = "Move to prev tab" })
 
 -- Window Resize
 -- Source: https://www.reddit.com/r/neovim/comments/10wru1c/how_do_i_resize_windows/
