@@ -1,4 +1,6 @@
-vim.g.mapleader = " "
+local util = require("util")
+
+vim.keymap.set("n", "<leader>]", util.print_attached_clients, { desc = "See attached clients" })
 
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>`", ":wa<CR>:qa<CR>", { desc = "Quit NeoVim" })
@@ -9,7 +11,7 @@ vim.keymap.set("n", "<leader>p", ":Format<CR>", { desc = "Format" })
 vim.keymap.set("n", "<leader>o", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
 vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
-vim.keymap.set("n", "<leader>z", "::NoNeckPain<cr>", { desc = "Zen mode" })
+vim.keymap.set("n", "<leader>z", ":NoNeckPain<cr>", { desc = "Zen mode" })
 vim.keymap.set("n", "<leader>b", ":SymbolsOutline<cr>", { desc = "Symbols tree" })
 
 vim.keymap.set("n", "<leader>'", require("harpoon.mark").add_file, { desc = "Harpoon mark file" })
