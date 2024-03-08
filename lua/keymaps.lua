@@ -1,6 +1,6 @@
 local util = require("util")
 
-vim.keymap.set("n", "<leader>]", util.print_attached_clients, { desc = "See attached clients" })
+vim.keymap.set("n", "<leader>.", util.print_attached_clients, { desc = "See attached clients" })
 
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>`", ":wa<CR>:qa<CR>", { desc = "Quit NeoVim" })

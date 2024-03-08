@@ -1,48 +1,28 @@
-print formatting error message
-- we can use a autocommant to manually trigger the formater on the particular event
-- https://www.reddit.com/r/neovim/comments/1b4oiob/how_to_print_error_message_with_conformnvim/
-- https://github.com/stevearc/conform.nvim/issues/319
-
 provide default configs for linters and formatters
-
-
-refactor plugins
-- this guy has good structure: https://www.youtube.com/watch?v=ybUE4D80XSk
-- take inspo from there
-	- https://github.com/craftzdog/dotfiles-public/tree/master/.config/nvim/lua/plugins
-	- https://www.youtube.com/watch?v=vdn_pKJUda8
-	- https://www.youtube.com/watch?v=ybUE4D80XSk
-clean up plugins
-- lualine 
-- nvim tree
-learn lazy nvim
-fix nvim cmp
-- the autocorrect keeps starting at the second option
-- https://www.youtube.com/watch?v=y1WWOaLCNyI
-
-add toggleterm bindings and telescope bindings to cheatsheet
-fix the todos in toggle term??
-clean up lua line and nvim tree
-- not much
-
-figure out how to check which linters are attached
-- get the function from lua line and print it based on a keymap
-- printing in nvim: https://neovim.discourse.group/t/how-to-print-a-string-with-many-lines-and-view-it-again-with-messages/2825
 
 how to wrap around with strings or brackets or replace them
 check editing plugins
+make >> shift tab not stop at one use
 
 toggle spell check 
 
 markdown linter
 
-make >> shift tab not stop at one use
-
-fix icons 
-- fix cmp icons: https://github.com/onsails/lspkind.nvim get some from here
-
-
 fix webdev stuff
+
+
+
+
+add toggleterm bindings and telescope bindings to cheatsheet
+
+clean up plugins and icons
+- fix cmp icons: https://github.com/onsails/lspkind.nvim get some from here
+- look at nvchad and other presets
+- lualine 
+- nvim tree
+
+learn lazy nvim
+
 
 fix keymaps that annoy you
 - figure out what the keymap api actually does
@@ -87,8 +67,7 @@ macros
 
 --------------------------
 
-change icons
-
+fix the todos in toggle term??
 
 fix telescope ui. Things keep gettign cut off and stuff (e.g. lsp references file names)
 let users grep specific directory

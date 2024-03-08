@@ -134,7 +134,10 @@ Cut selected files (including dir) | x
 Paste selected files | p 
 
 ## nvim-tree
-Copy file name | c
+Copy file | c
+
+## nvim-tree
+Copy file name | y
 
 ## tailwind 
 border radius | foo
