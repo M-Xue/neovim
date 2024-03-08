@@ -2,9 +2,7 @@
 
 ## TL;DR
 
-This config is split into 2 broad categories. Core plugins and miscellaneous plugins. Core plugins are necessary for this editor to work but misc plugins can be deleted the moment they break. I cannot be bothered sweating over 50+ plugins so I will only make sure the core plugins have their functionalities maintained. 
-
-(Not implemented yet) Language support is split into a directory for each (all frontend for webdev is in one directory). Just comment out the languages you don't care about.
+NeoVim sucks dont use it ive wasted so much time im in despair
 
 ## Dependencies
 

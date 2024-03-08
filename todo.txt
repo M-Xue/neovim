@@ -5,18 +5,42 @@ print formatting error message
 
 provide default configs for linters and formatters
 
-add ensure installed
-- https://github.com/rshkarin/mason-nvim-lint?tab=readme-ov-file
-- https://github.com/zapling/mason-conform.nvim?tab=readme-ov-file
-
-learn lazy nvim
 
 refactor plugins
 - this guy has good structure: https://www.youtube.com/watch?v=ybUE4D80XSk
-
+- take inspo from there
+	- https://github.com/craftzdog/dotfiles-public/tree/master/.config/nvim/lua/plugins
+	- https://www.youtube.com/watch?v=vdn_pKJUda8
+	- https://www.youtube.com/watch?v=ybUE4D80XSk
+clean up plugins
+- lualine 
+- nvim tree
+learn lazy nvim
 fix nvim cmp
 - the autocorrect keeps starting at the second option
 - https://www.youtube.com/watch?v=y1WWOaLCNyI
+
+add toggleterm bindings and telescope bindings to cheatsheet
+fix the todos in toggle term??
+clean up lua line and nvim tree
+- not much
+
+figure out how to check which linters are attached
+- get the function from lua line and print it based on a keymap
+- printing in nvim: https://neovim.discourse.group/t/how-to-print-a-string-with-many-lines-and-view-it-again-with-messages/2825
+
+how to wrap around with strings or brackets or replace them
+check editing plugins
+
+toggle spell check 
+
+markdown linter
+
+make >> shift tab not stop at one use
+
+fix icons 
+- fix cmp icons: https://github.com/onsails/lspkind.nvim get some from here
+
 
 fix webdev stuff
 
@@ -30,8 +54,13 @@ fix keymaps that annoy you
 add watch expressions in dap
 https://www.youtube.com/watch?v=oYzZxi3SSnM
 
+figure out how to move windows (esp for dap)
+
+add completion for dap : https://github.com/rcarriga/cmp-dap
+
 figure out all the go.nvim stuff and see what you want/need
 need to add watch expressions in debugger
+
 
 --------------------------
 
