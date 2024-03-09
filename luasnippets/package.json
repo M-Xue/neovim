@@ -1,0 +1,58 @@
+{
+	"name": "personal",
+	"engines": {
+		"vscode": "^1.11.0"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact",
+					"astro"
+				],
+				"path": "./snippets/javascript.json"
+			},
+			{
+				"language": [
+					"javascriptreact",
+					"typescriptreact",
+					"astro"
+				],
+				"path": "./snippets/react.json"
+			},
+			{
+				"language": [
+					"css",
+					"less",
+					"sass",
+					"scss"
+				],
+				"path": "./snippets/css.json"
+			},
+			{
+				"language": [
+					"html",
+					"astro",
+					"typescriptreact",
+					"javascriptreact"
+				],
+				"path": "./snippets/html.json"
+			},
+			{
+				"language": [
+					"go"
+				],
+				"path": "./snippets/go.json"
+			},
+			{
+				"language": [
+					"markdown"
+				],
+				"path": "./snippets/markdown.json"
+			}
+		]
+	}
+}

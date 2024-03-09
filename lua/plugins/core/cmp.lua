@@ -56,6 +56,9 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
+			require("luasnip.loaders.from_vscode").lazy_load({
+				paths = { "./luasnippets" },
+			})
 
 			local has_words_before = function()
 				unpack = unpack or table.unpack
@@ -155,9 +158,6 @@ return {
 					},
 				},
 			})
-
-			require("luasnip.loaders.from_vscode").lazy_load()
-			require("luasnip").filetype_extend("javascript", { "astro" })
 
 			-- `/` cmdline setup.
 			cmp.setup.cmdline("/", {
