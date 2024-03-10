@@ -27,6 +27,8 @@ return {
 					"graphql",
 					"dockerfile",
 					"astro",
+					-- "markdown",
+					"markdown_inline",
 				},
 				highlight = {
 					enable = true,

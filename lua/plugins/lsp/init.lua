@@ -15,9 +15,9 @@ return {
 				"tailwindcss",
 				"jsonls",
 				"gopls",
-				"rust_analyzer",
 				"lua_ls",
 				"marksman",
+				"mdx_analyzer",
 			}
 
 			require("mason-lspconfig").setup({
@@ -37,11 +37,7 @@ return {
 	{
 		"j-hui/fidget.nvim",
 		event = "LspAttach",
-		opts = {
-			text = {
-				spinner = "dots",
-			},
-		},
+		opts = {},
 	},
 	{
 		"kosayoda/nvim-lightbulb",

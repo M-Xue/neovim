@@ -2,6 +2,7 @@ local linters = {
 	"eslint_d",
 	"stylelint",
 	"golangci-lint",
+	"markdownlint-cli2",
 }
 
 return {
@@ -29,7 +30,7 @@ return {
 				astro = { "eslint_d" },
 				css = { "stylelint" },
 				go = { "golangcilint" },
-				markdown = {},
+				markdown = { "markdownlint" },
 				lua = {},
 			}
 

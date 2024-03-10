@@ -5,6 +5,7 @@ local formatters = {
 	"goimports-reviser",
 	"golines",
 	"gofumpt",
+	"markdownlint-cli2",
 }
 
 return {
@@ -39,6 +40,7 @@ return {
 					svelte = { "prettier" },
 
 					go = { "goimports-reviser", "golines", "gofumpt" },
+					markdown = { "markdownlint" },
 				},
 				format_on_save = {
 					lsp_fallback = true,
@@ -56,7 +58,7 @@ return {
 			}
 			conform.formatters.prettier = {
 				env = {
-					PRETTIERD_DEFAULT_CONFIG = "/Users/maxxue/.config/nvim/lua/plugins/formatter/.prettierrc",
+					PRETTIER_DEFAULT_CONFIG = "/Users/maxxue/.config/nvim/lua/plugins/formatter/.prettierrc",
 				},
 			}
 		end,

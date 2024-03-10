@@ -100,11 +100,18 @@ lspconfig.lua_ls.setup({
 	},
 })
 
+lspconfig.marksman.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	root_dir = lspconfig.util.root_pattern(".git"),
+})
+
+lspconfig.mdx_analyzer.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 -- lspconfig.vale_ls.setup({
 -- 	on_attach = on_attach,
 -- 	capabilities = capabilities,
 -- })
-lspconfig.marksman.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
