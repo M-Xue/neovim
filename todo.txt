@@ -1,17 +1,6 @@
-provide default configs for linters and formatters
-
 how to wrap around with strings or brackets or replace them
 check editing plugins
 make >> shift tab not stop at one use
-
-toggle spell check 
-
-markdown linter
-
-fix webdev stuff
-
-
-
 
 add toggleterm bindings and telescope bindings to cheatsheet
 
@@ -21,7 +10,33 @@ clean up plugins and icons
 - lualine 
 - nvim tree
 
-learn lazy nvim
+learn lazy nvim and clean up all the plugins
+
+convert nvim tree to neo tree
+example: https://github.com/AstroNvim/AstroNvim/blob/main/lua/plugins/neo-tree.lua
+
+add more colours lol
+- https://github.com/atrnh/magical-girl-vim
+
+
+
+take inspo from some cool nvim configs
+- astro: https://github.com/AstroNvim/AstroNvim/tree/main/lua/plugins 
+nvchad 
+lunarvim 
+nvide 
+
+get some cool ui?? 
+- make it so that you have defaults to fall back on if any of these break
+- noice 
+- lspsaga ? 
+- cmdline ?
+
+
+fix webdev stuff
+
+
+
 
 
 fix keymaps that annoy you
@@ -40,6 +55,21 @@ add completion for dap : https://github.com/rcarriga/cmp-dap
 
 figure out all the go.nvim stuff and see what you want/need
 need to add watch expressions in debugger
+
+
+provide default configs for linters and formatters
+- eslint
+- prettier (not prettierd)
+
+fix mdx
+
+toggle spell check 
+
+add spell check that is togglable
+better spell checks via linter
+- https://github.com/client9/misspell
+- https://github.com/codespell-project/codespell
+- https://github.com/streetsidesoftware/cspell
 
 
 --------------------------
@@ -77,10 +107,6 @@ let ysers fuzzy find specific directory
 macros
 https://www.youtube.com/watch?v=5x3dXo8aDCI
 
-
-obsidian
-https://www.youtube.com/watch?v=5ht8NYkU9wQ
-
 generic symbol tree config
 https://github.com/simrat39/symbols-outline.nvim
 
@@ -102,15 +128,6 @@ https://vi.stackexchange.com/questions/305/how-can-i-rename-the-file-im-editing
 
 
 fix up lsp configs for each lsp in configuration page
-
-add spell check that is togglable
-better spell checks via linter
-- https://github.com/client9/misspell
-- https://github.com/codespell-project/codespell
-- https://github.com/streetsidesoftware/cspell
-proselint and vale are good too
-- https://github.com/amperser/proselint
-- https://vale.sh/
 
 
 
