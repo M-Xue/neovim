@@ -3,36 +3,46 @@ local M = {}
 -- Source: https://github.com/LunarVim/Neovim-from-scratch/blob/06-LSP/lua/user/lsp/handlers.lua
 -- Set up diagnostics
 -- For documentationm, use the following command -> :help vim.diagnostic
-local setup_diagnostics = function()
-	local signs = {
-		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" }, -- 
-		{ name = "DiagnosticSignInfo", text = "" },
-	}
+local diagnostics_signs = {
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "" },
+	{ name = "DiagnosticSignInfo", text = "" },
+}
 
-	for _, sign in ipairs(signs) do
+local diagnostics_config = {
+	virtual_text = false,
+	signs = {
+		active = diagnostics_signs,
+	},
+	update_in_insert = true,
+	severity_sort = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
+}
+
+local toggle_diagnostics_virtual_text = function()
+	if diagnostics_config.virtual_text then
+		diagnostics_config.virtual_text = false
+	else
+		diagnostics_config.virtual_text = true
+	end
+
+	vim.diagnostic.config(diagnostics_config)
+end
+
+local setup_diagnostics = function()
+	for _, sign in ipairs(diagnostics_signs) do
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 	end
 
-	local config = {
-		virtual_text = false,
-		signs = {
-			active = signs,
-		},
-		update_in_insert = true,
-		severity_sort = true,
-		float = {
-			focusable = false,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
-	}
-
-	vim.diagnostic.config(config)
+	vim.diagnostic.config(diagnostics_config)
 end
 
 -- Set up handlers
@@ -73,13 +83,27 @@ local function lsp_keymaps(bufnr)
 	)
 	vim.keymap.set(
 		"n",
+		"<leader>gD",
+		"<cmd>Trouble lsp_definitions<cr>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Get definitions list" }
+	)
+
+	vim.keymap.set(
+		"n",
 		"<leader>gt",
 		vim.lsp.buf.type_definition,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to type definition" }
 	)
 	vim.keymap.set(
 		"n",
-		"<leader>gD",
+		"<leader>gT",
+		"<cmd>Trouble lsp_type_definitions<cr>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Get type definitions list" }
+	)
+
+	vim.keymap.set(
+		"n",
+		"<leader>gl",
 		vim.lsp.buf.declaration,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to declaration" }
 	)
@@ -90,12 +114,20 @@ local function lsp_keymaps(bufnr)
 		require("telescope.builtin").lsp_implementations,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "List implementations" }
 	)
+
 	vim.keymap.set(
 		"n",
 		"<leader>gr",
 		require("telescope.builtin").lsp_references,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "List references" }
 	)
+	vim.keymap.set(
+		"n",
+		"<leader>gR",
+		"<cmd>Trouble lsp_references<cr>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Get references list" }
+	)
+
 	vim.keymap.set(
 		"n",
 		"<C-k>",
@@ -141,6 +173,12 @@ local function lsp_keymaps(bufnr)
 		"n",
 		"<leader>el",
 		require("telescope.builtin").diagnostics,
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Find diagnostics" }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>eL",
+		"<cmd>Trouble workspace_diagnostics<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "List diagnostics" }
 	)
 	vim.keymap.set(
@@ -148,6 +186,12 @@ local function lsp_keymaps(bufnr)
 		"<leader>ei",
 		vim.diagnostic.open_float,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Get diagnostic info" }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>ev",
+		toggle_diagnostics_virtual_text,
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Toggle diagnostics virtual text" }
 	)
 	-- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, bufopts)
 end

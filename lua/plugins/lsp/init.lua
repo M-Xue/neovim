@@ -35,6 +35,26 @@ return {
 	},
 
 	{
+		"hedyhli/outline.nvim",
+		event = "LspAttach",
+		opts = {
+			position = "right",
+			width = 35,
+			relative_width = false,
+		},
+	},
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		event = "LspAttach",
+		opts = {
+			position = "right",
+			padding = true,
+			width = 35,
+		},
+	},
+
+	{
 		"j-hui/fidget.nvim",
 		event = "LspAttach",
 		opts = {},
@@ -48,19 +68,10 @@ return {
 	},
 	{
 		"weilbith/nvim-code-action-menu",
+		event = "LspAttach",
 	},
 	{
 		"ray-x/lsp_signature.nvim",
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
-		"folke/neodev.nvim",
-		event = "LspAttach",
-		opts = {},
-	},
-	{
-		"simrat39/symbols-outline.nvim",
 		event = "LspAttach",
 		opts = {},
 	},

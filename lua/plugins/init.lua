@@ -12,16 +12,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	require("plugins.core.cmp"),
-	require("plugins.core.telescope"),
-	require("plugins.core.treesitter"),
 	require("plugins.core.mason"),
+	require("plugins.core.telescope"),
+
 	require("plugins.lsp"),
 	require("plugins.linter"),
 	require("plugins.formatter"),
 	require("plugins.debugger"),
 	require("plugins.git"),
+
+	require("plugins.colourscheme"),
+	require("plugins.core.cmp"),
+	require("plugins.core.treesitter"),
 
 	require("plugins.core.toggleterm"),
 	require("plugins.core.lualine"),
