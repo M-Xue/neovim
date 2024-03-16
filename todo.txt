@@ -1,8 +1,57 @@
+get rid of any hard processing in nvim tree cuz it slows it down a ton
+- nvim tree: get rid of all git integrations and warning checker (use trouble.nvim for that now)
+
+refactor diagnostics out of lsp util
+
+config neodev for lua
+
+learn lazy nvim and clean up all the plugins
+
+fix noice and figit writting the same message twice
+
+
+
+
+
+
+
+
+
+clean up info from autocompletion
+- like lsp signature and cmp info and K info
+- fix window size n stuff
+
+https://www.youtube.com/shorts/kK1L1o13xGE
+
+
+
+
+
+
+
+add toggleterm bindings and telescope bindings to cheatsheet
+
+
+fix keymaps that annoy you
+- figure out what the keymap api actually does
+- commenting keymaps
+- completion cancelling keycaps
+- terminal keymaps
+- keymaps should only be for plugins. if you want to do a native vim action, try put it in cheatsheet instead
+
+figure out how to move windows and tabs better
+
+
+
+
+
+
+
 how to wrap around with strings or brackets or replace them
 check editing plugins
 make >> shift tab not stop at one use
 
-add toggleterm bindings and telescope bindings to cheatsheet
+
 
 clean up plugins and icons
 - fix cmp icons: https://github.com/onsails/lspkind.nvim get some from here
@@ -10,13 +59,9 @@ clean up plugins and icons
 - lualine 
 - nvim tree
 
-learn lazy nvim and clean up all the plugins
 
 convert nvim tree to neo tree
 example: https://github.com/AstroNvim/AstroNvim/blob/main/lua/plugins/neo-tree.lua
-
-add more colours lol
-- https://github.com/atrnh/magical-girl-vim
 
 
 
@@ -26,25 +71,10 @@ nvchad
 lunarvim 
 nvide 
 
-get some cool ui?? 
-- make it so that you have defaults to fall back on if any of these break
-- noice 
-- lspsaga ? 
-- cmdline ?
+
+lspsaga
 
 
-fix webdev stuff
-
-
-
-
-
-fix keymaps that annoy you
-- figure out what the keymap api actually does
-- commenting keymaps
-- completion cancelling keycaps
-- terminal keymaps
-- keymaps should only be for plugins. if you want to do a native vim action, try put it in cheatsheet instead
 
 add watch expressions in dap
 https://www.youtube.com/watch?v=oYzZxi3SSnM
