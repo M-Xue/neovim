@@ -2,17 +2,21 @@ local util = require("util")
 
 vim.keymap.set("n", "<leader>.", util.print_attached_clients, { desc = "See attached clients" })
 
+-- require("plugins.colorscheme.util").init_colourscheme_keymaps()
+local colorscheme_picker = require("plugins.colorscheme.picker").colorscheme_picker
+vim.keymap.set("n", "<leader>\\", colorscheme_picker, { desc = "Colorscheme menu" })
+
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>`", ":wa<CR>:qa<CR>", { desc = "Quit NeoVim" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close buffer" }) -- TODO dont make this close the buffer if it is the last buffer open -- <leader>q closes windows. If you only have one window, you will exit NVim
 vim.keymap.set("n", "<leader>p", ":Format<CR>", { desc = "Format" })
-vim.keymap.set("n", "<leader>o", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
+vim.keymap.set("n", "<leader>?", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
 vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
 vim.keymap.set("n", "<leader>z", ":NoNeckPain<cr>", { desc = "Zen mode" })
-vim.keymap.set("n", "<leader>b", ":Outline<cr>", { desc = "Symbol Outline" })
+vim.keymap.set("n", "<leader>o", ":Outline<cr>", { desc = "Symbol Outline" })
 
 vim.keymap.set("n", "<leader>'", require("harpoon.mark").add_file, { desc = "Harpoon mark file" })
 
@@ -21,13 +25,13 @@ vim.keymap.set("n", "<leader>mm", ":MarksToggleSigns<cr>", { desc = "Toggle mark
 vim.keymap.set("n", "<leader>md", ":delmarks a-zA-Z0-9<cr>", { desc = "Clear all marks" })
 
 -- Flash
-local flash = require("flash")
-vim.keymap.set("n", "<leader>jj", flash.jump, { desc = "Flash jump" })
-vim.keymap.set("n", "<leader>jt", flash.treesitter, { desc = "Flash treesitter" })
-vim.keymap.set("n", "<leader>js", flash.treesitter_search, { desc = "Flash treesitter search" })
-vim.keymap.set("n", "<leader>jh", flash.toggle, { desc = "Flash toggle" })
+-- local flash = require("flash")
+-- vim.keymap.set("n", "<leader>jj", flash.jump, { desc = "Flash jump" })
+-- vim.keymap.set("n", "<leader>jt", flash.treesitter, { desc = "Flash treesitter" })
+-- vim.keymap.set("n", "<leader>js", flash.treesitter_search, { desc = "Flash treesitter search" })
+-- vim.keymap.set("n", "<leader>jh", flash.toggle, { desc = "Flash toggle" })
 
-vim.keymap.set("n", "<leader>jl", require("telescope.builtin").jumplist, { desc = "Telescope jumplist" })
+-- vim.keymap.set("n", "<leader>jl", require("telescope.builtin").jumplist, { desc = "Telescope jumplist" })
 
 -- Telescope
 local telescope = require("telescope.builtin")

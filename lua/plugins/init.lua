@@ -21,7 +21,7 @@ local plugins = {
 	require("plugins.debugger"),
 	require("plugins.git"),
 
-	require("plugins.colourscheme"),
+	require("plugins.colorscheme"),
 	require("plugins.core.cmp"),
 	require("plugins.core.treesitter"),
 
