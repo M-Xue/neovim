@@ -6,7 +6,6 @@ local action_state = require("telescope.actions.state")
 
 local M = {}
 
--- our picker function: colors
 local picker = function(opts)
 	opts = opts or {}
 	pickers
@@ -22,7 +21,13 @@ local picker = function(opts)
 					"kanagawa-dragon",
 					"kanagawa-lotus",
 					"kanagawa-wave",
-					"onedark",
+					"onedark-dark",
+					"onedark-darker",
+					"onedark-cool",
+					"onedark-deep",
+					"onedark-warm",
+					"onedark-warmer",
+					"onedark-light",
 					"rose-pine-dawn",
 					"rose-pine-main",
 					"rose-pine-moon",
@@ -37,7 +42,8 @@ local picker = function(opts)
 				actions.select_default:replace(function()
 					actions.close(prompt_bufnr)
 					local selection = action_state.get_selected_entry()
-					require("util").set_colorscheme(selection[1])
+					local colorscheme = selection[1]
+					require("plugins.colorscheme.util").set_colorscheme(colorscheme)
 				end)
 				return true
 			end,

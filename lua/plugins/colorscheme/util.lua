@@ -1,35 +1,60 @@
+local function is_onedark(colorscheme)
+	return colorscheme:sub(1, #"onedark") == "onedark"
+end
+
+local function set_onedark_colorscheme(colorscheme)
+	local onedark_opts = require("plugins.colorscheme.onedark")
+
+	if colorscheme == "onedark-dark" then
+		onedark_opts.style = "dark"
+	elseif colorscheme == "onedark-darker" then
+		onedark_opts.style = "darker"
+	elseif colorscheme == "onedark-warm" then
+		onedark_opts.style = "warm"
+	elseif colorscheme == "onedark-warmer" then
+		onedark_opts.style = "warmer"
+	elseif colorscheme == "onedark-cool" then
+		onedark_opts.style = "cool"
+	elseif colorscheme == "onedark-deep" then
+		onedark_opts.style = "deep"
+	elseif colorscheme == "onedark-light" then
+		onedark_opts.style = "light"
+	end
+
+	require("onedark").setup(onedark_opts)
+	vim.cmd.colorscheme("onedark")
+end
+
 local M = {}
 
-M.init_colourscheme_keymaps = function()
-	vim.keymap.set("n", "<leader>\\c", function()
-		vim.cmd.colorscheme("catppuccin")
-	end, { desc = "catppuccin" })
+M.set_colorscheme = function(colorscheme)
+	local file = io.open(os.getenv("HOME") .. "/.config/nvim/colorscheme.txt", "w+")
+	if file ~= nil then
+		file:write(colorscheme)
+		file:close()
+	end
 
-	vim.keymap.set("n", "<leader>\\g", function()
-		vim.cmd.colorscheme("gruvbox")
-	end, { desc = "gruvbox" })
+	if is_onedark(colorscheme) then
+		set_onedark_colorscheme(colorscheme)
+	else
+		vim.cmd.colorscheme(colorscheme)
+	end
+end
 
-	vim.keymap.set("n", "<leader>\\w", function()
-		vim.cmd.colorscheme("kanagawa-wave")
-	end, { desc = "kanagawa-wave" })
+M.init_colorscheme = function()
+	local file = io.open(os.getenv("HOME") .. "/.config/nvim/colorscheme.txt", "r")
+	if file ~= nil then
+		local content = file:read("*all")
+		file:close()
 
-	vim.keymap.set("n", "<leader>\\l", function()
-		vim.cmd.colorscheme("kanagawa-lotus")
-	end, { desc = "kanagawa-lotus" })
-
-	vim.keymap.set("n", "<leader>\\d", function()
-		vim.cmd.colorscheme("kanagawa-dragon")
-	end, { desc = "kanagawa-dragon" })
-
-	vim.keymap.set("n", "<leader>\\T", function()
-		require("tokyonight").setup({ style = "storm" })
-		vim.cmd.colorscheme("tokyonight")
-	end, { desc = "tokyonight storm" })
-
-	vim.keymap.set("n", "<leader>\\t", function()
-		require("tokyonight").setup({ style = "moon" })
-		vim.cmd.colorscheme("tokyonight")
-	end, { desc = "tokyonight storm" })
+		if content ~= "" then
+			M.set_colorscheme(content)
+		else
+			M.set_colorscheme("catppuccin-macchiato")
+		end
+	else
+		M.set_colorscheme("catppuccin-macchiato")
+	end
 end
 
 return M

@@ -63,29 +63,4 @@ M.print_attached_clients = function()
 	vim.print(language_servers)
 end
 
-M.set_colorscheme = function(colorscheme)
-	vim.cmd.colorscheme(colorscheme)
-	local file = io.open(os.getenv("HOME") .. "/.config/nvim/colorscheme.txt", "w+")
-	if file ~= nil then
-		file:write(colorscheme)
-		file:close()
-	end
-end
-
-M.init_colorscheme = function()
-	local file = io.open(os.getenv("HOME") .. "/.config/nvim/colorscheme.txt", "r")
-
-	if file ~= nil then
-		local content = file:read("*all")
-		file:close()
-		if content ~= "" then
-			vim.cmd.colorscheme(content)
-		else
-			vim.cmd.colorscheme("catppuccin-macchiato")
-		end
-	else
-		M.set_colorscheme("catppuccin-macchiato")
-	end
-end
-
 return M
