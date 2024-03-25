@@ -69,7 +69,7 @@ lspconfig.gopls.setup({
 	-- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
 	settings = {
 		gopls = {
-			usePlaceholders = true,
+			usePlaceholders = false,
 			analyses = {
 				unusedvariable = true,
 				unusedparams = true,

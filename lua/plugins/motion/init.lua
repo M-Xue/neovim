@@ -1,20 +1,21 @@
 return {
-	{
-		"folke/flash.nvim",
-		opts = {
-			{
-				modes = {
-					char = {
-						enabled = false,
-						autohide = true,
-						jump_labels = false,
-						multi_line = true,
-						highlight = { backdrop = false },
-					},
-				},
-			},
-		},
-	},
+	-- {
+	-- 	"folke/flash.nvim",
+	-- 	opts = {
+	-- 		{
+	-- 			modes = {
+	-- 				char = {
+	-- 					enabled = false,
+	-- 					autohide = true,
+	-- 					jump_labels = false,
+	-- 					multi_line = true,
+	-- 					highlight = { backdrop = false },
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 		highlight = { backdrop = false },
+	-- 	},
+	-- },
 	{
 		"ThePrimeagen/harpoon",
 		config = true,

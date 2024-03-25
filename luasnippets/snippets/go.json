@@ -115,8 +115,8 @@
 		"description": "Snippet for if else"
 	},
 	"if err != nil": {
-		"prefix": "ir",
-		"body": "if err != nil {\n\t${1:return ${2:nil, }${3:err}}\n}",
+		"prefix": "iferr",
+		"body": "if err != nil {\n\treturn ${1}\n}",
 		"description": "Snippet for if err != nil"
 	},
 	"fmt.Println": {

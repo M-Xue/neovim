@@ -17,8 +17,8 @@ return {
 					prompt_prefix = " 󰍉 ",
 					selection_caret = "   ",
 					entry_prefix = "   ",
-					-- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-					borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+					borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+					-- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 					-- https://www.w3.org/TR/xml-entity-names/025.html
 					initial_mode = "insert",
 					selection_strategy = "reset",

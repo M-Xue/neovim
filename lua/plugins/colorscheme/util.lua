@@ -57,4 +57,20 @@ M.init_colorscheme = function()
 	end
 end
 
+M.print_curr_colorscheme = function()
+	local file = io.open(os.getenv("HOME") .. "/.config/nvim/colorscheme.txt", "r")
+	if file ~= nil then
+		local content = file:read("*all")
+		file:close()
+
+		if content ~= "" then
+			vim.print("Colorscheme: " .. content)
+		else
+			vim.print("No colorscheme set")
+		end
+	else
+		vim.print("Couldn't find colorscheme.txt")
+	end
+end
+
 return M

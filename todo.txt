@@ -1,30 +1,15 @@
-get rid of any hard processing in nvim tree cuz it slows it down a ton
-- nvim tree: get rid of all git integrations and warning checker (use trouble.nvim for that now)
-
 refactor diagnostics out of lsp util
+clean up trobule nvim (keeps taking over default fuzzyh finder)
+- cant reproduce
+
+
+figure out undo
+- undo tree
+- https://www.youtube.com/shorts/W_cCMcb22hU
 
 config neodev for lua
 
 learn lazy nvim and clean up all the plugins
-
-fix noice and figit writting the same message twice
-
-
-
-
-
-
-
-
-
-clean up info from autocompletion
-- like lsp signature and cmp info and K info
-- fix window size n stuff
-
-https://www.youtube.com/shorts/kK1L1o13xGE
-
-
-
 
 
 

@@ -74,6 +74,17 @@ local function lsp_keymaps(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Documentation" }
 	) -- Use "K" again to go into the float window to scroll and interact. Press <C-o> to exit the float.
 
+	-- vim.keymap.set({ "n" }, "<C-k>", function()
+	-- 	require("lsp_signature").toggle_float_win()
+	-- end, { silent = true, noremap = true, desc = "toggle signature" })
+
+	vim.keymap.set(
+		{ "n", "i" },
+		"<C-k>",
+		vim.lsp.buf.signature_help,
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Get signature" }
+	)
+
 	-- Definitions and References
 	vim.keymap.set(
 		"n",
@@ -130,13 +141,6 @@ local function lsp_keymaps(bufnr)
 
 	vim.keymap.set(
 		"n",
-		"<C-k>",
-		vim.lsp.buf.signature_help,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Get signature" }
-	)
-
-	vim.keymap.set(
-		"n",
 		"<leader>ga",
 		-- vim.lsp.buf.code_action,
 		":CodeActionMenu<cr>",
@@ -147,13 +151,6 @@ local function lsp_keymaps(bufnr)
 		"<leader>ga",
 		":CodeActionMenu<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "List code actions for range" }
-	)
-
-	vim.keymap.set(
-		"n",
-		"<leader>gs",
-		":SymbolsOutline<cr>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Symbols tree" }
 	)
 
 	-- Diagnostics
