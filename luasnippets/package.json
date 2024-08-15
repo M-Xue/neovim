@@ -11,7 +11,8 @@
 					"javascriptreact",
 					"typescript",
 					"typescriptreact",
-					"astro"
+					"astro",
+					"svelte"
 				],
 				"path": "./snippets/javascript.json"
 			},
@@ -28,7 +29,8 @@
 					"css",
 					"less",
 					"sass",
-					"scss"
+					"scss",
+					"svelte"
 				],
 				"path": "./snippets/css.json"
 			},
@@ -37,9 +39,16 @@
 					"html",
 					"astro",
 					"typescriptreact",
-					"javascriptreact"
+					"javascriptreact",
+					"svelte"
 				],
 				"path": "./snippets/html.json"
+			},
+			{
+				"language": [
+					"svelte"
+				],
+				"path": "./snippets/svelte.json"
 			},
 			{
 				"language": [

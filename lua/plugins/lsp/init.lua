@@ -15,9 +15,12 @@ return {
 				"tailwindcss",
 				"jsonls",
 				"gopls",
+				"rust_analyzer",
 				"lua_ls",
 				"marksman",
 				"mdx_analyzer",
+				"svelte",
+				"astro",
 			}
 
 			require("mason-lspconfig").setup({
@@ -29,7 +32,8 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("plugins.lsp.util").setup()
+			require("plugins.lsp.lsp").setup_lsp_handlers()
+			require("plugins.lsp.diagnostics").setup_diagnostics()
 			require("plugins.lsp.lspconfig")
 		end,
 	},
@@ -41,16 +45,6 @@ return {
 			position = "right",
 			width = 35,
 			relative_width = false,
-		},
-	},
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		event = "LspAttach",
-		opts = {
-			position = "right",
-			padding = true,
-			width = 35,
 		},
 	},
 
@@ -65,14 +59,5 @@ return {
 		opts = {
 			autocmd = { enabled = true },
 		},
-	},
-	{
-		"weilbith/nvim-code-action-menu",
-		event = "LspAttach",
-	},
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "LspAttach",
-		config = true,
 	},
 }

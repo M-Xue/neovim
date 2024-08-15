@@ -1,40 +1,249 @@
-refactor diagnostics out of lsp util
-clean up trobule nvim (keeps taking over default fuzzyh finder)
-- cant reproduce
+==================================================
+Nvim Clean Up
+==================================================
+neodev lua development plugin
+
+look through other configs for better plugin organisation
+
+better search and replace
+- https://github.com/nvim-pack/nvim-spectre
+
+tree sitter objects
+- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+
+test neo-tree and nvim-tree to see which one can work in displayr's code base
+
+nvim surround
+
+session manager?
+
+function signature help in capital K while typing in the function 
+
+spelunker nvim
+
+folder breadcrumbs
+- c-f breadcrumb in awesome nvim
+https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#bars-and-lines
+
+better search and replace 
+- see how qfl goes first??
+
+beter rename visual feedback
+- https://github.com/smjonas/inc-rename.nvim
 
 
-figure out undo
-- undo tree
-- https://www.youtube.com/shorts/W_cCMcb22hU
+symbol file type member search like visual studio
 
-config neodev for lua
+helpdocs nivm??
 
-learn lazy nvim and clean up all the plugins
+fuzzy find working directory and project
 
+look at some editing keymaps
+- awesome nvim
+https://github.com/roobert/search-replace.nvim
 
+look at other configs for plugins
 
+function location at top ui plugin
+breadcrum path to file
 
-add toggleterm bindings and telescope bindings to cheatsheet
+see how trouble can be used for qfl
 
+all ui plugins not working
 
-fix keymaps that annoy you
+fix which key
+
+Learn lazy nvim and clean up all the plugins
+- look through other configs and see if there are any plugs really interesting to add
+
+Fix keymaps that annoy you
+move keymaps into files
 - figure out what the keymap api actually does
 - commenting keymaps
 - completion cancelling keycaps
 - terminal keymaps
 - keymaps should only be for plugins. if you want to do a native vim action, try put it in cheatsheet instead
 
-figure out how to move windows and tabs better
+Clean up which key and cheatsheet
+- cheatsheet should not have any which key things
+- this includes shortcuts for plugins like telescope or git
+
+fix gitsign issues 
+
+clean up language specific stuff
+
+
+typesceipt
+-https://github.com/dmmulroy/ts-error-translator.nvim
+
+
+use telescope colourscheme picker rather than the one you made
+
+icons
+https://github.com/loctvl842/breadcrumb.nvim
+https://www.youtube.com/watch?v=NkQnPuidxWY
+- this guys config has good icons
+https://github.com/onsails/lspkind.nvim
+https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#icon
+
+
+this may be the best looking nvim styling I have seen
+- https://www.youtube.com/watch?v=NkQnPuidxWY
 
 
 
+add toggleterm bindings and telescope bindings to cheatsheet
 
 
 
+DONE
+
+
+==================================================
+Editing
+==================================================
+
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+
+
+figureout multiselect and multicursor
+https://github.com/mg979/vim-visual-multi
+- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
 
 how to wrap around with strings or brackets or replace them
 check editing plugins
+
 make >> shift tab not stop at one use
+
+
+
+
+==================================================
+Misc Language Issues
+==================================================
+Snippets for:
+- Astro 
+- Svelte
+- Markdown
+
+- Svelte language server
+
+Set up all the language server configs??
+
+Fix syntax highlighting and LSP features for MDX.
+
+=================================================
+Clean Up LSP
+=================================================
+Look into lsp call heirarchy feature
+
+Make the hover and signature help popups have a max width of 50.
+Make cmp 50 as well
+
+==================================================
+Windows and Tabs Navigation and Manipulation
+==================================================
+Figure out how to move windows and tabs better
+
+Window manipulation keymaps
+https://vi.stackexchange.com/questions/3725/swap-the-position-of-two-windows
+https://stackoverflow.com/questions/4556184/vim-move-window-left-right/4571319#4571319
+https://stackoverflow.com/questions/1269603/to-switch-from-vertical-split-to-horizontal-split-fast-in-vim
+
+
+
+
+
+
+
+
+
+
+==================================================
+Debugger
+==================================================
+neovim debugging: https://www.youtube.com/watch?v=lyNfnI-B640
+
+add watch expressions in dap
+https://www.youtube.com/watch?v=oYzZxi3SSnM
+
+figure out how to move windows (esp for dap)
+pulling out windows into tabs and moving them back in
+duplicating windows and pulling them back out
+
+add completion for dap : https://github.com/rcarriga/cmp-dap
+- for current scope in watch??
+
+figure out all the go.nvim stuff and see what you want/need
+need to add watch expressions in debugger
+
+debugger integration in awesome nvim and split up each language debugger settings
+
+==================================================
+Use TMUX Instead Of ToggleTerm
+==================================================
+Title
+look into terminal integration in awesome nvim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------
+
+
+TREESITTER OBJECTS
+https://www.youtube.com/watch?v=CEMPq_r8UYQ
+https://www.youtube.com/watch?v=FuYQ7M73bC0
+
+
+macros
+
+--------------------------
+
+fix the todos in toggle term??
+
+fix telescope ui. Things keep gettign cut off and stuff (e.g. lsp references file names)
+let users grep specific directory
+let ysers fuzzy find specific directory
+
+
+macros
+https://www.youtube.com/watch?v=5x3dXo8aDCI
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -61,66 +270,7 @@ lspsaga
 
 
 
-add watch expressions in dap
-https://www.youtube.com/watch?v=oYzZxi3SSnM
 
-figure out how to move windows (esp for dap)
-
-add completion for dap : https://github.com/rcarriga/cmp-dap
-
-figure out all the go.nvim stuff and see what you want/need
-need to add watch expressions in debugger
-
-
-provide default configs for linters and formatters
-- eslint
-- prettier (not prettierd)
-
-fix mdx
-
-toggle spell check 
-
-add spell check that is togglable
-better spell checks via linter
-- https://github.com/client9/misspell
-- https://github.com/codespell-project/codespell
-- https://github.com/streetsidesoftware/cspell
-
-
---------------------------
-
-subsitutue command 
-search replace
-https://www.youtube.com/watch?v=YzVmdJ41Xkg
-can use substitution on multiple lines with call back to stored values like sed
-- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
-
-figureout multiselect and multicursor
-https://github.com/mg979/vim-visual-multi
-- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
-
-TREESITTER OBJECTS
-https://www.youtube.com/watch?v=CEMPq_r8UYQ
-https://www.youtube.com/watch?v=FuYQ7M73bC0
-
-window manipulation keymaps
-https://vi.stackexchange.com/questions/3725/swap-the-position-of-two-windows
-https://stackoverflow.com/questions/4556184/vim-move-window-left-right/4571319#4571319
-https://stackoverflow.com/questions/1269603/to-switch-from-vertical-split-to-horizontal-split-fast-in-vim
-
-macros
-
---------------------------
-
-fix the todos in toggle term??
-
-fix telescope ui. Things keep gettign cut off and stuff (e.g. lsp references file names)
-let users grep specific directory
-let ysers fuzzy find specific directory
-
-
-macros
-https://www.youtube.com/watch?v=5x3dXo8aDCI
 
 generic symbol tree config
 https://github.com/simrat39/symbols-outline.nvim

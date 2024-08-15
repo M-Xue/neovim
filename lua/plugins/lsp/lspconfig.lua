@@ -1,7 +1,21 @@
 local lspconfig = require("lspconfig")
-local lsp_util = require("plugins.lsp.util")
-local on_attach = lsp_util.on_attach
-local capabilities = lsp_util.capabilities
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local wk = require("which-key")
+local on_attach = function(client, bufnr)
+	local opts = {
+		buffer = bufnr,
+	}
+	local mappings = {
+		-- ["<leader>"] = {
+		-- 	e = { name = "Diagnostics" },
+		-- 	g = { name = "LSP" },
+		-- },
+	}
+	-- wk.register(mappings, opts)
+
+	require("plugins.lsp.lsp").init_lsp_keymaps(bufnr)
+	require("plugins.lsp.diagnostics").init_diagnostics_keymaps(bufnr)
+end
 
 lspconfig.html.setup({
 	on_attach = on_attach,
@@ -47,6 +61,12 @@ lspconfig.jsonls.setup({
 })
 
 lspconfig.astro.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
+})
+
+lspconfig.svelte.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),

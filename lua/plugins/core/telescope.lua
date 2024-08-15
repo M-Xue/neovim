@@ -6,12 +6,32 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 		config = function()
+			local telescope_actions = require("telescope.actions")
+			local smart_send_and_open_qfl = function(prompt_bufnr)
+				telescope_actions.smart_send_to_qflist(prompt_bufnr)
+				telescope_actions.open_qflist(prompt_bufnr)
+			end
+			local simple_qfl_mapping = {
+				mappings = {
+					i = {
+						["<C-q>"] = smart_send_and_open_qfl,
+					},
+				},
+			}
+
 			local telescope = require("telescope")
 			telescope.setup({
 				pickers = {
 					find_files = {
 						find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
 					},
+					current_buffer_fuzzy_find = simple_qfl_mapping,
+					diagnostics = simple_qfl_mapping,
+					lsp_implementations = simple_qfl_mapping,
+					lsp_definitions = simple_qfl_mapping,
+					lsp_type_definitions = simple_qfl_mapping,
+					lsp_incoming_calls = simple_qfl_mapping,
+					lsp_outgoing_calls = simple_qfl_mapping,
 				},
 				defaults = {
 					prompt_prefix = " 󰍉 ",
@@ -41,39 +61,25 @@ return {
 				},
 				extensions = {
 					file_browser = {
-						-- disables netrw and use telescope-file-browser in its place
 						hijack_netrw = true,
 					},
-					undo = {
-						-- https://github.com/debugloop/telescope-undo.nvim#configuration
-						side_by_side = true,
-						layout_strategy = "vertical",
-						layout_config = {
-							preview_height = 0.8,
-						},
+					advanced_git_search = {
+						diff_plugin = "diffview",
 					},
+					undo = {
+						preview_width = 0.8,
+					},
+					live_grep_args = simple_qfl_mapping,
 				},
 			})
-
 			telescope.load_extension("file_browser")
 			telescope.load_extension("toggleterm")
 			telescope.load_extension("projects")
 			telescope.load_extension("undo")
 			telescope.load_extension("harpoon")
-
-			-- base telescope mappings
-			-- <C-x> 	Go to file selection as a split
-			-- <C-v> 	Go to file selection as a vsplit
-			-- <C-t> 	Go to a file in a new tab
-			-- <C-u> 	Scroll up in preview window
-			-- <C-d> 	Scroll down in preview window
-			-- <C-f> 	Scroll left in preview window
-			-- <C-k> 	Scroll right in preview window
-
-			-- Telescope undo mappings
-			-- ["<cr>"] = require("telescope-undo.actions").yank_additions,
-			-- ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
-			-- ["<C-cr>"] = require("telescope-undo.actions").restore,
+			telescope.load_extension("advanced_git_search")
+			telescope.load_extension("live_grep_args")
+			-- telescope.load_extension("fzf")
 		end,
 	},
 	{
@@ -90,10 +96,6 @@ return {
 		},
 		event = "TermOpen",
 	},
-	-- {
-	-- 	"nvim-telescope/telescope-fzf-native.nvim",
-	-- 	build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-	-- },
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
@@ -101,4 +103,11 @@ return {
 			"debugloop/telescope-undo.nvim",
 		},
 	},
+	{
+		"nvim-telescope/telescope-live-grep-args.nvim",
+		-- This will not install any breaking changes.
+		-- For major updates, this must be adjusted manually.
+		version = "^1.0.0",
+	},
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }

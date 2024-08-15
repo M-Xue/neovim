@@ -16,7 +16,7 @@ local plugins = {
 	require("plugins.core.telescope"),
 
 	require("plugins.lsp"),
-	require("plugins.linter"),
+	require("plugins.linter").plugins,
 	require("plugins.formatter"),
 	require("plugins.debugger"),
 	require("plugins.git"),
@@ -28,6 +28,7 @@ local plugins = {
 	require("plugins.core.toggleterm"),
 	require("plugins.core.lualine"),
 	require("plugins.core.nvim-tree"),
+	require("plugins.core.trouble"),
 	require("plugins.core.misc"),
 
 	require("plugins.lang.go"),
