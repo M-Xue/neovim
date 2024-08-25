@@ -77,11 +77,9 @@ lspconfig.tsserver.setup({
 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
 })
 
--- local go_keymaps = require("plugins.lang.go.keymaps")
 lspconfig.gopls.setup({
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
-		-- go_keymaps(bufnr)
 	end,
 	capabilities = capabilities,
 
