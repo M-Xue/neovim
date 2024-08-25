@@ -16,20 +16,14 @@ local plugins = {
 	require("plugins.completion"),
 	require("plugins.navigation"),
 	require("plugins.search"),
-
 	require("plugins.lsp"),
 	require("plugins.linter").plugins,
 	require("plugins.formatter"),
 	require("plugins.git"),
-
 	require("plugins.ui.colorscheme"),
 	require("plugins.ui"),
-
 	require("plugins.editing"),
-
-	-- ============
-
-	require("plugins.core.toggleterm"),
+	require("plugins.terminal"),
 }
 
 require("lazy").setup(plugins)

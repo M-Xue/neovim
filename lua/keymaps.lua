@@ -23,11 +23,9 @@ vim.keymap.set("n", "<leader>o", ":Outline<cr>", { desc = "Symbol Outline" })
 -- This will remove all diagnostics so you need to do some text action to get them back
 vim.keymap.set("n", "<leader>,", require("plugins.linter").toggle_spell_check, { desc = "Toggle spell check linter" })
 
-require("keymaps.git")
+require("plugins.git.keymaps")
 require("plugins.search.keymaps")
-require("keymaps.windows_and_tabs")
-require("keymaps.file_tree")
-require("keymaps.terminal")
+require("plugins.terminal.keymaps")
 require("plugins.navigation.keymaps")
 
 -- LSP
