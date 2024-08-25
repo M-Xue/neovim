@@ -1,24 +1,10 @@
 return {
-	-- {
-	-- 	"folke/flash.nvim",
-	-- 	opts = {
-	-- 		{
-	-- 			modes = {
-	-- 				char = {
-	-- 					enabled = false,
-	-- 					autohide = true,
-	-- 					jump_labels = false,
-	-- 					multi_line = true,
-	-- 					highlight = { backdrop = false },
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 		highlight = { backdrop = false },
-	-- 	},
-	-- },
 	{
-		"ThePrimeagen/harpoon",
-		config = true,
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {
+			disable_filetype = { "TelescopePrompt", "vim" },
+		},
 	},
 	{
 		"abecodes/tabout.nvim",
@@ -43,15 +29,16 @@ return {
 			exclude = {}, -- tabout will ignore these filetypes
 		},
 	},
-	{ "unblevable/quick-scope" },
 	{
-		"nacro90/numb.nvim",
-		opts = {
-			show_numbers = true, -- Enable 'number' for the window while peeking
-			show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-			hide_relativenumbers = false, -- Enable turning off 'relativenumber' for the window while peeking
-			number_only = true, -- Peek only when the command is only a number instead of when it starts with a number
-			centered_peeking = true, -- Peeked line will be centered relative to window
-		},
+		"utilyre/sentiment.nvim", -- Highlight matching parentheses
+		version = "*",
+		event = "VeryLazy", -- keep for lazy loading
+		init = function()
+			-- `matchparen.vim` needs to be disabled manually in case of lazy loading
+			vim.g.loaded_matchparen = 1
+		end,
+		config = function()
+			require("sentiment").enable()
+		end,
 	},
 }

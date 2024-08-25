@@ -3,9 +3,9 @@ local util = require("util")
 vim.keymap.set("n", "<leader>.", util.print_attached_clients, { desc = "See attached clients" })
 
 -- require("plugins.colorscheme.util").init_colourscheme_keymaps()
-local colorscheme_picker = require("plugins.colorscheme.picker").colorscheme_picker
+local colorscheme_picker = require("plugins.ui.colorscheme.picker").colorscheme_picker
 vim.keymap.set("n", "<leader>\\", colorscheme_picker, { desc = "Colorscheme menu" })
-local print_curr_colorscheme = require("plugins.colorscheme.util").print_curr_colorscheme
+local print_curr_colorscheme = require("plugins.ui.colorscheme.util").print_curr_colorscheme
 vim.keymap.set("n", "<leader>|", print_curr_colorscheme, { desc = "Current colorscheme" })
 
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
@@ -23,16 +23,12 @@ vim.keymap.set("n", "<leader>o", ":Outline<cr>", { desc = "Symbol Outline" })
 -- This will remove all diagnostics so you need to do some text action to get them back
 vim.keymap.set("n", "<leader>,", require("plugins.linter").toggle_spell_check, { desc = "Toggle spell check linter" })
 
-vim.keymap.set("n", "<leader>'", require("harpoon.mark").add_file, { desc = "Harpoon mark file" })
--- Marks
-vim.keymap.set("n", "<leader>mm", ":MarksToggleSigns<cr>", { desc = "Toggle marks indicator" })
-vim.keymap.set("n", "<leader>md", ":delmarks a-zA-Z0-9<cr>", { desc = "Clear all marks" })
-
 require("keymaps.git")
-require("keymaps.telescope")
+require("plugins.search.keymaps")
 require("keymaps.windows_and_tabs")
 require("keymaps.file_tree")
 require("keymaps.terminal")
+require("plugins.navigation.keymaps")
 
 -- LSP
 -- g: LSP

@@ -1,20 +1,19 @@
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local wk = require("which-key")
-local on_attach = function(client, bufnr)
-	local opts = {
-		buffer = bufnr,
-	}
-	local mappings = {
-		-- ["<leader>"] = {
-		-- 	e = { name = "Diagnostics" },
-		-- 	g = { name = "LSP" },
-		-- },
-	}
-	-- wk.register(mappings, opts)
+local navic = require("nvim-navic")
 
-	require("plugins.lsp.lsp").init_lsp_keymaps(bufnr)
+local on_attach = function(client, bufnr)
+	wk.add({
+		{ "<leader>e", group = "Diagnostics" },
+		{ "<leader>g", group = "LSP" },
+	})
+	require("plugins.lsp.keymaps").init_lsp_keymaps(bufnr)
 	require("plugins.lsp.diagnostics").init_diagnostics_keymaps(bufnr)
+
+	if client.supports_method("textDocument/documentSymbol") then
+		navic.attach(client, bufnr)
+	end
 end
 
 lspconfig.html.setup({
@@ -78,11 +77,11 @@ lspconfig.tsserver.setup({
 	root_dir = lspconfig.util.root_pattern("package.json", ".git"),
 })
 
-local go_keymaps = require("plugins.lang.go.keymaps")
+-- local go_keymaps = require("plugins.lang.go.keymaps")
 lspconfig.gopls.setup({
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
-		go_keymaps(bufnr)
+		-- go_keymaps(bufnr)
 	end,
 	capabilities = capabilities,
 
@@ -130,8 +129,3 @@ lspconfig.mdx_analyzer.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
-
--- lspconfig.vale_ls.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })

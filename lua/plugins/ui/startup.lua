@@ -1,70 +1,5 @@
 return {
 	{
-		"folke/which-key.nvim",
-		-- event = "VeryLazy",
-		-- init = function()
-		-- 	vim.o.timeout = true
-		-- 	vim.o.timeoutlen = 300
-		-- end,
-		-- config = function()
-		-- 	local wk = require("which-key")
-		-- 	-- Help link: https://medium.com/@shaikzahid0713/which-key-7554ac347c9d
-
-		-- 	--[[ wk.setup({
-		-- 		window = {
-		-- 			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
-		-- 		},
-		-- 	}) ]]
-
-		-- 	local mappings = {
-		-- 		["<leader>"] = {
-		-- 			f = { name = "Telescope" },
-		-- 			s = { name = "Window" },
-		-- 			k = { name = "Tab" },
-		-- 			t = { name = "Terminal" },
-		-- 			c = { name = "Comment" },
-		-- 			y = { name = "File Tree" },
-		-- 			h = { name = "Git" },
-		-- 			d = { name = "Debug" },
-		-- 			m = { name = "Marks" },
-		-- 			j = { name = "Motions" },
-		-- 		},
-		-- 	}
-		-- 	wk.register(mappings)
-		-- end,
-		dependencies = {
-			{ "echasnovski/mini.icons" },
-			{ "nvim-tree/nvim-web-devicons" },
-		},
-	},
-	{
-		"sudormrfbin/cheatsheet.nvim",
-		dependencies = {
-			{ "nvim-telescope/telescope.nvim" },
-			{ "nvim-lua/popup.nvim" },
-			{ "nvim-lua/plenary.nvim" },
-		},
-		opts = {
-			bundled_cheatsheets = false,
-			bundled_plugin_cheatsheets = false,
-		},
-	},
-	{
-		"shortcuts/no-neck-pain.nvim",
-		config = true,
-	},
-	{
-		"ahmedkhalf/project.nvim",
-		config = function()
-			local project = require("project_nvim")
-			project.setup({
-				detection_methods = { "pattern" },
-				patterns = { ".git" },
-			})
-		end,
-	},
-
-	{
 		"goolord/alpha-nvim",
 		priority = 999,
 		lazy = false,
@@ -100,7 +35,7 @@ return {
 				dashboard.button("r", "   Recently opened files", ":Telescope oldfiles<CR>"),
 				dashboard.button("p", "󰅩   Find project", ":Telescope projects<CR>"),
 				dashboard.button("d", "   Change directories", ":cd "),
-				dashboard.button("s", "   Settings", ":cd ~/.config/nvim<cr>:Telescope find_files<cr>"),
+				dashboard.button("c", "   Config", ":cd ~/.config/nvim<cr>:Telescope find_files<cr>"),
 				dashboard.button("`", "   Quit NVIM", ":qa<CR>"),
 			}
 

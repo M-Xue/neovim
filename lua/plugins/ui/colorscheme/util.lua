@@ -3,7 +3,7 @@ local function is_onedark(colorscheme)
 end
 
 local function set_onedark_colorscheme(colorscheme)
-	local onedark_opts = require("plugins.colorscheme.onedark")
+	local onedark_opts = require("plugins.ui.colorscheme.onedark")
 
 	if colorscheme == "onedark-dark" then
 		onedark_opts.style = "dark"

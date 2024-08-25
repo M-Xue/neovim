@@ -8,13 +8,15 @@ return {
 		config = function()
 			local telescope_actions = require("telescope.actions")
 			local smart_send_and_open_qfl = function(prompt_bufnr)
+				print("debug")
 				telescope_actions.smart_send_to_qflist(prompt_bufnr)
-				telescope_actions.open_qflist(prompt_bufnr)
+				-- telescope_actions.open_qflist(prompt_bufnr)
+				require("trouble").open("quickfix")
 			end
 			local simple_qfl_mapping = {
 				mappings = {
 					i = {
-						["<C-q>"] = smart_send_and_open_qfl,
+						["<c-q>"] = smart_send_and_open_qfl,
 					},
 				},
 			}
@@ -24,6 +26,11 @@ return {
 				pickers = {
 					find_files = {
 						find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
+						mappings = {
+							i = {
+								["<c-q>"] = smart_send_and_open_qfl,
+							},
+						},
 					},
 					current_buffer_fuzzy_find = simple_qfl_mapping,
 					diagnostics = simple_qfl_mapping,
@@ -39,7 +46,6 @@ return {
 					entry_prefix = "   ",
 					borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 					-- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-					-- https://www.w3.org/TR/xml-entity-names/025.html
 					initial_mode = "insert",
 					selection_strategy = "reset",
 					sorting_strategy = "ascending",
@@ -69,17 +75,23 @@ return {
 					undo = {
 						preview_width = 0.8,
 					},
-					live_grep_args = simple_qfl_mapping,
+					live_grep_args = {
+						mappings = {
+							i = {
+								["<c-q>"] = smart_send_and_open_qfl,
+								["<c-f>"] = telescope_actions.to_fuzzy_refine,
+							},
+						},
+					},
 				},
 			})
 			telescope.load_extension("file_browser")
 			telescope.load_extension("toggleterm")
 			telescope.load_extension("projects")
 			telescope.load_extension("undo")
-			telescope.load_extension("harpoon")
 			telescope.load_extension("advanced_git_search")
 			telescope.load_extension("live_grep_args")
-			-- telescope.load_extension("fzf")
+			telescope.load_extension("fzf")
 		end,
 	},
 	{

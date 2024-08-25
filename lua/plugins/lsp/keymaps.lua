@@ -1,17 +1,5 @@
 local M = {}
 
-M.setup_lsp_handlers = function()
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
-end
-
--- Keymap sources
--- For documentation for lsp, use the following command -> :help lsp
--- For documentation telescope integration, use the following command -> :help telescope.builtin
 M.init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
@@ -123,6 +111,13 @@ M.init_lsp_keymaps = function(bufnr)
 		"<leader>gO",
 		"<cmd>Trouble lsp_outgoing_calls<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Outgoing calls list" }
+	)
+
+	vim.keymap.set(
+		"n",
+		"<leader>gs",
+		require("telescope.builtin").lsp_workspace_symbols,
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Search LSP symbols" }
 	)
 end
 

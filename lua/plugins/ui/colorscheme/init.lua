@@ -4,7 +4,7 @@ return {
 		priority = 1000,
 		lazy = false,
 		config = function()
-			local opts = require("plugins.colorscheme.catppuccin")
+			local opts = require("plugins.ui.colorscheme.catppuccin")
 			require("catppuccin").setup(opts)
 		end,
 	},
@@ -13,7 +13,7 @@ return {
 		priority = 1000,
 		lazy = false,
 		config = function()
-			local opts = require("plugins.colorscheme.gruvbox")
+			local opts = require("plugins.ui.colorscheme.gruvbox")
 			require("gruvbox").setup(opts)
 		end,
 	},
@@ -22,7 +22,7 @@ return {
 		priority = 1000,
 		lazy = false,
 		config = function()
-			local opts = require("plugins.colorscheme.kanagawa")
+			local opts = require("plugins.ui.colorscheme.kanagawa")
 			require("kanagawa").setup(opts)
 		end,
 	},
@@ -31,7 +31,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local opts = require("plugins.colorscheme.tokyonight")
+			local opts = require("plugins.ui.colorscheme.tokyonight")
 			require("tokyonight").setup(opts)
 		end,
 	},
@@ -40,7 +40,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local opts = require("plugins.colorscheme.onedark")
+			local opts = require("plugins.ui.colorscheme.onedark")
 			require("onedark").setup(opts)
 		end,
 	},
@@ -49,7 +49,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local opts = require("plugins.colorscheme.rose-pine")
+			local opts = require("plugins.ui.colorscheme.rose-pine")
 			require("rose-pine").setup(opts)
 		end,
 	},

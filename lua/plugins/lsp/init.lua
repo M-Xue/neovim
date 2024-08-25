@@ -1,43 +1,40 @@
+local lsp_servers = {
+	"tsserver",
+	"html",
+	"emmet_language_server",
+	"cssls",
+	"cssmodules_ls",
+	"tailwindcss",
+	"jsonls",
+	"gopls",
+	"rust_analyzer",
+	"lua_ls",
+	"marksman",
+	"mdx_analyzer",
+	"svelte",
+	"astro",
+}
+
 return {
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("plugins.lsp.handlers")
+			require("plugins.lsp.diagnostics").setup_diagnostics()
+			require("plugins.lsp.lspconfig")
+		end,
+	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
 		},
-		config = function()
-			local lsp_servers = {
-				"tsserver",
-				"html",
-				"emmet_language_server",
-				"cssls",
-				"cssmodules_ls",
-				"tailwindcss",
-				"jsonls",
-				"gopls",
-				"rust_analyzer",
-				"lua_ls",
-				"marksman",
-				"mdx_analyzer",
-				"svelte",
-				"astro",
-			}
-
-			require("mason-lspconfig").setup({
-				ensure_installed = lsp_servers,
-				automatic_installation = true,
-			})
-		end,
+		opts = {
+			ensure_installed = lsp_servers,
+			automatic_installation = true,
+		},
 	},
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("plugins.lsp.lsp").setup_lsp_handlers()
-			require("plugins.lsp.diagnostics").setup_diagnostics()
-			require("plugins.lsp.lspconfig")
-		end,
-	},
-
 	{
 		"hedyhli/outline.nvim",
 		event = "LspAttach",
@@ -47,10 +44,8 @@ return {
 			relative_width = false,
 		},
 	},
-
 	{
 		"j-hui/fidget.nvim",
-		event = "LspAttach",
 		opts = {},
 	},
 	{
@@ -59,5 +54,19 @@ return {
 		opts = {
 			autocmd = { enabled = true },
 		},
+	},
+	{
+		"SmiteshP/nvim-navic",
+		opts = {},
+		config = function()
+			vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+			return {
+				enabled = true,
+				separator = " ",
+				highlight = true,
+				depth_limit = 5,
+				lazy_update_context = true,
+			}
+		end,
 	},
 }

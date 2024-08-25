@@ -1,5 +1,3 @@
---      section_separators = { left = '', right = '' },
---
 --      TODO
 --      LSP maybe
 --      make it responsive/collapsable. Example here: https://github.com/nvim-lualine/lualine.nvim/blob/05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9/examples/evil_lualine.lua with the conditions local function
@@ -46,13 +44,18 @@ return {
 							},
 						},
 					},
-					lualine_c = { "filename" },
+					lualine_c = {
+						{
+							"filename",
+							path = 1,
+						},
+					},
 					lualine_x = {
 						{
 							"diff",
-							-- Is it me or the symbol for modified us really weird
 							-- icon = ' ',
 							symbols = { added = " ", modified = " ", removed = " " },
+							-- symbols = { added = " ", modified = " ", removed = " " },
 							diff_color = {
 								-- added = { fg = colors.green },
 								-- -- modified = { fg = colors.orange },

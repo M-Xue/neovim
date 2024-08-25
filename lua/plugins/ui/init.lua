@@ -1,55 +1,24 @@
 return {
+	require("plugins.ui.breadcrumb"),
+	-- require("plugins.ui.context"),
+	require("plugins.ui.indent"),
+	require("plugins.ui.startup"),
+	require("plugins.ui.statusline"),
+	require("plugins.ui.tabs"),
 	{ "RRethy/vim-illuminate" },
-	{ "lukas-reineke/indent-blankline.nvim" },
-	{
-		"nanozuki/tabby.nvim",
-		config = function()
-			local theme = {
-				fill = "TabLineFill",
-				-- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
-				head = "TabLine",
-				current_tab = "TabLineSel",
-				tab = "TabLine",
-				win = "TabLine",
-				tail = "TabLine",
-			}
-			require("tabby.tabline").set(function(line)
-				return {
-					-- {
-					--   { '  ', hl = theme.head },
-					--   line.sep('', theme.head, theme.fill),
-					-- },
-					line.tabs().foreach(function(tab)
-						local hl = tab.is_current() and theme.current_tab or theme.tab
-						return {
-							line.sep(" ", hl, theme.fill),
-							tab.is_current() and "" or "󰆣",
-							tab.number(),
-							line.sep("", hl, theme.fill),
-							hl = hl,
-							margin = " ",
-						}
-					end),
-					line.spacer(),
-					hl = theme.fill,
-				}
-			end)
-		end,
-	},
-	{
-		"utilyre/barbecue.nvim",
-		name = "barbecue",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-		config = function()
-			require("barbecue.ui").toggle(true)
-		end,
-	},
-	{
-		"chentoast/marks.nvim",
-		config = true,
-	},
 }
+
+-- beter rename visual feedback
+-- - https://github.com/smjonas/inc-rename.nvim
+--
+-- icons
+-- https://github.com/loctvl842/breadcrumb.nvim
+-- https://www.youtube.com/watch?v=NkQnPuidxWY
+-- - this guys config has good icons
+-- https://github.com/onsails/lspkind.nvim
+-- https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#icon
+-- navic has some icons https://github.com/SmiteshP/nvim-navic
+-- webdev icons mini icons
+
+-- this may be the best looking nvim styling I have seen
+-- - https://www.youtube.com/watch?v=NkQnPuidxWY

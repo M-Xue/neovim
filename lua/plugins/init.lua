@@ -12,30 +12,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	require("plugins.core.mason"),
-	require("plugins.core.telescope"),
+	require("plugins.mason"),
+	require("plugins.completion"),
+	require("plugins.navigation"),
+	require("plugins.search"),
 
 	require("plugins.lsp"),
 	require("plugins.linter").plugins,
 	require("plugins.formatter"),
-	require("plugins.debugger"),
 	require("plugins.git"),
 
-	require("plugins.colorscheme"),
-	require("plugins.core.cmp"),
-	require("plugins.core.treesitter"),
+	require("plugins.ui.colorscheme"),
+	require("plugins.ui"),
+
+	require("plugins.editing"),
+
+	-- ============
 
 	require("plugins.core.toggleterm"),
-	require("plugins.core.lualine"),
-	require("plugins.core.nvim-tree"),
-	require("plugins.core.trouble"),
-	require("plugins.core.misc"),
-
-	require("plugins.lang.go"),
-
-	require("plugins.motion"),
-	require("plugins.ui"),
-	require("plugins.editing"),
 }
 
 require("lazy").setup(plugins)
