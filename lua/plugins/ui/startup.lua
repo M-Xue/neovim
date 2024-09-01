@@ -35,7 +35,11 @@ return {
 				dashboard.button("r", "   Recently opened files", ":Telescope oldfiles<CR>"),
 				dashboard.button("p", "󰅩   Find project", ":Telescope projects<CR>"),
 				dashboard.button("d", "   Change directories", ":cd "),
-				dashboard.button("c", "   Config", ":cd ~/.config/nvim<cr>:Telescope find_files<cr>"),
+				dashboard.button(
+					"c",
+					"   Config",
+					":cd " .. os.getenv("HOME") .. "/.config/nvim<cr>:Telescope find_files<cr>"
+				),
 				dashboard.button("`", "   Quit NVIM", ":qa<CR>"),
 			}
 

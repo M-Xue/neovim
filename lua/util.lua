@@ -1,5 +1,24 @@
 local M = {}
 
+-- Function to perform a deep copy of a table
+local function deep_copy(original)
+	local copy
+	-- If the original is a table, create a new table
+	if type(original) == "table" then
+		copy = {}
+		for orig_key, orig_value in next, original, nil do
+			copy[deep_copy(orig_key)] = deep_copy(orig_value)
+		end
+		setmetatable(copy, deep_copy(getmetatable(original)))
+	else
+		-- If the original is not a table, just return it (base case)
+		copy = original
+	end
+	return copy
+end
+
+M.deep_copy = deep_copy
+
 M.print_attached_clients = function()
 	local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
 	if #buf_clients == 0 then

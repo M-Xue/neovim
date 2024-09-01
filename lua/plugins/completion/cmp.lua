@@ -1,30 +1,4 @@
-local symbol_map = {
-	Text = "󰉿",
-	Method = "m",
-	Function = "󰊕",
-	Constructor = "",
-	Field = "",
-	Variable = "󰀫",
-	Class = "󰠱",
-	Interface = "",
-	Module = "",
-	Property = "󰜢",
-	Unit = "󰑭",
-	Value = "󰎠",
-	Enum = "",
-	Keyword = "󰌋",
-	Snippet = "",
-	Color = "󰏘",
-	File = "󰈙",
-	Reference = "",
-	Folder = "󰉋",
-	EnumMember = "",
-	Constant = "󰏿",
-	Struct = "󰙅",
-	Event = "",
-	Operator = "󰆕",
-	TypeParameter = "",
-}
+local symbol_map = require("icons.symbols")
 
 local source_icons = {
 	nvim_lsp = "",
@@ -41,7 +15,8 @@ return {
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
-				build = "make install_jsregexp", -- Need this for the regex to work: https://github.com/L3MON4D3/LuaSnip/discussions/538
+				-- Need this for the regex to work: https://github.com/L3MON4D3/LuaSnip/discussions/538
+				build = "make install_jsregexp",
 				dependencies = "rafamadriz/friendly-snippets",
 			},
 			{
@@ -180,67 +155,7 @@ return {
 	},
 }
 
--- TODO Set up the autocomplete and snippets for each file type manually
--- TODO Look at NvChads formatting and other styping ui choices after all base functionality is done
--- https://preview.redd.it/hk5g7jum3kna1.jpg?width=2560&format=pjpg&auto=webp&v=enabled&s=2328916dd939b59ee49da119dd0904c4f2755109
-
--- TODO Set up snippets using luasnip
--- require('luasnip').filetype_extend("javascript", { "javascriptreact" })
--- Might not need this. Just need some config file or smth
--- https://www.reddit.com/r/neovim/comments/tqw05z/what_lsp_are_you_using_for_reactjs_projects_and/
--- "Yeah I had to create a jsconfig.json file to get tsserver to work with Javascript files."
-
---[[
-
-		completion = cmp.config.window.bordered({
-			border = 'none',
-		}),
-
-
-
-local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
-["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-		  	elseif luasnip.expandable() then
-				luasnip.expand()
-		  	elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
-		  	elseif check_backspace() then
-				fallback()
-		  	else
-				fallback()
-		  	end
-		end, {"i", "s",}),
-		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
- 		end, {"i", "s",}),
-
-
---]]
 --󰓆
-
---[[
-local source_names = {
-	nvim_lsp = "[LSP]",
-	nvim_lua = "[VIM]",
-	luasnip = "[Snippet]",
-	buffer = "[Buffer]",
-	path = "[Path]",
-}
---]]
--- vim.api.nvim_set_hl(0, 'cmp_normal', {fg = '', bg = ''})
--- vim.api.nvim_set_hl(0, 'cmp_float_boarder', {fg = '', bg = ''})
--- vim.api.nvim_set_hl(0, 'cmp_cursor_line', {fg = '', bg = ''})
 
 --[[
 local options = {
@@ -267,105 +182,4 @@ local options = {
 
   formatting = formatting_style,
 
-  mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
-    ["<CR>"] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = false,
-    },
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif require("luasnip").expand_or_jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif require("luasnip").jumpable(-1) then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "nvim_lua" },
-    { name = "path" },
-  },
-}
 --]]
-
--- TODO Look at NvChad, LunarVim and Lazy Vim and see what icons and colors they use for their color schemes
--- local kind_icons = {
--- 	Text = "",
--- 	Method = "m",
--- 	Function = "",
--- 	Constructor = "",
--- 	Field = "",
--- 	Variable = "",
--- 	Class = "",
--- 	Interface = "",
--- 	Module = "",
--- 	Property = "",
--- 	Unit = "",
--- 	Value = "",
--- 	Enum = "",
--- 	Keyword = "",
--- 	Snippet = "",
--- 	Color = "",
--- 	File = "",
--- 	Reference = "",
--- 	Folder = "",
--- 	EnumMember = "",
--- 	Constant = "",
--- 	Struct = "",
--- 	Event = "",
--- 	Operator = "",
--- 	TypeParameter = "",
--- }
-
--- symbol_map = {
---   Text = "󰉿",
---   Method = "󰆧",
---   Function = "󰊕",
---   Constructor = "",
---   Field = "󰜢",
---   Variable = "󰀫",
---   Class = "󰠱",
---   Interface = "",
---   Module = "",
---   Property = "󰜢",
---   Unit = "󰑭",
---   Value = "󰎠",
---   Enum = "",
---   Keyword = "󰌋",
---   Snippet = "",
---   Color = "󰏘",
---   File = "󰈙",
---   Reference = "󰈇",
---   Folder = "󰉋",
---   EnumMember = "",
---   Constant = "󰏿",
---   Struct = "󰙅",
---   Event = "",
---   Operator = "󰆕",
---   TypeParameter = "",
--- },

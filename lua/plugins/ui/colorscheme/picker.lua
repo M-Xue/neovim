@@ -43,7 +43,7 @@ local picker = function(opts)
 					actions.close(prompt_bufnr)
 					local selection = action_state.get_selected_entry()
 					local colorscheme = selection[1]
-					require("plugins.colorscheme.util").set_colorscheme(colorscheme)
+					require("plugins.ui.colorscheme.util").set_colorscheme(colorscheme)
 				end)
 				return true
 			end,

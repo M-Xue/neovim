@@ -1,20 +1,3 @@
-local lsp_servers = {
-	"tsserver",
-	"html",
-	"emmet_language_server",
-	"cssls",
-	"cssmodules_ls",
-	"tailwindcss",
-	"jsonls",
-	"gopls",
-	"rust_analyzer",
-	"lua_ls",
-	"marksman",
-	"mdx_analyzer",
-	"svelte",
-	"astro",
-}
-
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -31,7 +14,12 @@ return {
 			"neovim/nvim-lspconfig",
 		},
 		opts = {
-			ensure_installed = lsp_servers,
+			ensure_installed = {
+				unpack(require("plugins.lang.webdev.lsp_name")),
+				unpack(require("plugins.lang.markdown.lsp_name")),
+				require("plugins.lang.go.lsp_name"),
+				require("plugins.lang.lua.lsp_name"),
+			},
 			automatic_installation = true,
 		},
 	},
@@ -42,10 +30,16 @@ return {
 			position = "right",
 			width = 35,
 			relative_width = false,
+			symbols = {
+				icon_fetcher = function(kind, bufnr)
+					return require("icons.symbols")[kind]
+				end,
+			},
 		},
 	},
 	{
 		"j-hui/fidget.nvim",
+		event = "LspAttach",
 		opts = {},
 	},
 	{
@@ -55,18 +49,5 @@ return {
 			autocmd = { enabled = true },
 		},
 	},
-	{
-		"SmiteshP/nvim-navic",
-		opts = {},
-		config = function()
-			vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-			return {
-				enabled = true,
-				separator = " ",
-				highlight = true,
-				depth_limit = 5,
-				lazy_update_context = true,
-			}
-		end,
-	},
+	require("plugins.lsp.winbar"),
 }

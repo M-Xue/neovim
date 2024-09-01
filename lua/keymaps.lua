@@ -2,7 +2,6 @@ local util = require("util")
 
 vim.keymap.set("n", "<leader>.", util.print_attached_clients, { desc = "See attached clients" })
 
--- require("plugins.colorscheme.util").init_colourscheme_keymaps()
 local colorscheme_picker = require("plugins.ui.colorscheme.picker").colorscheme_picker
 vim.keymap.set("n", "<leader>\\", colorscheme_picker, { desc = "Colorscheme menu" })
 local print_curr_colorscheme = require("plugins.ui.colorscheme.util").print_curr_colorscheme

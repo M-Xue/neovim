@@ -7,12 +7,16 @@ return {
 		},
 		config = function()
 			local telescope_actions = require("telescope.actions")
+			local ok, trouble = pcall(require, "trouble")
 			local smart_send_and_open_qfl = function(prompt_bufnr)
-				print("debug")
 				telescope_actions.smart_send_to_qflist(prompt_bufnr)
-				-- telescope_actions.open_qflist(prompt_bufnr)
-				require("trouble").open("quickfix")
+				if not ok then
+					telescope_actions.open_qflist(prompt_bufnr)
+				else
+					trouble.open("quickfix")
+				end
 			end
+
 			local simple_qfl_mapping = {
 				mappings = {
 					i = {
@@ -96,7 +100,10 @@ return {
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim",
+		},
 	},
 	{
 		"https://git.sr.ht/~havi/telescope-toggleterm.nvim",
@@ -121,5 +128,8 @@ return {
 		-- For major updates, this must be adjusted manually.
 		version = "^1.0.0",
 	},
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
+	},
 }

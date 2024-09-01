@@ -67,7 +67,7 @@ M.init_diagnostics_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>eL",
-		"<cmd>Trouble workspace_diagnostics<cr>",
+		"<cmd>Trouble diagnostics<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "List diagnostics" }
 	)
 	vim.keymap.set(
@@ -82,7 +82,6 @@ M.init_diagnostics_keymaps = function(bufnr)
 		toggle_diagnostics_virtual_text,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Toggle diagnostics virtual text" }
 	)
-	-- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, bufopts)
 end
 
 return M

@@ -27,8 +27,6 @@ return {
 
 			conform.setup({
 				formatters_by_ft = {
-					lua = { "stylua" },
-
 					javascript = { "prettierd" },
 					javascriptreact = { "prettierd" },
 					typescript = { "prettierd" },
@@ -39,6 +37,7 @@ return {
 					astro = { "prettier" },
 					svelte = { "prettier" },
 
+					lua = { "stylua" },
 					go = { "goimports-reviser", "golines", "gofumpt" },
 					markdown = { "markdownlint" },
 				},
@@ -50,17 +49,6 @@ return {
 				log_level = vim.log.levels.ERROR,
 				notify_on_error = true,
 			})
-
-			conform.formatters.prettierd = {
-				env = {
-					PRETTIERD_DEFAULT_CONFIG = "/Users/maxxue/.config/nvim/lua/plugins/formatter/.prettierrc",
-				},
-			}
-			conform.formatters.prettier = {
-				env = {
-					PRETTIER_DEFAULT_CONFIG = "/Users/maxxue/.config/nvim/lua/plugins/formatter/.prettierrc",
-				},
-			}
 		end,
 	},
 }

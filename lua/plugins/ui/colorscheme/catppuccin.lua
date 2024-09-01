@@ -6,8 +6,8 @@ return {
 	},
 	integrations = {
 		cmp = true,
-		gitsigns = true,
 		nvimtree = true,
+		gitsigns = true,
 		treesitter = true,
 		alpha = true,
 		mason = true,

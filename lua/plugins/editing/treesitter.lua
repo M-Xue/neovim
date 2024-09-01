@@ -2,6 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
@@ -32,6 +33,7 @@ return {
 					additional_vim_regex_highlighting = true,
 				},
 				indent = { enable = true },
+				textobjects = require("plugins.editing.treesitter-textobjs-config"),
 			})
 		end,
 	},

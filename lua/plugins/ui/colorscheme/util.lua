@@ -47,6 +47,8 @@ M.init_colorscheme = function()
 		local content = file:read("*all")
 		file:close()
 
+		-- vim.cmd.colorscheme(content)
+		-- M.set_colorscheme("catppuccin-macchiato")
 		if content ~= "" then
 			M.set_colorscheme(content)
 		else

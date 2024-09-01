@@ -6,10 +6,3 @@ vim.opt.signcolumn = "yes:1"
 vim.opt.linebreak = true
 
 vim.cmd("set colorcolumn=80")
-
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		-- require("flash").toggle()
-		vim.cmd("MarksToggleSigns")
-	end,
-})

@@ -11,8 +11,8 @@ return {
 				-- changedelete = { text = "~" },
 				add = { text = "+" },
 				change = { text = "|" },
-				delete = { text = "-" },
-				topdelete = { text = "-" },
+				delete = { text = "" },
+				topdelete = { text = "" },
 				changedelete = { text = "|" },
 
 				untracked = { text = "┆" }, -- TODO change these
@@ -49,27 +49,6 @@ return {
 			yadm = {
 				enable = false,
 			},
-		})
-
-		-- Green
-		vim.api.nvim_set_hl(0, "GitSignsChange", {
-			fg = "#a6da95",
-		})
-		-- Yellow
-		vim.api.nvim_set_hl(0, "GitSignsAdd", {
-			fg = "#eed49f",
-		})
-		-- Red
-		vim.api.nvim_set_hl(0, "GitSignsDelete", {
-			fg = "#ed8796",
-		})
-		-- Rosewater
-		vim.api.nvim_set_hl(0, "GitSignsUntracked", {
-			fg = "#f4dbd6",
-		})
-		-- Mauve
-		vim.api.nvim_set_hl(0, "GitSignsChangedelete", {
-			fg = "#c6a0f6",
 		})
 	end,
 }

@@ -2,7 +2,7 @@ local harpoon = require("harpoon")
 harpoon:setup()
 vim.keymap.set("n", "<leader>'", function()
 	harpoon:list():add()
-end)
+end, { desc = "Harpoon" })
 
 local conf = require("telescope.config").values
 local function toggle_telescope(harpoon_files)
@@ -61,7 +61,7 @@ local function delete_all_marks()
 	vim.cmd("delmarks []")
 	vim.cmd("wshada!")
 end
-vim.keymap.set("n", "<leader>md", delete_all_marks, { desc = "Clear all marks" })
+vim.keymap.set("n", "<leader>mD", delete_all_marks, { desc = "Clear all marks" })
 -- toggle = "<leader>mm",
 -- delete_buf = "<leader>md",
 

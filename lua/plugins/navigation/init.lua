@@ -1,5 +1,6 @@
 return {
 	require("plugins.navigation.trouble"),
+	require("plugins.navigation.nvim-tree"),
 	{
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
@@ -7,21 +8,23 @@ return {
 	},
 	{
 		"chentoast/marks.nvim",
-		config = {
-			default_mappings = false,
-			mappings = {
-				toggle = "<leader>mm",
-				delete_buf = "<leader>md",
-			},
-		},
+		config = function()
+			require("marks").setup({
+				default_mappings = false,
+				mappings = {
+					toggle = "<leader>mm",
+					delete_buf = "<leader>md",
+				},
+				force_write_shada = true,
+			})
+		end,
 	},
-	require("plugins.navigation.nvim-tree"),
 	{
 		"nacro90/numb.nvim",
 		opts = {
 			show_numbers = true, -- Enable 'number' for the window while peeking
 			show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-			hide_relativenumbers = false, -- Enable turning off 'relativenumber' for the window while peeking
+			hide_relativenumbers = true, -- Enable turning off 'relativenumber' for the window while peeking
 			number_only = true, -- Peek only when the command is only a number instead of when it starts with a number
 			centered_peeking = true, -- Peeked line will be centered relative to window
 		},

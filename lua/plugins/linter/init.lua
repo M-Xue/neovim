@@ -16,25 +16,18 @@ M.linters_by_ft = {
 	astro = { "eslint_d" },
 	svelte = { "eslint_d" },
 	css = { "stylelint" },
+
 	go = { "golangcilint" },
 	markdown = { "markdownlint" },
 	lua = {},
 	text = {},
 }
 
-M.linters_with_spell_check = {
-	javascript = { "eslint_d", "cspell" },
-	javascriptreact = { "eslint_d", "cspell" },
-	typescript = { "eslint_d", "cspell" },
-	typescriptreact = { "eslint_d", "cspell" },
-	astro = { "eslint_d", "cspell" },
-	svelte = { "eslint_d", "cspell" },
-	css = { "stylelint", "cspell" },
-	go = { "golangcilint", "cspell" },
-	markdown = { "markdownlint", "cspell" },
-	lua = { "cspell" },
-	text = { "cspell" },
-}
+local util = require("util")
+M.linters_with_spell_check = util.deep_copy(M.linters_by_ft)
+for key, value in pairs(M.linters_with_spell_check) do
+	table.insert(value, "cspell")
+end
 
 M.plugins = {
 	{
@@ -52,17 +45,11 @@ M.plugins = {
 		"mfussenegger/nvim-lint",
 		config = function()
 			local lint = require("lint")
-
 			lint.linters_by_ft = M.linters_by_ft
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
 				callback = function(opts)
-					if vim.bo[opts.buf].filetype == "markdown" then
-						-- TODO write an if check to see if the vale config file is found in this root dir. Only run this if it exists.
-						lint.try_lint()
-					else
-						lint.try_lint()
-					end
+					lint.try_lint()
 				end,
 			})
 		end,
