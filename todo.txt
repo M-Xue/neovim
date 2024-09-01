@@ -1,60 +1,83 @@
 ==================================================
 Nvim Clean Up
 ==================================================
-neodev lua development plugin
 
-look through other configs for better plugin organisation
+make all the colourschemes pretty
+- nvchad 
+- nvide
+- lunarvim - astro lazy etc
+- just look for cool designs in general
+- try and get plugin agnostic colours that are used in the config 
+	- apply to lsp kind icons in navic and cmp??
+	- apply to where ever else is needed
 
-better search and replace
-- https://github.com/nvim-pack/nvim-spectre
+- set up a few really good custom ones
+- tokyo night 
+- catppuccin (all flavours??)
+- onedarker
+- gruvbox
+- geddit
+- default vim 
+- check monkeytype for some good ones? 
+- look into nvchad
 
-tree sitter objects
-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+give icons diff colours based on colour scheme
+- https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
+look for plugins to help
 
-test neo-tree and nvim-tree to see which one can work in displayr's code base
+checkout nvchads styling
 
-nvim surround
-
-session manager?
-
-function signature help in capital K while typing in the function 
-
-spelunker nvim
-
-folder breadcrumbs
-- c-f breadcrumb in awesome nvim
-https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#bars-and-lines
-
-better search and replace 
-- see how qfl goes first??
-
-beter rename visual feedback
-- https://github.com/smjonas/inc-rename.nvim
+-- this may be the best looking nvim styling I have seen
+-- - https://www.youtube.com/watch?v=NkQnPuidxWY
 
 
-symbol file type member search like visual studio
+refine icons and fix icons for whichkey
+- special icons for special directories like test and git
+- more icons here https://docs.astronvim.com/recipes/icons/
 
-helpdocs nivm??
+also add misc file symbols
+- for things like git? maybe make git its own icon file
+- grab them from mini icons??
+- more icons here https://docs.astronvim.com/recipes/icons/
 
-fuzzy find working directory and project
+cmp styling
+- check out nvchads styling
+	-- https://preview.redd.it/hk5g7jum3kna1.jpg?width=2560&format=pjpg&auto=webp&v=enabled&s=2328916dd939b59ee49da119dd0904c4f2755109
+- https://github.com/catppuccin/nvim/discussions/323#discussioncomment-4410359
 
-look at some editing keymaps
-- awesome nvim
-https://github.com/roobert/search-replace.nvim
 
-look at other configs for plugins
 
-function location at top ui plugin
-breadcrum path to file
 
-see how trouble can be used for qfl
 
-all ui plugins not working
 
-fix which key
+
+
+
+
+
+
+Snippets for:
+- Astro 
+- Svelte
+- Markdown
+
+cheatsheet
+- clean up for now 
+- not sure what else to add. keep it clear and add as you go??
+
+
+
+
+
+
+
+
+
+
 
 Learn lazy nvim and clean up all the plugins
 - look through other configs and see if there are any plugs really interesting to add
+https://github.com/adibhanna/nvim
 
 Fix keymaps that annoy you
 move keymaps into files
@@ -64,35 +87,77 @@ move keymaps into files
 - terminal keymaps
 - keymaps should only be for plugins. if you want to do a native vim action, try put it in cheatsheet instead
 
-Clean up which key and cheatsheet
-- cheatsheet should not have any which key things
-- this includes shortcuts for plugins like telescope or git
-
 fix gitsign issues 
+look at git plugins in awesom nvim
 
-clean up language specific stuff
 
 
-typesceipt
--https://github.com/dmmulroy/ts-error-translator.nvim
 
+
+copilot if available
+other ai help
+
+need to figure out tmux
+
+neodev lua development plugin
+
+
+
+
+
+
+
+
+
+
+
+
+
+Make cmp popups have a max width of 50
+Make the hover and signature help popups have a max width of 50.
+- cant figure this out. do it when you meet it later or when you add in rust LSP and look at a really long func
+
+
+
+
+
+-- beter rename visual feedback
+-- - https://github.com/smjonas/inc-rename.nvim
+--
+
+
+
+
+
+watch on youtube good vim motion guides
+
+Look into lsp call heirarchy feature
+- lspsaga is pre cool
+Function signature help in capital K while typing in the function 
+lspsaga
+
+test neo-tree and nvim-tree to see which one can work in displayr's code base
+session manager?
+spelunker nvim
+helpdocs nivm??
 
 use telescope colourscheme picker rather than the one you made
 
-icons
-https://github.com/loctvl842/breadcrumb.nvim
-https://www.youtube.com/watch?v=NkQnPuidxWY
-- this guys config has good icons
-https://github.com/onsails/lspkind.nvim
-https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#icon
-
-
-this may be the best looking nvim styling I have seen
-- https://www.youtube.com/watch?v=NkQnPuidxWY
-
-
 
 add toggleterm bindings and telescope bindings to cheatsheet
+
+
+LSP
+clean up language specific stuff
+plugins
+typesceipt
+- https://github.com/dmmulroy/ts-error-translator.nvim
+- tailwind
+markdown 
+c#
+bash 
+lua 
+
 
 
 
@@ -125,24 +190,11 @@ make >> shift tab not stop at one use
 ==================================================
 Misc Language Issues
 ==================================================
-Snippets for:
-- Astro 
-- Svelte
-- Markdown
-
-- Svelte language server
-
-Set up all the language server configs??
-
-Fix syntax highlighting and LSP features for MDX.
 
 =================================================
 Clean Up LSP
 =================================================
-Look into lsp call heirarchy feature
 
-Make the hover and signature help popups have a max width of 50.
-Make cmp 50 as well
 
 ==================================================
 Windows and Tabs Navigation and Manipulation
@@ -215,10 +267,6 @@ look into terminal integration in awesome nvim
 --------------------------
 
 
-TREESITTER OBJECTS
-https://www.youtube.com/watch?v=CEMPq_r8UYQ
-https://www.youtube.com/watch?v=FuYQ7M73bC0
-
 
 macros
 
@@ -247,11 +295,6 @@ https://www.youtube.com/watch?v=5x3dXo8aDCI
 
 
 
-clean up plugins and icons
-- fix cmp icons: https://github.com/onsails/lspkind.nvim get some from here
-- look at nvchad and other presets
-- lualine 
-- nvim tree
 
 
 convert nvim tree to neo tree
