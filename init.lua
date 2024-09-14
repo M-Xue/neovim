@@ -1,8 +1,11 @@
 vim.g.mapleader = " "
 
+--- @type ThemeConfig
+ThemeConfig = nil
+
 require("plugins")
 require("autocmd")
 require("options")
 require("keymaps")
-require("plugins.ui.colorscheme.util").init_colorscheme()
-require("plugins.ui.colorscheme.util").init_colorscheme()
+require("plugins.themes.util").init_theme()
+-- require("plugins.themes.util").init_theme()

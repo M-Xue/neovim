@@ -1,6 +1,74 @@
 ==================================================
 Nvim Clean Up
 ==================================================
+lsp window colors 
+outline colours
+add proper spacing for icons (esp for winbar)
+clean up theme properties
+
+cmp fixes 
+snippets
+
+
+
+more cmp fixes
+Make cmp popups have a max width of 50
+Make the hover and signature help popups have a max width of 50.
+- cant figure this out. do it when you meet it later or when you add in rust LSP and look at a really long func
+- makue sure the documentation has treesitter??
+- make sure snippets have previews showing the snippet
+tab goes through the suggestions
+enter completes it
+if a snippet is open AND a cmp window is open, tab should go down the cmp window 
+- once the selection has been made and te cmp window is closes, tab now jumps to the next section of the snippet
+
+cmp styling
+- check out nvchads styling
+	-- https://preview.redd.it/hk5g7jum3kna1.jpg?width=2560&format=pjpg&auto=webp&v=enabled&s=2328916dd939b59ee49da119dd0904c4f2755109
+	https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#how-to-get-types-on-the-left-and-offset-the-menu
+- https://github.com/catppuccin/nvim/discussions/323#discussioncomment-4410359
+
+
+all highlight changes go in themes
+make it so that if i delete themes, nothing goes wrong
+
+
+
+Snippets for:
+- Astro 
+- Svelte
+- Markdown
+
+
+
+neodev lua development plugin
+
+
+
+
+dont forget to fix up winbar
+better K definition styling
+
+
+material lighter - clean
+vscode dark - clean
+onedark
+one red one
+
+
+
+cheatsheet?
+outline
+- make sybols right color
+
+window colours
+- blame and status colours
+
+lualine
+- vim mode colors
+
+
+
 
 make all the colourschemes pretty
 - nvchad 
@@ -21,10 +89,6 @@ make all the colourschemes pretty
 - check monkeytype for some good ones? 
 - look into nvchad
 
-give icons diff colours based on colour scheme
-- https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
-look for plugins to help
-
 checkout nvchads styling
 
 -- this may be the best looking nvim styling I have seen
@@ -40,35 +104,9 @@ also add misc file symbols
 - grab them from mini icons??
 - more icons here https://docs.astronvim.com/recipes/icons/
 
-cmp styling
-- check out nvchads styling
-	-- https://preview.redd.it/hk5g7jum3kna1.jpg?width=2560&format=pjpg&auto=webp&v=enabled&s=2328916dd939b59ee49da119dd0904c4f2755109
-- https://github.com/catppuccin/nvim/discussions/323#discussioncomment-4410359
-
-
-
-
-
-
-
-
-
-
-
-
-Snippets for:
-- Astro 
-- Svelte
-- Markdown
-
-cheatsheet
-- clean up for now 
-- not sure what else to add. keep it clear and add as you go??
-
-
-
-
-
+give icons diff colours based on colour scheme
+- https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
+look for plugins to help
 
 
 
@@ -87,49 +125,38 @@ move keymaps into files
 - terminal keymaps
 - keymaps should only be for plugins. if you want to do a native vim action, try put it in cheatsheet instead
 
-fix gitsign issues 
+need to figure out tmux
+
+workspace
+session management
+
 look at git plugins in awesom nvim
-
-
-
-
 
 copilot if available
 other ai help
-
-need to figure out tmux
-
-neodev lua development plugin
-
-
-
-
-
-
-
-
-
-
-
-
-
-Make cmp popups have a max width of 50
-Make the hover and signature help popups have a max width of 50.
-- cant figure this out. do it when you meet it later or when you add in rust LSP and look at a really long func
-
-
-
-
 
 -- beter rename visual feedback
 -- - https://github.com/smjonas/inc-rename.nvim
 --
 
-
-
-
-
 watch on youtube good vim motion guides
+
+cheatsheet
+- clean up for now 
+- not sure what else to add. keep it clear and add as you go??
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Look into lsp call heirarchy feature
 - lspsaga is pre cool
@@ -140,9 +167,6 @@ test neo-tree and nvim-tree to see which one can work in displayr's code base
 session manager?
 spelunker nvim
 helpdocs nivm??
-
-use telescope colourscheme picker rather than the one you made
-
 
 add toggleterm bindings and telescope bindings to cheatsheet
 
