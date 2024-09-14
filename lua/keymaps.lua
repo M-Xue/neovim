@@ -2,10 +2,10 @@ local util = require("util")
 
 vim.keymap.set("n", "<leader>.", util.print_attached_clients, { desc = "See attached clients" })
 
-local colorscheme_picker = require("plugins.ui.colorscheme.picker").colorscheme_picker
+local colorscheme_picker = require("plugins.themes.picker").colorscheme_picker
 vim.keymap.set("n", "<leader>\\", colorscheme_picker, { desc = "Colorscheme menu" })
-local print_curr_colorscheme = require("plugins.ui.colorscheme.util").print_curr_colorscheme
-vim.keymap.set("n", "<leader>|", print_curr_colorscheme, { desc = "Current colorscheme" })
+local print_curr_theme = require("plugins.themes.util").print_curr_theme
+vim.keymap.set("n", "<leader>|", print_curr_theme, { desc = "Current colorscheme" })
 
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>`", ":wa<CR>:qa<CR>", { desc = "Quit NeoVim" })

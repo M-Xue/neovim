@@ -15,6 +15,7 @@ return {
 					icons_enabled = true,
 					theme = "auto",
 					component_separators = { left = "", right = "" },
+					-- component_separators = { left = "│", right = "│" },
 					section_separators = { left = "", right = "" },
 					disabled_filetypes = {
 						statusline = { "NvimTree", "alpha" },
@@ -37,6 +38,7 @@ return {
 							"diagnostics",
 							sources = { "nvim_diagnostic" },
 							symbols = { error = " ", warn = " ", info = " ", hint = " " },
+							-- symbols = { error = " ", warn = " ", info = " ", hint = " " },
 							diagnostics_color = {
 								-- color_error = { fg = colors.red },
 								-- color_warn = { fg = colors.yellow },
@@ -55,6 +57,7 @@ return {
 							"diff",
 							-- icon = ' ',
 							symbols = { added = " ", modified = " ", removed = " " },
+							-- symbols = { added = "+", modified = "~", removed = "-" },
 							-- symbols = { added = " ", modified = " ", removed = " " },
 							diff_color = {
 								-- added = { fg = colors.green },

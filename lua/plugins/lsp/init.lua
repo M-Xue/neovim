@@ -32,7 +32,7 @@ return {
 			relative_width = false,
 			symbols = {
 				icon_fetcher = function(kind, bufnr)
-					return require("icons.symbols")[kind]
+					return require("icons.lspkind")[kind]
 				end,
 			},
 		},

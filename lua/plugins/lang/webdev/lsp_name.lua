@@ -7,5 +7,5 @@ return {
 	"jsonls",
 	"astro",
 	"svelte",
-	"tsserver",
+	"ts_ls",
 }

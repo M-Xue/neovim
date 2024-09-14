@@ -1,4 +1,4 @@
-local symbol_map = require("icons.symbols")
+local symbol_map = require("icons.lspkind").icons
 
 local source_icons = {
 	nvim_lsp = "",
@@ -7,6 +7,46 @@ local source_icons = {
 	buffer = "",
 	path = "󰝰",
 	treesitter = "",
+}
+
+local source_text = {
+	nvim_lsp = "LSP",
+	nvim_lua = "LUA",
+	luasnip = "Snip",
+	buffer = "Buf",
+	path = "Path",
+	treesitter = "TS",
+}
+
+local default = {
+	fields = { "abbr", "kind" },
+	format = function(_, vim_item)
+		vim_item.kind = string.format("%s  %s", symbol_map[vim_item.kind], vim_item.kind)
+		return vim_item
+	end,
+}
+
+local text = {
+	fields = { "abbr", "menu", "kind" },
+	format = function(entry, vim_item)
+		vim_item.menu = string.format("[%s]", source_text[entry.source.name])
+		return vim_item
+	end,
+}
+local verbose = {
+	fields = { "kind", "abbr", "menu" },
+	format = function(entry, vim_item)
+		vim_item.kind = string.format("%s %s", symbol_map[vim_item.kind], vim_item.kind)
+		vim_item.menu = source_icons[entry.source.name]
+		return vim_item
+	end,
+}
+local minimal = {
+	fields = { "kind", "abbr" },
+	format = function(_, vim_item)
+		vim_item.kind = string.format("%s ┃", symbol_map[vim_item.kind])
+		return vim_item
+	end,
 }
 
 return {
@@ -82,18 +122,18 @@ return {
 						max_item_count = 5,
 					},
 				}),
-				formatting = {
-					fields = { "kind", "abbr", "menu" },
-					format = function(entry, vim_item)
-						vim_item.kind = string.format("%s  %s", symbol_map[vim_item.kind], vim_item.kind)
-						vim_item.menu = source_icons[entry.source.name]
-						-- vim_item.menu = string.format("[%s]", (entry.source.name:gsub("^%l", string.upper)))
-						return vim_item
-					end,
-				},
+				formatting = default,
 				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
+					completion = cmp.config.window.bordered({
+						border = "rounded",
+						winhighlight = "Normal:CmpItemMenu,FloatBorder:CmpBorder,CursorLine:CmpSel,Search:None",
+						-- winhighlight = "Normal:CmpItemMenu,FloatBorder:CmpBorder,Search:None",
+					}),
+					documentation = cmp.config.window.bordered({
+						border = "rounded",
+						winhighlight = "Normal:CmpItemMenu,FloatBorder:CmpBorder,CursorLine:CmpSel,Search:None",
+						-- winhighlight = "Normal:CmpItemMenu,FloatBorder:CmpBorder,Search:None",
+					}),
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -108,8 +148,8 @@ return {
 							cmp.select_next_item()
 						elseif luasnip.expand_or_jumpable() then
 							luasnip.expand_or_jump()
-						-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-						-- that way you will only jump inside the snippet region
+							-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+							-- that way you will only jump inside the snippet region
 						elseif has_words_before() then
 							cmp.complete()
 						else

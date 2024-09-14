@@ -1,22 +1,26 @@
+local guttersigns_bar = {
+	add = { text = "▎" },
+	change = { text = "▎" },
+	untracked = { text = "▎" },
+	delete = { text = "" },
+	topdelete = { text = "" },
+	changedelete = { text = "▎" },
+}
+local guttersigns_text = {
+	add = { text = "+" },
+	change = { text = "|" },
+	untracked = { text = "┆" },
+	delete = { text = "" },
+	topdelete = { text = "" },
+	changedelete = { text = "|" },
+}
+
 return {
 	"lewis6991/gitsigns.nvim",
 	config = function()
 		local gitsigns = require("gitsigns")
 		gitsigns.setup({
-			signs = {
-				-- add = { text = "▎" },
-				-- change = { text = "▎" },
-				-- delete = { text = "_" },
-				-- topdelete = { text = "‾" },
-				-- changedelete = { text = "~" },
-				add = { text = "+" },
-				change = { text = "|" },
-				delete = { text = "" },
-				topdelete = { text = "" },
-				changedelete = { text = "|" },
-
-				untracked = { text = "┆" }, -- TODO change these
-			},
+			signs = guttersigns_text,
 			signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 			numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
 			linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
@@ -46,9 +50,9 @@ return {
 				row = 0,
 				col = 1,
 			},
-			yadm = {
-				enable = false,
-			},
+			-- yadm = {
+			-- 	enable = false,
+			-- },
 		})
 	end,
 }

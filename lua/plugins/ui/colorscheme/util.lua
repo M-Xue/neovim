@@ -28,6 +28,7 @@ end
 local M = {}
 
 M.set_colorscheme = function(colorscheme)
+	print("test")
 	local file = io.open(os.getenv("HOME") .. "/.config/nvim/colorscheme.txt", "w+")
 	if file ~= nil then
 		file:write(colorscheme)

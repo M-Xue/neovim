@@ -1,6 +1,6 @@
 local M = {}
 
-M.init_lsp_keymaps = function(bufnr)
+local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>r",
@@ -120,5 +120,7 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Search LSP symbols" }
 	)
 end
+
+M.init_lsp_keymaps = init_lsp_keymaps
 
 return M
