@@ -16,7 +16,7 @@ local colors = {
 }
 --- @type ThemeConfig
 local theme_config = {
-	colorscheme_name = "tokyonight-moon",
+	colorscheme_name = "tokyonight",
 	colors = colors,
 
 	border_color = colors.grey,
@@ -26,7 +26,6 @@ local theme_config = {
 	telescope_window_color = colors.bg,
 
 	border_radius = "rounded",
-	cmp_format = "minimal",
 	diagnostics_icon_style = "outline",
 	git_gutter_style = "bar",
 	lualine_git_diff_style = "icon",

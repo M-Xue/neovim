@@ -95,7 +95,6 @@ return {
 			telescope.load_extension("undo")
 			telescope.load_extension("advanced_git_search")
 			telescope.load_extension("live_grep_args")
-			telescope.load_extension("fzf")
 		end,
 	},
 	{
@@ -128,8 +127,8 @@ return {
 		-- For major updates, this must be adjusted manually.
 		version = "^1.0.0",
 	},
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
-	},
+	-- {
+	-- 	"nvim-telescope/telescope-fzf-native.nvim",
+	-- 	build = "make",
+	-- },
 }

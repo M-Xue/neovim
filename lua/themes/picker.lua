@@ -12,10 +12,7 @@ local picker = function(opts)
 		.new(opts, {
 			prompt_title = "Colorscheme",
 			finder = finders.new_table({
-				results = {
-					"catppuccin",
-					"gruvbox",
-				},
+				results = require("themes.enabled-themes"),
 			}),
 			sorter = conf.generic_sorter(opts),
 			attach_mappings = function(prompt_bufnr, map)
@@ -23,7 +20,7 @@ local picker = function(opts)
 					actions.close(prompt_bufnr)
 					local selection = action_state.get_selected_entry()
 					local colorscheme = selection[1]
-					require("plugins.themes.util").set_theme(colorscheme)
+					require("themes.util").set_theme(colorscheme)
 				end)
 				return true
 			end,

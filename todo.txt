@@ -1,197 +1,7 @@
 ==================================================
-Nvim Clean Up
+Nvim Clean Uptodo
 ==================================================
-lsp window colors 
-outline colours
-add proper spacing for icons (esp for winbar)
-clean up theme properties
-
-cmp fixes 
-snippets
-
-
-
-more cmp fixes
-Make cmp popups have a max width of 50
-Make the hover and signature help popups have a max width of 50.
-- cant figure this out. do it when you meet it later or when you add in rust LSP and look at a really long func
-- makue sure the documentation has treesitter??
-- make sure snippets have previews showing the snippet
-tab goes through the suggestions
-enter completes it
-if a snippet is open AND a cmp window is open, tab should go down the cmp window 
-- once the selection has been made and te cmp window is closes, tab now jumps to the next section of the snippet
-
-cmp styling
-- check out nvchads styling
-	-- https://preview.redd.it/hk5g7jum3kna1.jpg?width=2560&format=pjpg&auto=webp&v=enabled&s=2328916dd939b59ee49da119dd0904c4f2755109
-	https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#how-to-get-types-on-the-left-and-offset-the-menu
-- https://github.com/catppuccin/nvim/discussions/323#discussioncomment-4410359
-
-
-all highlight changes go in themes
-make it so that if i delete themes, nothing goes wrong
-
-
-
-Snippets for:
-- Astro 
-- Svelte
-- Markdown
-
-
-
-neodev lua development plugin
-
-
-
-
-dont forget to fix up winbar
-better K definition styling
-
-
-material lighter - clean
-vscode dark - clean
-onedark
-one red one
-
-
-
-cheatsheet?
-outline
-- make sybols right color
-
-window colours
-- blame and status colours
-
-lualine
-- vim mode colors
-
-
-
-
-make all the colourschemes pretty
-- nvchad 
-- nvide
-- lunarvim - astro lazy etc
-- just look for cool designs in general
-- try and get plugin agnostic colours that are used in the config 
-	- apply to lsp kind icons in navic and cmp??
-	- apply to where ever else is needed
-
-- set up a few really good custom ones
-- tokyo night 
-- catppuccin (all flavours??)
-- onedarker
-- gruvbox
-- geddit
-- default vim 
-- check monkeytype for some good ones? 
-- look into nvchad
-
-checkout nvchads styling
-
--- this may be the best looking nvim styling I have seen
--- - https://www.youtube.com/watch?v=NkQnPuidxWY
-
-
-refine icons and fix icons for whichkey
-- special icons for special directories like test and git
-- more icons here https://docs.astronvim.com/recipes/icons/
-
-also add misc file symbols
-- for things like git? maybe make git its own icon file
-- grab them from mini icons??
-- more icons here https://docs.astronvim.com/recipes/icons/
-
-give icons diff colours based on colour scheme
-- https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
-look for plugins to help
-
-
-
-
-
-
-Learn lazy nvim and clean up all the plugins
-- look through other configs and see if there are any plugs really interesting to add
-https://github.com/adibhanna/nvim
-
-Fix keymaps that annoy you
-move keymaps into files
-- figure out what the keymap api actually does
-- commenting keymaps
-- completion cancelling keycaps
-- terminal keymaps
-- keymaps should only be for plugins. if you want to do a native vim action, try put it in cheatsheet instead
-
-need to figure out tmux
-
-workspace
-session management
-
-look at git plugins in awesom nvim
-
-copilot if available
-other ai help
-
--- beter rename visual feedback
--- - https://github.com/smjonas/inc-rename.nvim
---
-
-watch on youtube good vim motion guides
-
-cheatsheet
-- clean up for now 
-- not sure what else to add. keep it clear and add as you go??
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Look into lsp call heirarchy feature
-- lspsaga is pre cool
-Function signature help in capital K while typing in the function 
-lspsaga
-
-test neo-tree and nvim-tree to see which one can work in displayr's code base
-session manager?
-spelunker nvim
-helpdocs nivm??
-
-add toggleterm bindings and telescope bindings to cheatsheet
-
-
-LSP
-clean up language specific stuff
-plugins
-typesceipt
-- https://github.com/dmmulroy/ts-error-translator.nvim
-- tailwind
-markdown 
-c#
-bash 
-lua 
-
-
-
-
-DONE
-
-
-==================================================
-Editing
-==================================================
-
+get better at sed and grep
 subsitutue command 
 search replace
 https://www.youtube.com/watch?v=YzVmdJ41Xkg
@@ -203,41 +13,41 @@ figureout multiselect and multicursor
 https://github.com/mg979/vim-visual-multi
 - can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
 
-how to wrap around with strings or brackets or replace them
-check editing plugins
+get rid of that markdown rule about the long line
 
-make >> shift tab not stop at one use
+Snippets for:
+- Astro 
+- Svelte
+- Markdown
 
+Learn lazy nvim and clean up all the plugins
+https://github.com/adibhanna/nvim
 
+asdfasd "asdfasdf" asdf "asdfas"
+fix up eslint and prettier???
 
+LSP
+clean up language specific stuff
+plugins
+typesceipt
+markdown 
+c#
+bash 
+lua 
 
-==================================================
-Misc Language Issues
-==================================================
-
-=================================================
-Clean Up LSP
-=================================================
-
-
-==================================================
-Windows and Tabs Navigation and Manipulation
-==================================================
-Figure out how to move windows and tabs better
-
-Window manipulation keymaps
-https://vi.stackexchange.com/questions/3725/swap-the-position-of-two-windows
-https://stackoverflow.com/questions/4556184/vim-move-window-left-right/4571319#4571319
-https://stackoverflow.com/questions/1269603/to-switch-from-vertical-split-to-horizontal-split-fast-in-vim
+ 'keymap' stuff
 
 
 
+-- this may be the best looking nvim styling I have seen
+-- - https://www.youtube.com/watch?v=NkQnPuidxWY
+- special icons for special directories like test and git
+- more icons here https://docs.astronvim.com/recipes/icons/
+- more icons here https://docs.astronvim.com/recipes/icons/
+- https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
 
 
-
-
-
-
+helpdocs nivm??
 
 ==================================================
 Debugger
@@ -288,79 +98,14 @@ look into terminal integration in awesome nvim
 
 
 
---------------------------
 
 
 
-macros
-
---------------------------
-
-fix the todos in toggle term??
-
-fix telescope ui. Things keep gettign cut off and stuff (e.g. lsp references file names)
-let users grep specific directory
-let ysers fuzzy find specific directory
-
-
-macros
-https://www.youtube.com/watch?v=5x3dXo8aDCI
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-convert nvim tree to neo tree
-example: https://github.com/AstroNvim/AstroNvim/blob/main/lua/plugins/neo-tree.lua
-
-
-
-take inspo from some cool nvim configs
-- astro: https://github.com/AstroNvim/AstroNvim/tree/main/lua/plugins 
-nvchad 
-lunarvim 
-nvide 
-
-
-lspsaga
-
-
-
-
-
-generic symbol tree config
-https://github.com/simrat39/symbols-outline.nvim
 
 
 fix lsp configs for languages 
 - figure out what all these textDocutmer/... and code actions do
 - hwo to have better code actions
-
-add editiong mode
-- change highlighting for flash
-- add mark indicator 
-- add harpoon indicator???
-
-
-fix formatting on save bug when there is an lsp error in the file
-fix alpha vim new file 
-let user rename the new file immediatley as they enter the buffer
-https://vi.stackexchange.com/questions/305/how-can-i-rename-the-file-im-editing
-
-
-fix up lsp configs for each lsp in configuration page
-
 
 
 
@@ -370,9 +115,6 @@ reconsider keymaps
     - move buffers into new tabs and get better tab navigations 
 - learn more about windows, buffers and tabs
 - figureout how to move dap windows adn buffers around
-
-
-
 
 :nmap
 :nmap <leader>
@@ -391,37 +133,6 @@ https://www.youtube.com/watch?v=F6GNPOXpfwU
 figure out what this stuff is for remapping keys
 { noremap = true, silent = true, buffer = bufnr, desc = "Symbols tree" }
 
-
-
-------------------------
-
-
-rust and python and config files like yaml and docker and bash
-
-
-rust
-https://www.youtube.com/watch?v=mh_EJhH49Ms&t=463s&pp=ygUMbmVvb3ZpbSBydXN0
-https://www.youtube.com/watch?v=gihHLsClHF0&pp=ygUMbmVvb3ZpbSBydXN0
-https://www.youtube.com/watch?v=Mccy6wuq3JE&t=1052s&pp=ygUMbmVvb3ZpbSBydXN0
-https://github.com/mrcjkb/rustaceanvim
-https://github.com/Saecki/crates.nvim
-
-
-
-
-
-
-
-add vale, code spell and suggested words to markdown and text files. Also add a markdown linter,
-
-
-
-
-fix vale linter
-- vale is currently running on markdown files. However, it still runs when vale is not configured. Change the autocmd in the linter.lua file so that it only runs if it sees the vale config file in the root dir.
-
-Can also specify a custom path to vale config
-https://www.reddit.com/r/vim/comments/my8eqw/why_does_my_function_work_with_one_external/
 
 
 

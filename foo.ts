@@ -5,17 +5,20 @@ const m: { exports?: any } = {};
 m.exports = class extends Foo {
   prompting() {
     console.log("hello");
-    const prompts = [
-      {
-        message: "test",
-      },
-    ];
+    const prompts = [{}];
     return prompts.map((a) => {});
   }
 };
 
-function foo() {}
+console.log("bar");
+
+function foo(a: number, b: string, c: string[]) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
 class Bar {}
+foo(1, "1", ["1"]);
 Bar;
 
 export const loadProduct = (product) => {

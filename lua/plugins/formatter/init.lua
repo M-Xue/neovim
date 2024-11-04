@@ -30,7 +30,7 @@ return {
 					javascript = { "prettierd" },
 					javascriptreact = { "prettierd" },
 					typescript = { "prettierd" },
-					typescriptreact = { "prettierd" },
+					typescriptreact = { "prettier" },
 					html = { "prettierd" },
 					css = { "prettierd" },
 

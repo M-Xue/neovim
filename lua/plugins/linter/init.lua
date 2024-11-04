@@ -63,12 +63,14 @@ M.toggle_spell_check = function()
 		lint.linters_by_ft = M.linters_with_spell_check
 		lint.try_lint()
 		is_spell_check_enabled = true
+		print("Spell check on")
 	else
 		lint.linters_by_ft = M.linters_by_ft
 		local ns = lint.get_namespace("cspell")
 		vim.diagnostic.reset(ns)
 		lint.try_lint()
 		is_spell_check_enabled = false
+		print("Spell check off")
 	end
 end
 

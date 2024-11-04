@@ -4,8 +4,7 @@ vim.g.mapleader = " "
 ThemeConfig = nil
 
 require("plugins")
+require("themes.util").init_theme()
 require("autocmd")
 require("options")
 require("keymaps")
-require("plugins.themes.util").init_theme()
--- require("plugins.themes.util").init_theme()

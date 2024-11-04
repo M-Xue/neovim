@@ -1,5 +1,5 @@
 return {
-	require("plugins.git.gitsigns"),
+	require("plugins.git.gitsigns").plugin,
 	{
 		-- Docs: https://github.com/kdheepak/lazygit.nvim
 		-- custom configs for lazygit

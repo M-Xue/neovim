@@ -122,7 +122,7 @@ return {
 						max_item_count = 5,
 					},
 				}),
-				formatting = default,
+				formatting = verbose,
 				window = {
 					completion = cmp.config.window.bordered({
 						border = "rounded",

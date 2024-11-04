@@ -1,6 +1,6 @@
 return {
 	require("plugins.navigation.trouble"),
-	require("plugins.navigation.nvim-tree"),
+	require("plugins.navigation.nvim-tree").plugin,
 	{
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",

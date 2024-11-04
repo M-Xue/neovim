@@ -19,29 +19,39 @@
 --- @field black string
 --- @field white string
 
+--- @alias Themes
+---| 'catppuccin-macchiato'
+---| 'gruvbox'
+---| 'vscode-dark'
+---| 'tokyonight-day'
+---| 'tokyonight-moon'
+
 --- @class (exact) ThemeConfig
---- @field colorscheme_name string
+--- @field colorscheme_name Themes
 --- @field colors ColorConfig
---
---- @field border_color string
---- @field window_color string
+---
+--- @field cmp_window_color string
+--- @field cmp_border_color string
 --- @field cmp_selected_color string
---- @field telescope_selected_color string
+---
 --- @field telescope_window_color string
 --- @field telescope_border_color string
+--- @field telescope_selected_color string
+--- @field telescope_header_background_color boolean
+---
+--- @field float_window_color string
+--- @field float_border_color string
+--- @field float_border_radius "single" | "rounded" | "none"
+---
+--- @field font_color string
+--- @field contrast_font_color string
+---
+--- @field window_separator_color string
+---
+--- @field background_color string
 --
---- @field border_radius "single" | "rounded" | "none"
---- @field cmp_format "minimal" | "default" | "verbose" | "text"
 --- @field diagnostics_icon_style "filled" | "outline"
---- @field git_gutter_style "bar" | "text"
+--- @field git_gutter_style "bar" | "text" | "default"
 --- @field lualine_separator_style "flat" | "sharp"
 --- @field lualine_git_diff_style "icon" | "text"
 --- @field nvimtree_modified_glyph "icon" | "text"
-
---- @alias Themes
----| 'catppuccin'
----| 'gruvbox'
----| 'tokyomoon'
-
-local M = {}
-return M

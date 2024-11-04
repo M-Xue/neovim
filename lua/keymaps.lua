@@ -2,9 +2,9 @@ local util = require("util")
 
 vim.keymap.set("n", "<leader>.", util.print_attached_clients, { desc = "See attached clients" })
 
-local colorscheme_picker = require("plugins.themes.picker").colorscheme_picker
+local colorscheme_picker = require("themes.picker").colorscheme_picker
 vim.keymap.set("n", "<leader>\\", colorscheme_picker, { desc = "Colorscheme menu" })
-local print_curr_theme = require("plugins.themes.util").print_curr_theme
+local print_curr_theme = require("themes.util").print_curr_theme
 vim.keymap.set("n", "<leader>|", print_curr_theme, { desc = "Current colorscheme" })
 
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
@@ -18,6 +18,10 @@ vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
 vim.keymap.set("n", "<leader>z", ":NoNeckPain<cr>", { desc = "Zen mode" })
 vim.keymap.set("n", "<leader>o", ":Outline<cr>", { desc = "Symbol Outline" })
+
+-- Indenting
+vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
 
 -- This will remove all diagnostics so you need to do some text action to get them back
 vim.keymap.set("n", "<leader>,", require("plugins.linter").toggle_spell_check, { desc = "Toggle spell check linter" })

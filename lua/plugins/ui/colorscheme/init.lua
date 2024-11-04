@@ -22,7 +22,7 @@ return {
 		priority = 1000,
 		lazy = false,
 		config = function()
-			local opts = require("plugins.ui.colorscheme.kanagawa")
+			local opts = require("plugins.ui.colorscheme.kanagawa-config")
 			require("kanagawa").setup(opts)
 		end,
 	},
@@ -49,8 +49,17 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local opts = require("plugins.ui.colorscheme.rose-pine")
+			local opts = require("plugins.ui.colorscheme.rosepine")
 			require("rose-pine").setup(opts)
+		end,
+	},
+	{
+		"Mofiqul/vscode.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			local opts = require("plugins.ui.colorscheme.vscode-config")
+			require("vscode").setup(opts)
 		end,
 	},
 }

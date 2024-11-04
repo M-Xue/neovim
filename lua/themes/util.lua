@@ -12,15 +12,27 @@ end
 local set_theme = function(theme_name)
 	save_colorscheme_to_file(theme_name)
 
-	if theme_name == "catppuccin" then
-		ThemeConfig = require("plugins.themes.theme_configs.catppuccin")
+	if theme_name == "catppuccin-macchiato" then
+		ThemeConfig = require("themes.theme_configs.catppuccin-macchiato")
 	elseif theme_name == "gruvbox" then
-		ThemeConfig = require("plugins.themes.theme_configs.gruvbox")
+		vim.o.background = "dark"
+		ThemeConfig = require("themes.theme_configs.gruvbox")
+	elseif theme_name == "vscode-dark" then
+		vim.o.background = "dark"
+		ThemeConfig = require("themes.theme_configs.vscode-dark")
 	else
 		vim.print("Invalid theme")
+		save_colorscheme_to_file("catppuccin-macchiato")
 	end
-	vim.cmd.colorscheme(ThemeConfig.colorscheme_name)
-	require("plugins.themes.update_hl").update_hl(ThemeConfig)
+	if ThemeConfig ~= nil then
+		if theme_name == "vscode-dark" then
+			vim.cmd.colorscheme("vscode")
+			vim.o.background = "dark"
+		else
+			vim.cmd.colorscheme(ThemeConfig.colorscheme_name)
+		end
+		require("themes.update_hl").update_highlight_groups(ThemeConfig)
+	end
 end
 
 local init_theme = function()
@@ -32,10 +44,10 @@ local init_theme = function()
 		if content ~= "" then
 			set_theme(content)
 		else
-			set_theme("catppuccin")
+			set_theme("catppuccin-macchiato")
 		end
 	else
-		set_theme("catppuccin")
+		set_theme("catppuccin-macchiato")
 	end
 end
 

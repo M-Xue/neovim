@@ -1,0 +1,189 @@
+## editing
+Redo | <c-r>
+
+## jumplist
+Go back on jumplist | <c-o>
+
+## jumplist
+Go forward on jumplist | <c-i>
+
+## jumplist
+See jumplist | :jumps
+
+## jumplist
+Clear jumplist | :clearjumps
+
+## motion
+Move to next occurence of specified character <char> | f<char>
+
+## motion
+Move right before next occurence of specified character <char> | t<char>
+
+## motion
+Move to prev occurence of specified character <char> | F<char>
+
+## motion
+Move right before prev occurence of specified character <char> | T<char>
+
+## motion
+Repeat previous f, t, F or T movement | ;
+
+## motion
+Repeat previous f, t, F or T movement, backwards | ,
+
+## motion
+Go to beginning of line in INSERT mode | I
+
+## motion
+Go to end of line in INSERT mode | A
+
+## motion
+Move cursor vertically (multi-line text) | g<jk> 
+
+## motion
+Move half page up | <c-u>
+
+## motion
+Move half page down | <c-d>
+
+## motion
+Center line under cursor on screen | zz
+
+## motion
+Move to next/prev paragraph (contiguous non-white space) | { for next or } for prev
+
+## motion
+Move to corresponding {}, () or [] under cursor | %
+
+## motion
+visual select word/paragraph/block | vi<wpb>
+
+## motion
+visual select word/paragraph/block (includes surrounding white-space/new line for para) | va<wpb>
+
+## motion
+Visual select contiguous word | viW
+
+## motion
+Visual select around nearest bracket/quote symbols (includes symbols) | va<symbol> 
+
+## motion
+Visual select between nearest bracket/quote symbols (excludes symbols) | vi<symbol> 
+
+## motion
+Search | /<search-term>
+
+## motion
+Search word under cursor | *
+
+## motion
+Next/prev search occurance | n for next or N for prev
+
+## motion
+Remove search highlight | :nohl
+
+## motion
+Replace all old with new throughout file | :%s/old/new/g
+
+## motion
+Replace all old with new throughout file with confirmations | :%s/old/new/gc
+
+## marks
+Set mark with character <char> (lowercase marks for unique per buffer but uppercase marks are global) | m<char>
+
+## marks
+Go to row at corresponding character mark <char> (which-key has mark preview) | '<char>
+
+## marks
+Go to row and column at corresponding character mark <char> | `<char>
+
+## marks
+Look at all existing marks | :marks
+
+## marks
+Look at existing marks for specific characters <char> | :marks <char+>
+
+## marks
+Delete mark for specific characters <char> | :delm <char+>
+
+## marks
+Cycle through local marks | [` / ]`
+
+## marks
+Toggle marks indicator | <leader>m
+
+## marks
+Refresh marks indicator | :SignatureRefresh
+
+## nvim-tree 
+Rename file | u
+
+## nvim-tree
+Create file | a
+
+## nvim-tree
+Remove file | d 
+
+## nvim-tree 
+Select multiple files | v<jk>
+
+## nvim-tree
+Cut selected files (including dir) | x
+
+## nvim-tree
+Paste selected files | p 
+
+## nvim-tree
+Copy file | c
+
+## nvim-tree
+Copy file name | y
+
+## tailwind 
+border radius | foo
+
+## debugging
+Continue/Start | <f1>
+
+## debugging
+Toggle breakpoint | <f2>
+
+## debugging
+Clear breakpoint | <f3>
+
+## debugging
+List breakpoints | <f4>
+
+## debugging
+Step over | <f5>
+
+## debugging
+Step into | <f6>
+
+## debugging
+Step out | <f7>
+
+## debugging
+Reset DAP UI | <f8>
+
+## debugging
+Set breakpoint with condition | <f9>
+
+## debugging
+Set breakpoint with log | <f10>
+
+## debugging
+Go down stacktrace | <f11>
+
+## debugging
+Go up stacktrace | <f12>
+
+## debugging
+Terminate | <leader>dq
+
+## debugging
+Toggle REPL | <leader>dR
+
+## debugging
+Set log level | <leader>dL
+

@@ -2,17 +2,25 @@ local M = {}
 
 -- Source: https://github.com/LunarVim/Neovim-from-scratch/blob/06-LSP/lua/user/lsp/handlers.lua
 -- Set up diagnostics
-local diagnostics_signs = {
+
+M.filled_signs = {
 	{ name = "DiagnosticSignError", text = "" },
 	{ name = "DiagnosticSignWarn", text = "" },
 	{ name = "DiagnosticSignHint", text = "" },
 	{ name = "DiagnosticSignInfo", text = "" },
 }
 
-local diagnostics_config = {
+M.outline_signs = {
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "" },
+	{ name = "DiagnosticSignInfo", text = "" },
+}
+
+M.config = {
 	virtual_text = false,
 	signs = {
-		active = diagnostics_signs,
+		active = M.filled_diagnostics_signs,
 	},
 	update_in_insert = true,
 	severity_sort = true,
@@ -27,22 +35,22 @@ local diagnostics_config = {
 }
 
 local toggle_diagnostics_virtual_text = function()
-	if diagnostics_config.virtual_text then
-		diagnostics_config.virtual_text = false
+	if M.config.virtual_text then
+		M.config.virtual_text = false
 	else
-		diagnostics_config.virtual_text = true
+		M.config.virtual_text = true
 	end
 
-	vim.diagnostic.config(diagnostics_config)
+	vim.diagnostic.config(M.config)
 end
 
 -- For documentation, use the following command -> :help vim.diagnostic
 M.setup_diagnostics = function()
-	for _, sign in ipairs(diagnostics_signs) do
+	for _, sign in ipairs(M.config.signs) do
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 	end
 
-	vim.diagnostic.config(diagnostics_config)
+	vim.diagnostic.config(M.config)
 end
 
 M.init_diagnostics_keymaps = function(bufnr)
