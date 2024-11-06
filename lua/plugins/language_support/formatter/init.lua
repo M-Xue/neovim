@@ -30,7 +30,7 @@ return {
 					javascript = { "prettierd" },
 					javascriptreact = { "prettierd" },
 					typescript = { "prettierd" },
-					typescriptreact = { "prettier" },
+					typescriptreact = { "prettierd" },
 					html = { "prettierd" },
 					css = { "prettierd" },
 
@@ -48,6 +48,15 @@ return {
 				},
 				log_level = vim.log.levels.ERROR,
 				notify_on_error = true,
+				formatters = {
+					prettierd = {
+						-- https://github.com/stevearc/conform.nvim/blob/0e61fc88f725b4411e63b43470a397c6102534c7/lua/conform/formatters/prettierd.lua
+						-- https://github.com/stevearc/conform.nvim/issues/268
+						env = {
+							PRETTIERD_LOCAL_PRETTIER_ONLY = 1,
+						},
+					},
+				},
 			})
 		end,
 	},
