@@ -2,9 +2,9 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("plugins.lsp.handlers")
-			require("plugins.lsp.diagnostics").setup_diagnostics()
-			require("plugins.lsp.lspconfig")
+			require("plugins.language_support.lsp.handlers")
+			require("plugins.language_support.lsp.diagnostics").setup_diagnostics()
+			require("plugins.language_support.lsp.lspconfig")
 		end,
 	},
 	{
@@ -15,10 +15,10 @@ return {
 		},
 		opts = {
 			ensure_installed = {
-				unpack(require("plugins.lang.webdev.lsp_name")),
-				unpack(require("plugins.lang.markdown.lsp_name")),
-				require("plugins.lang.go.lsp_name"),
-				require("plugins.lang.lua.lsp_name"),
+				unpack(require("plugins.language_support.lang.webdev.lsp_name")),
+				unpack(require("plugins.language_support.lang.markdown.lsp_name")),
+				require("plugins.language_support.lang.go.lsp_name"),
+				require("plugins.language_support.lang.lua.lsp_name"),
 			},
 			automatic_installation = true,
 		},
@@ -83,5 +83,5 @@ return {
 			autocmd = { enabled = true },
 		},
 	},
-	require("plugins.lsp.winbar"),
+	require("plugins.language_support.lsp.winbar"),
 }
