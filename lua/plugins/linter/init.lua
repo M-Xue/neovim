@@ -23,7 +23,7 @@ M.linters_by_ft = {
 	text = {},
 }
 
-local util = require("util")
+local util = require("config_util")
 M.linters_with_spell_check = util.deep_copy(M.linters_by_ft)
 for key, value in pairs(M.linters_with_spell_check) do
 	table.insert(value, "cspell")
