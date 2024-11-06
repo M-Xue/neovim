@@ -82,4 +82,27 @@ M.print_attached_clients = function()
 	vim.print(language_servers)
 end
 
+--- @alias OperatingSystem
+---| 'windows'
+---| 'mac'
+
+--- @return OperatingSystem?
+M.get_os = function()
+	if package.config:sub(1, 1) == "\\" then
+		return "windows"
+	else
+		return "mac"
+	end
+end
+
+--- @return string
+M.get_config_path = function()
+	local home_path = vim.fn.expand("$HOME")
+	if M.get_os() == "windows" then
+		return home_path .. "\\AppData\\Local\\nvim"
+	else
+		return home_path .. "/.config/nvim"
+	end
+end
+
 return M

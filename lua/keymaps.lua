@@ -1,4 +1,4 @@
-local util = require("util")
+local util = require("config_util")
 
 vim.keymap.set("n", "<leader>.", util.print_attached_clients, { desc = "See attached clients" })
 
