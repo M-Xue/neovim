@@ -38,7 +38,7 @@ return {
 				dashboard.button(
 					"c",
 					"   Config",
-					":cd " .. os.getenv("HOME") .. "/.config/nvim<cr>:Telescope find_files<cr>"
+					":cd " .. require("config_util").get_config_path() .. "<cr>:Telescope find_files<cr>"
 				),
 				dashboard.button("`", "   Quit NVIM", ":qa<CR>"),
 			}
