@@ -1,6 +1,12 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+fix telescope from not staying at the top
+fix cd not respecting root
+fix eslint
+simplify everything??
+
+
 get better at sed and grep
 subsitutue command 
 search replace
