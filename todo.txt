@@ -1,7 +1,6 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-fix telescope from not staying at the top
 fix cd not respecting root
 fix eslint
 simplify everything??

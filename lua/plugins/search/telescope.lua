@@ -87,6 +87,12 @@ return {
 							},
 						},
 					},
+					fzf = {
+						fuzzy = true, -- false will only do exact matching
+						override_generic_sorter = true, -- override the generic sorter
+						override_file_sorter = true, -- override the file sorter
+						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+					},
 				},
 			})
 			telescope.load_extension("file_browser")
@@ -95,6 +101,7 @@ return {
 			telescope.load_extension("undo")
 			telescope.load_extension("advanced_git_search")
 			telescope.load_extension("live_grep_args")
+			telescope.load_extension("fzf")
 		end,
 	},
 	{
@@ -127,8 +134,8 @@ return {
 		-- For major updates, this must be adjusted manually.
 		version = "^1.0.0",
 	},
-	-- {
-	-- 	"nvim-telescope/telescope-fzf-native.nvim",
-	-- 	build = "make",
-	-- },
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
+	},
 }
