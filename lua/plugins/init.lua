@@ -13,7 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	require("plugins.ui.colorscheme"),
+	require("plugins.treesitter"),
 	require("plugins.language_support"),
+	require("plugins.linter").plugins,
+	require("plugins.formatter"),
 	require("plugins.completion"),
 	require("plugins.navigation"),
 	require("plugins.search"),

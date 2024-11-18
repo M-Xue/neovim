@@ -1,9 +1,17 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+improve git experience
+- diff branch with another branch 
+	- special case for master
+- pr reviews
+
+
+
+
 fix cd not respecting root
 fix eslint
-simplify everything??
+add base prettier file
 
 
 get better at sed and grep
@@ -28,19 +36,9 @@ Snippets for:
 Learn lazy nvim and clean up all the plugins
 https://github.com/adibhanna/nvim
 
-asdfasd "asdfasdf" asdf "asdfas"
-fix up eslint and prettier???
+clean up lsp configs
 
-LSP
-clean up language specific stuff
-plugins
-typesceipt
-markdown 
-c#
-bash 
-lua 
-
- 'keymap' stuff
+'keymap' stuff
 
 
 
@@ -50,9 +48,6 @@ lua
 - more icons here https://docs.astronvim.com/recipes/icons/
 - more icons here https://docs.astronvim.com/recipes/icons/
 - https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
-
-
-helpdocs nivm??
 
 ==================================================
 Debugger

@@ -1,5 +1,4 @@
 return {
-	require("plugins.editing.treesitter"),
 	{
 		"chrisgrieser/nvim-various-textobjs",
 		opts = { useDefaultKeymaps = true },

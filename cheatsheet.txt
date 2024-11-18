@@ -7,7 +7,6 @@ Send selection to quickfix list | <c-q>
 ## terminal
 Open split terminal | [new terminal number]<leader>tt
 
-
 ## textobj
 Call | m
 
@@ -104,6 +103,13 @@ Current selection | Press : in visual mode with selection
 ## sed_range
 All lines in buffer | %
 
+## fold
+Toggle fold | za
 
+## fold
+Open all folds | zR 
+
+## fold
+Close all folds | zR 
 
 
