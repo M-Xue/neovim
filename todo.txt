@@ -1,14 +1,6 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-improve git experience
-- diff branch with another branch 
-	- special case for master
-- pr reviews
-
-
-
-
 fix cd not respecting root
 fix eslint
 add base prettier file
