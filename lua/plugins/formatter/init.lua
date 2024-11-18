@@ -91,11 +91,14 @@ return {
 					go = { "goimports-reviser", "golines", "gofumpt" },
 					markdown = { "markdownlint" },
 				},
+				--[[
 				format_on_save = {
 					lsp_fallback = true,
 					async = false,
 					timeout_ms = 500,
 				},
+				--
+				--]]
 				log_level = vim.log.levels.ERROR,
 				notify_on_error = true,
 				-- formatters = {
