@@ -1,11 +1,24 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-open qfl on the right
+better harpoon ui 
+- marks 
+- how many 
+- which one
+- better file names in the finder window 
+󰀱
+
+grapple nvim??
+octo nvim ??
+
 
 fix cd not respecting root
+
+toggle qfl
+
 fix eslint
 add base prettier file
+
 
 
 get better at sed and grep
