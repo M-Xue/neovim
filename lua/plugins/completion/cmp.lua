@@ -194,32 +194,3 @@ return {
 		end,
 	},
 }
-
---󰓆
-
---[[
-local options = {
-  completion = {
-    completeopt = "menu,menuone",
-  },
-
-  window = {
-    completion = {
-      side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored") and 1 or 0,
-      winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
-      scrollbar = false,
-    },
-    documentation = {
-      border = border "CmpDocBorder",
-      winhighlight = "Normal:CmpDoc",
-    },
-  },
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end,
-  },
-
-  formatting = formatting_style,
-
---]]

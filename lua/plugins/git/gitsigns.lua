@@ -9,6 +9,8 @@ M.guttersigns_bar = {
 	changedelete = { text = "▎" },
 }
 
+-- cool icon: ┃
+
 M.guttersigns_default = {
 	add = { text = "+" },
 	change = { text = "|" },
@@ -29,6 +31,7 @@ M.guttersigns_text = {
 
 M.config = {
 	signs = M.guttersigns_default,
+	-- staged signs: https://github.com/lewis6991/gitsigns.nvim?tab=readme-ov-file#installation--usage
 	signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 	numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
 	linehl = false, -- Toggle with `:Gitsigns toggle_linehl`

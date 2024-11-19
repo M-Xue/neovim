@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>ht", gitsigns.toggle_deleted, { desc = "Toggle dele
 vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview hunk" })
 vim.keymap.set("n", "<leader>hP", gitsigns.preview_hunk_inline, { desc = "Preview hunk inline" })
 
-vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage hunk" })
+vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Toggle stage hunk" })
 vim.keymap.set("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Undo stage hunk" })
 vim.keymap.set("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage buffer" })
 vim.keymap.set("v", "<leader>hs", visual_stage, { desc = "Stage hunk" })
