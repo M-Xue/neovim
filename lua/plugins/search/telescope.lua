@@ -45,6 +45,7 @@ return {
 					lsp_outgoing_calls = simple_qfl_mapping,
 				},
 				defaults = {
+                    path_display = { "truncate" },
 					prompt_prefix = " 󰍉 ",
 					selection_caret = "   ",
 					entry_prefix = "   ",

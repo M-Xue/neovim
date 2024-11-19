@@ -1,7 +1,6 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-fix telescope display for file names 
 open qfl on the right
 
 fix cd not respecting root
