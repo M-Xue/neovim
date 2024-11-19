@@ -112,4 +112,23 @@ Open all folds | zR
 ## fold
 Close all folds | zR 
 
+## fzf
+Exact match | 'foo 
 
+## fzf
+Prefix exact match | ^foo 
+
+## fzf
+Suffix exact match | foo$ 
+
+## fzf
+Inverse exact match | !foo 
+
+## fzf
+Inverse prefix exact match | !^foo 
+
+## fzf
+Inverse suffix exact match | !foo$ 
+
+## fzf
+A single bar character term acts as an OR operator. E.g., the following query matches entries that start with core and end with either go, or py | ^core go$ | py$
