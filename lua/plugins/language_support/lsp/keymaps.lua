@@ -38,7 +38,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gd",
-		require("telescope.builtin").lsp_definitions,
+        ":Telescope lsp_definitions show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find definition" }
 	)
 	vim.keymap.set(
@@ -51,7 +51,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gt",
-		require("telescope.builtin").lsp_type_definitions,
+        ":Telescope lsp_type_definitions show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find type definition" }
 	)
 	vim.keymap.set(
@@ -64,7 +64,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gi",
-		require("telescope.builtin").lsp_implementations,
+        ":Telescope lsp_implementations show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find implementation" }
 	)
 	vim.keymap.set(
@@ -77,7 +77,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gr",
-		require("telescope.builtin").lsp_references,
+        ":Telescope lsp_references show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find reference" }
 	)
 	vim.keymap.set(
@@ -90,7 +90,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gc",
-		require("telescope.builtin").lsp_incoming_calls,
+        ":Telescope lsp_incoming_calls show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find incoming calls" }
 	)
 	vim.keymap.set(
@@ -103,7 +103,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>go",
-		require("telescope.builtin").lsp_outgoing_calls,
+        ":Telescope lsp_outgoing_calls show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find outgoing calls" }
 	)
 	vim.keymap.set(
