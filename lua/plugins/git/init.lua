@@ -15,7 +15,8 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	{ "tpope/vim-fugitive" }, -- This is a vim plugin, not Lua. Not customized.
+	{ "tpope/vim-fugitive" },
+	{ "tpope/vim-rhubarb" },
 	{
 		"sindrets/diffview.nvim",
 		config = function()

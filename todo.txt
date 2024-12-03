@@ -8,6 +8,10 @@ better harpoon ui
 - better file names in the finder window 
 󰀱
 
+
+comments
+get perma links
+
 grapple nvim??
 octo nvim ??
 

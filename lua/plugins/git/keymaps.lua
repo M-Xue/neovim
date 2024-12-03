@@ -46,3 +46,5 @@ vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer_index, { desc = "Reset b
 
 vim.keymap.set("n", "<leader>hj", gitsigns.next_hunk, { desc = "Next hunk" })
 vim.keymap.set("n", "<leader>hk", gitsigns.prev_hunk, { desc = "Prev hunk" })
+
+vim.keymap.set({ "n", "v" }, "<leader>hl", ":.GBrowse master:%", { desc = "Open permalink in remote" })
