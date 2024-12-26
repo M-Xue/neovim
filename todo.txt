@@ -7,12 +7,29 @@ better harpoon ui
 - which one
 - better file names in the finder window 
 󰀱
+- better marks 
+    - how many marks in a file
 
+highlight matching parenthesis
 
-comments
-get perma links
+c#
+biome
 
-grapple nvim??
+clean up colorschemes
+
+copilot + claude??
+speed up lazy.vim load up
+
+better harpoon??
+- grapple nvim??
+- best would be similar to harpoon
+    - have per file harpoons so ig keep harpoon
+    - then for each buffer have LABELED marks
+
+nice commit history for line under cursor
+- see list of commits, their messages and the option to diff their pr
+- be able to go to the pr on github
+
 octo nvim ??
 
 
