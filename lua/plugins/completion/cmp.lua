@@ -100,7 +100,7 @@ return {
 			cmp.setup({
 				enabled = is_cmp_enabled,
 				performance = {
-					max_view_entries = 15,
+					-- max_view_entries = 15,
 				},
 				preselect = cmp.PreselectMode.None,
 				-- completion = {

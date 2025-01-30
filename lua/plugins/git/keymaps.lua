@@ -30,6 +30,12 @@ vim.keymap.set(
 	":Telescope advanced_git_search diff_commit_line<cr>",
 	{ desc = "Git blame line history" }
 )
+vim.keymap.set(
+	"n",
+	"<leader>h<c-b>",
+	":Telescope advanced_git_search diff_commit_file<cr>",
+	{ desc = "Git blame file history" }
+)
 
 vim.keymap.set("n", "<leader>ht", gitsigns.toggle_deleted, { desc = "Toggle deleted" })
 

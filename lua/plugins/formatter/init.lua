@@ -10,13 +10,6 @@ local formatters = {
 
 -- https://github.com/stevearc/conform.nvim/issues/92#issuecomment-2077222348
 local function format_git_modified_lines()
-	-- local ignore_filetypes = { "lua" }
-	local ignore_filetypes = {}
-	if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
-		vim.notify("range formatting for " .. vim.bo.filetype .. " not working properly.")
-		return
-	end
-
 	local hunks = require("gitsigns").get_hunks()
 	if hunks == nil then
 		return
@@ -91,16 +84,16 @@ return {
 					go = { "goimports-reviser", "golines", "gofumpt" },
 					markdown = { "markdownlint" },
 				},
-				--[[
-				format_on_save = {
-					lsp_fallback = true,
-					async = false,
-					timeout_ms = 500,
-				},
-				--
-				--]]
 				log_level = vim.log.levels.ERROR,
 				notify_on_error = true,
+				-- format_on_save = {
+				-- 	lsp_fallback = true,
+				-- 	async = false,
+				-- 	timeout_ms = 500,
+				-- },
+				--[[
+				--
+				--]]
 				-- formatters = {
 				-- 	prettierd = {
 				-- 		-- https://github.com/stevearc/conform.nvim/blob/0e61fc88f725b4411e63b43470a397c6102534c7/lua/conform/formatters/prettierd.lua

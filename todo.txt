@@ -1,47 +1,21 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-better harpoon ui 
-- marks 
-- how many 
-- which one
-- better file names in the finder window 
-󰀱
-- better marks 
-    - how many marks in a file
+fix ranged formatting
+- https://prettier.io/docs/en/options.html#range
+- https://www.reddit.com/r/neovim/comments/1giylfd/i_cant_make_range_formatting_work/
 
 highlight matching parenthesis
 
-c#
-biome
+errors not working with telescope
 
-clean up colorschemes
+multi cursor understanding
+figureout multiselect and multicursor
+https://github.com/mg979/vim-visual-multi
+- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
+multcursor nvim
 
-copilot + claude??
-speed up lazy.vim load up
-
-better harpoon??
-- grapple nvim??
-- best would be similar to harpoon
-    - have per file harpoons so ig keep harpoon
-    - then for each buffer have LABELED marks
-
-nice commit history for line under cursor
-- see list of commits, their messages and the option to diff their pr
-- be able to go to the pr on github
-
-octo nvim ??
-
-
-fix cd not respecting root
-
-toggle qfl
-
-fix eslint
-add base prettier file
-
-
-
+check if grep syntax is working for telescope and add the synatx to the tcheatsheet
 get better at sed and grep
 subsitutue command 
 search replace
@@ -50,23 +24,35 @@ can use substitution on multiple lines with call back to stored values like sed
 - 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
 
-figureout multiselect and multicursor
-https://github.com/mg979/vim-visual-multi
-- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
-
 get rid of that markdown rule about the long line
-
 Snippets for:
 - Astro 
 - Svelte
 - Markdown
 
+
+marks nvim 
+- only show local marks 
+
+
+clean up colorschemes
+
+copilot + claude??
+
+
+
+
+
+
+c# do this at work
+
+octo nvim ?? do this at work
+- review prs in nvim
+
+
+speed up lazy.vim load up
 Learn lazy nvim and clean up all the plugins
 https://github.com/adibhanna/nvim
-
-clean up lsp configs
-
-'keymap' stuff
 
 
 

@@ -5,12 +5,21 @@ const m: { exports?: any } = {};
 m.exports = class extends Foo {
   prompting() {
     console.log("hello");
+
+
+
+
+
     const prompts = [{}];
     return prompts.map((a) => {});
   }
 };
 
 console.log("bar");
+
+
+
+
 
 function foo(a: number, b: string, c: string[]) {
   console.log(a);

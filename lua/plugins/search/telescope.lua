@@ -16,8 +16,8 @@ return {
 					trouble.open("quickfix")
 				end
 			end
-            local open_with_trouble = require("trouble.sources.telescope").open
-            local add_to_trouble = require("trouble.sources.telescope").add
+			local open_with_trouble = require("trouble.sources.telescope").open
+			local add_to_trouble = require("trouble.sources.telescope").add
 
 			local simple_qfl_mapping = {
 				mappings = {
@@ -37,8 +37,8 @@ return {
 						mappings = {
 							i = {
 								["<c-q>"] = smart_send_and_open_qfl,
-                                ["<c-o>"] = open_with_trouble,
-                                ["<c-a>"] = add_to_trouble,
+								["<c-o>"] = open_with_trouble,
+								["<c-a>"] = add_to_trouble,
 							},
 						},
 					},
@@ -52,7 +52,7 @@ return {
 					lsp_references = simple_qfl_mapping,
 				},
 				defaults = {
-                    path_display = { "truncate" },
+					path_display = { "truncate" },
 					prompt_prefix = " 󰍉 ",
 					selection_caret = "   ",
 					entry_prefix = "   ",
@@ -92,8 +92,8 @@ return {
 							i = {
 								["<c-q>"] = smart_send_and_open_qfl,
 								["<c-f>"] = telescope_actions.to_fuzzy_refine,
-                                ["<c-o>"] = open_with_trouble,
-                                ["<c-a>"] = add_to_trouble,
+								["<c-o>"] = open_with_trouble,
+								["<c-a>"] = add_to_trouble,
 							},
 						},
 					},
