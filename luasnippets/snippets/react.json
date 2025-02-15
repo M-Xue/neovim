@@ -1,8 +1,13 @@
 {
 	"reactFunctionComponent": {
 		"prefix": "rafc",
-		"body": "\nconst ${TM_FILENAME_BASE} = () => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}\n\nexport default ${TM_FILENAME_BASE}",
-		"description": "Creates a React function component without PropTypes"
+		"body": "\nconst $1 = () => {\n\treturn (\n\t\t$2\n\t)\n}",
+		"description": "Creates a React function component"
+	},
+	"reactFunctionComponentExport": {
+		"prefix": "rafce",
+		"body": "\nconst ${TM_FILENAME_BASE} = () => {\n\treturn (\n\t\t$1\n\t)\n}\n\nexport default ${TM_FILENAME_BASE}",
+		"description": "Creates a React function component as default export"
 	},
 	"useState": {
 		"prefix": [
