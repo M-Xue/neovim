@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>fb", telescope.buffers, { desc = "Search buffers" }
 vim.keymap.set(
 	"n",
 	"<leader>fy",
-	":Telescope file_browser path=%:p:h select_buffer=true<CR> <ESC>",
+	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
 	{ desc = "File browser current buffer" }
 )
 

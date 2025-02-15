@@ -1,6 +1,9 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+
+move diffview side panel to right
+
 fix ranged formatting
 - https://prettier.io/docs/en/options.html#range
 - https://www.reddit.com/r/neovim/comments/1giylfd/i_cant_make_range_formatting_work/
@@ -23,31 +26,40 @@ https://www.youtube.com/watch?v=YzVmdJ41Xkg
 can use substitution on multiple lines with call back to stored values like sed
 - 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
-
-get rid of that markdown rule about the long line
 Snippets for:
 - Astro 
 - Svelte
 - Markdown
 
+fix telescope file search not showing top results at the top
+- maybe use snacks nvim???
+
+fix root dir in mono repo 
+- affects
+    - pwd
+    - lsp 
+    - linting 
+    - formatting
+    - harpoon name
+
+better cheatsheet labelled with the relevant feature
 
 marks nvim 
 - only show local marks 
 
-
 clean up colorschemes
 
 copilot + claude??
-
-
-
-
-
+avante nvim?
 
 c# do this at work
 
+debugger
+
 octo nvim ?? do this at work
 - review prs in nvim
+
+better pr reviews from editor
 
 
 speed up lazy.vim load up
