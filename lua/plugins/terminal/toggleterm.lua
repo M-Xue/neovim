@@ -6,7 +6,8 @@ return {
 			open_mapping = [[<C-\>]], -- To open a new terminal instance, prefix the terminal mapping with a number: [number][open_mapping]
 			start_in_insert = true,
 			auto_scroll = true,
-			direction = "horizontal",
+			-- direction = "horizontal",
+			direction = "float",
 			autochdir = true,
 			close_on_exit = true,
 			size = function(term)

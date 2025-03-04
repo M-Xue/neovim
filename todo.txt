@@ -1,16 +1,49 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-
 move diffview side panel to right
+change diffview viwer
+- add keymaps when diffview active???
+
+fix git history telescope
+telescrope git modified files
+telescope git staged
+
+octovim
+- change keymaps when review mode?
+
+clean up keymaps
+- add them all back into one file???
+
+^ same with lsp
+
+
+check previous commits with telescope 
+- one for file
+- one for repo
+
+telescrope file finder bug
+telescope grepping stuff (exlducing files)
+
+clean up color
+- tokyo
+- flatten satus bar and make all themes have the same ui so dont have to keep reinitialaizing plugins
+
+marks.nvim
+- keymaps to show local marks, show all marks and show global marks
+- bookmarks?
+
+easy way to move the orientation of QFL
 
 fix ranged formatting
 - https://prettier.io/docs/en/options.html#range
 - https://www.reddit.com/r/neovim/comments/1giylfd/i_cant_make_range_formatting_work/
 
-highlight matching parenthesis
+fix formatting for work and linting for work
+- maybe do custom linting or formatting that just works on my local + linitng from work
+^ need this for both js and c#
 
-errors not working with telescope
+highlight matching parenthesis
 
 multi cursor understanding
 figureout multiselect and multicursor
@@ -56,17 +89,9 @@ c# do this at work
 
 debugger
 
-octo nvim ?? do this at work
-- review prs in nvim
-
-better pr reviews from editor
-
-
 speed up lazy.vim load up
 Learn lazy nvim and clean up all the plugins
 https://github.com/adibhanna/nvim
-
-
 
 -- this may be the best looking nvim styling I have seen
 -- - https://www.youtube.com/watch?v=NkQnPuidxWY
