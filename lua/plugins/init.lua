@@ -35,7 +35,7 @@ local plugins = {
 	require("plugins.lualine").plugin,
 	require("plugins.tabby"),
 	require("plugins.icons"),
-	require("plugins.barbecue"),
+	-- require("plugins.barbecue"), -- Use nvim-navic instead
 	require("plugins.indent-blankline"),
 
 	require("plugins.textobjects"),
@@ -45,7 +45,7 @@ local plugins = {
 	require("plugins.whichkey"),
 	require("plugins.cheatsheet"),
 
-	require("plugins.terminal"),
+	require("plugins.toggleterm"),
 
 	{ "RRethy/vim-illuminate" },
 	{ "unblevable/quick-scope" }, -- Unqiue character highlight

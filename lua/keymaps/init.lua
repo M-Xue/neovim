@@ -26,13 +26,17 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
 
 -- This will remove all diagnostics so you need to do some text action to get them back
-vim.keymap.set("n", "<leader>,", require("plugins.linter").toggle_spell_check, { desc = "Toggle spell check linter" })
-
-require("plugins.git.keymaps")
-require("plugins.search.keymaps")
-require("plugins.terminal.keymaps")
-require("plugins.navigation.keymaps")
+vim.keymap.set(
+	"n",
+	"<leader>,",
+	require("plugins.nvim-lint").toggle_spell_check,
+	{ desc = "Toggle spell check linter" }
+)
 
 -- LSP
 -- g: LSP
 -- e: Diagnostics
+require("keymaps.git")
+require("keymaps.navigation")
+require("keymaps.telescope")
+require("keymaps.toggleterm")
