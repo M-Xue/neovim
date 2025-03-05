@@ -28,13 +28,11 @@ return {
 
 			dashboard.section.buttons.val = {
 				dashboard.button("f", "󰈞   Find file", ":Telescope find_files<CR>"),
+				dashboard.button("h", "󰈞   Harpoon", ":Telescope find_files<CR>"),
 				dashboard.button("b", "   Browse files", ":Telescope file_browser<CR><esc>"),
-				-- dashboard.button("e", "   New file", ":ene <BAR> startinsert <CR>"),
 				dashboard.button("w", "󰬴   Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
 				dashboard.button("t", "   Find todo", ":TodoTelescope<CR>"),
 				dashboard.button("r", "   Recently opened files", ":Telescope oldfiles<CR>"),
-				dashboard.button("p", "󰅩   Find project", ":Telescope projects<CR>"),
-				dashboard.button("d", "   Change directories", ":cd "),
 				dashboard.button(
 					"c",
 					"   Config",

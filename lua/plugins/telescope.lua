@@ -107,7 +107,6 @@ return {
 			})
 			telescope.load_extension("file_browser")
 			telescope.load_extension("toggleterm")
-			telescope.load_extension("projects")
 			telescope.load_extension("undo")
 			telescope.load_extension("advanced_git_search")
 			telescope.load_extension("live_grep_args")

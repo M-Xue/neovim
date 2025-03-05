@@ -21,7 +21,7 @@ return {
 				},
 				opleader = {
 					line = "<leader>/",
-					-- block = "<leader>;", 
+					-- block = "<leader>;",
 				},
 			})
 		end,

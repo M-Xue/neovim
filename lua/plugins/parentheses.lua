@@ -30,18 +30,6 @@ return {
 		},
 	},
 	{
-		"utilyre/sentiment.nvim", -- Highlight matching parentheses
-		version = "*",
-		event = "VeryLazy", -- keep for lazy loading
-		init = function()
-			-- `matchparen.vim` needs to be disabled manually in case of lazy loading
-			vim.g.loaded_matchparen = 1
-		end,
-		config = function()
-			require("sentiment").enable()
-		end,
-	},
-	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",

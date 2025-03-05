@@ -12,18 +12,43 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	require("plugins.ui.colorscheme"),
+	require("plugins.colorscheme"),
 	require("plugins.treesitter"),
 	require("plugins.language_support"),
-	require("plugins.linter").plugins,
-	require("plugins.formatter"),
-	require("plugins.completion"),
-	require("plugins.navigation"),
-	require("plugins.search"),
+
+	require("plugins.conform"),
+	require("plugins.nvim-lint").plugins,
+
+	require("plugins.cmp"),
+
+	require("plugins.nvim-tree").plugin,
+	require("plugins.trouble"),
+	require("plugins.marks"),
+	require("plugins.harpoon"),
+	require("plugins.numb"),
+
+	require("plugins.telescope"),
+	require("plugins.spectre"),
 	require("plugins.git"),
-	require("plugins.ui"),
-	require("plugins.editing"),
+
+	require("plugins.alpha"),
+	require("plugins.lualine").plugin,
+	require("plugins.tabby"),
+	require("plugins.icons"),
+	require("plugins.barbecue"),
+	require("plugins.indent-blankline"),
+
+	require("plugins.textobjects"),
+	require("plugins.parentheses"),
+	require("plugins.comments"),
+	require("plugins.zenmode"),
+	require("plugins.whichkey"),
+	require("plugins.cheatsheet"),
+
 	require("plugins.terminal"),
+
+	{ "RRethy/vim-illuminate" },
+	{ "unblevable/quick-scope" }, -- Unqiue character highlight
 }
 
 require("lazy").setup(plugins)
