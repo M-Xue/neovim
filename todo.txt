@@ -26,10 +26,11 @@ marks.nvim
 - bookmarks?
 
 
+harpoon in alpha nvom
 
 
 
-
+clean up pluigins
 
 clean up keymaps
 - add them all back into one file???
@@ -44,9 +45,6 @@ clean up color
 
 
 
-
-
-highlight matching parenthesis
 
 for lualine, make sure the file name is always visible and takes prcedence
 - remove all of the right side if too small
