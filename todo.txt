@@ -25,16 +25,15 @@ marks.nvim
 - keymaps to show local marks, show all marks and show global marks
 - bookmarks?
 
+harpoon in alpha nvim
 
-harpoon in alpha nvom
+undoredo tree
 
 
 
-clean up pluigins
+clean up lsp files
 
-clean up keymaps
-- add them all back into one file???
-^ same with lsp
+fix diagnostic error icons/symbols
 
 clean up color
 - tokyo
@@ -46,8 +45,16 @@ clean up color
 
 
 
+
+
+
+
+
+
+
 for lualine, make sure the file name is always visible and takes prcedence
 - remove all of the right side if too small
+- get rid of the lua line fancy styling (pointed arrows and stuff)
 
 for lualine: 
 - octovim mode

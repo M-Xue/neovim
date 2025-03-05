@@ -29,7 +29,6 @@ vim.keymap.set(
 	{ desc = "Grep buffer word under cursor" }
 )
 vim.keymap.set("n", "<leader>fz", telescope.current_buffer_fuzzy_find, { desc = "Fzf buffer" })
-vim.keymap.set("n", "<leader>fs", ":Spectre<cr>", { desc = "Search and replace" })
 
 -- Navigation
 vim.keymap.set("n", "<leader>fm", telescope.marks, { desc = "Search marks" })
