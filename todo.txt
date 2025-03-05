@@ -1,39 +1,69 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-move diffview side panel to right
-change diffview viwer
-- add keymaps when diffview active???
+functionality
+    file history
+    line history
+    range selection history
+    diff against commit
+    diff against branch
+    previous commits (commit history) (i.e., go to that commit and see all the diffs)
+implementation
+    telescope 
+    diffview
+    AdvancedGitSearch
 
-fix git history telescope
-telescrope git modified files
-telescope git staged
+GitBrowse browser for current commit
+- currently we only have it for against master?
 
 octovim
-- change keymaps when review mode?
-
-clean up keymaps
-- add them all back into one file???
-
-^ same with lsp
-
-
-check previous commits with telescope 
-- one for file
-- one for repo
-
-telescrope file finder bug
-telescope grepping stuff (exlducing files)
-
-clean up color
-- tokyo
-- flatten satus bar and make all themes have the same ui so dont have to keep reinitialaizing plugins
+- Review mode
+- keep diffs in review mode
+- add comments
 
 marks.nvim
 - keymaps to show local marks, show all marks and show global marks
 - bookmarks?
 
-easy way to move the orientation of QFL
+
+
+
+
+
+
+clean up keymaps
+- add them all back into one file???
+^ same with lsp
+
+clean up color
+- tokyo
+- flatten satus bar and make all themes have the same ui so dont have to keep reinitialaizing plugins
+- remove custom styling
+
+
+
+
+
+
+
+highlight matching parenthesis
+
+for lualine, make sure the file name is always visible and takes prcedence
+- remove all of the right side if too small
+
+for lualine: 
+- octovim mode
+- harpoon?
+- lsp
+
+
+
+
+
+
+
+telescrope file finder bug
+telescope grepping stuff (exlducing files)
 
 fix ranged formatting
 - https://prettier.io/docs/en/options.html#range
@@ -43,7 +73,29 @@ fix formatting for work and linting for work
 - maybe do custom linting or formatting that just works on my local + linitng from work
 ^ need this for both js and c#
 
-highlight matching parenthesis
+fix root dir in mono repo 
+- affects
+    - pwd
+    - lsp 
+    - linting 
+    - formatting
+    - harpoon name
+
+
+
+
+
+
+c# do this at work
+
+golang
+
+debugger
+
+
+
+
+
 
 multi cursor understanding
 figureout multiselect and multicursor
@@ -59,35 +111,22 @@ https://www.youtube.com/watch?v=YzVmdJ41Xkg
 can use substitution on multiple lines with call back to stored values like sed
 - 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
+
+
+
+
 Snippets for:
 - Astro 
 - Svelte
 - Markdown
 
-fix telescope file search not showing top results at the top
-- maybe use snacks nvim???
 
-fix root dir in mono repo 
-- affects
-    - pwd
-    - lsp 
-    - linting 
-    - formatting
-    - harpoon name
 
 better cheatsheet labelled with the relevant feature
-
-marks nvim 
-- only show local marks 
-
-clean up colorschemes
 
 copilot + claude??
 avante nvim?
 
-c# do this at work
-
-debugger
 
 speed up lazy.vim load up
 Learn lazy nvim and clean up all the plugins
