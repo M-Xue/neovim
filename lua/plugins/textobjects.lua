@@ -1,3 +1,8 @@
 return {
-	{ "chrisgrieser/nvim-various-textobjs", opts = { useDefaultKeymaps = true } },
+	{
+		"chrisgrieser/nvim-various-textobjs",
+		opts = { keymaps = {
+			useDefaults = true,
+		} },
+	},
 }
