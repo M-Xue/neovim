@@ -53,43 +53,4 @@ M.setup_diagnostics = function()
 	vim.diagnostic.config(M.config)
 end
 
-M.init_diagnostics_keymaps = function(bufnr)
-	vim.keymap.set(
-		"n",
-		"<leader>ej",
-		vim.diagnostic.goto_next,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to next diagnostic" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>ek",
-		vim.diagnostic.goto_prev,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to previous diagnostic" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>el",
-		require("telescope.builtin").diagnostics,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Find diagnostics" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>eL",
-		"<cmd>Trouble diagnostics<cr>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "List diagnostics" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>ei",
-		vim.diagnostic.open_float,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Get diagnostic info" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>ev",
-		toggle_diagnostics_virtual_text,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Toggle diagnostics virtual text" }
-	)
-end
-
 return M
