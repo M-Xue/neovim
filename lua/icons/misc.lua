@@ -135,3 +135,17 @@ local icons = {
 		removed = " ",
 	},
 }
+
+-- M.filled_signs = {
+-- 	{ name = "DiagnosticSignError", text = "" },
+-- 	{ name = "DiagnosticSignWarn", text = "" },
+-- 	{ name = "DiagnosticSignHint", text = "" },
+-- 	{ name = "DiagnosticSignInfo", text = "" },
+-- }
+
+-- M.outline_signs = {
+-- 	{ name = "DiagnosticSignError", text = "" },
+-- 	{ name = "DiagnosticSignWarn", text = "" },
+-- 	{ name = "DiagnosticSignHint", text = "" },
+-- 	{ name = "DiagnosticSignInfo", text = "" },
+-- }

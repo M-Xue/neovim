@@ -12,8 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	require("plugins.colorscheme"),
 	require("plugins.mason"),
+	require("plugins.colorscheme"),
 	require("plugins.treesitter"),
 	require("plugins.lsp"),
 

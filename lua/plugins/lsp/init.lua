@@ -5,41 +5,36 @@ return {
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 				border = "rounded",
 			})
-
 			vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 				border = "rounded",
 			})
 
-			require("plugins.lsp.diagnostics").setup_diagnostics()
+			-- For documentation, use the following command -> :help vim.diagnostic
+			vim.diagnostic.config({
+				virtual_text = false,
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = "",
+						[vim.diagnostic.severity.WARN] = "",
+						[vim.diagnostic.severity.INFO] = "",
+						[vim.diagnostic.severity.HINT] = "",
+					},
+				},
+
+				update_in_insert = true,
+				severity_sort = true,
+				float = {
+					focusable = false,
+					style = "minimal",
+					border = "rounded",
+					source = true,
+					header = "",
+					prefix = "",
+				},
+			})
+
 			require("plugins.lsp.lspconfig")
 		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"neovim/nvim-lspconfig",
-		},
-		opts = {
-			ensure_installed = {
-				"marksman",
-				"mdx_analyzer",
-
-				"html",
-				"emmet_language_server",
-				"cssls",
-				"cssmodules_ls",
-				"tailwindcss",
-				"jsonls",
-				"astro",
-				"svelte",
-				"ts_ls",
-
-				"gopls",
-				"lua_ls",
-			},
-			automatic_installation = true,
-		},
 	},
 	{
 		"hedyhli/outline.nvim",

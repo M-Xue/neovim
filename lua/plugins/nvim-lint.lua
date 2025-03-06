@@ -1,13 +1,5 @@
 local M = {}
 
-local linters = {
-	"eslint_d",
-	"stylelint",
-	"golangci-lint",
-	"markdownlint-cli2",
-	"cspell",
-}
-
 M.linters_by_ft = {
 	javascript = { "eslint_d" },
 	javascriptreact = { "eslint_d" },
@@ -30,17 +22,6 @@ for key, value in pairs(M.linters_with_spell_check) do
 end
 
 M.plugins = {
-	{
-		"rshkarin/mason-nvim-lint",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"mfussenegger/nvim-lint",
-		},
-		opts = {
-			ensure_installed = linters,
-			automatic_installation = true,
-		},
-	},
 	{
 		"mfussenegger/nvim-lint",
 		config = function()

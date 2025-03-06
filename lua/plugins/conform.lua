@@ -1,13 +1,3 @@
-local formatters = {
-	"prettierd",
-	"prettier",
-	"stylua",
-	"goimports-reviser",
-	"golines",
-	"gofumpt",
-	"markdownlint-cli2",
-}
-
 -- https://github.com/stevearc/conform.nvim/issues/92#issuecomment-2077222348
 local function format_git_modified_lines()
 	local hunks = require("gitsigns").get_hunks()
@@ -52,17 +42,6 @@ end
 -- })
 
 return {
-	{
-		"zapling/mason-conform.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"stevearc/conform.nvim",
-		},
-		opts = {
-			ensure_installed = formatters,
-			automatic_installation = true,
-		},
-	},
 	{
 		"stevearc/conform.nvim",
 		config = function()
