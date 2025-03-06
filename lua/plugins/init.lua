@@ -22,7 +22,7 @@ local plugins = {
 
 	require("plugins.cmp"),
 
-	require("plugins.nvim-tree").plugin,
+	require("plugins.nvim-tree"),
 	require("plugins.trouble"),
 	require("plugins.marks"),
 	require("plugins.harpoon"),
@@ -33,10 +33,9 @@ local plugins = {
 	require("plugins.git"),
 
 	require("plugins.alpha"),
-	require("plugins.lualine").plugin,
+	require("plugins.lualine"),
 	require("plugins.tabby"),
 	require("plugins.icons"),
-	-- require("plugins.barbecue"), -- Use nvim-navic instead
 	require("plugins.indent-blankline"),
 
 	require("plugins.textobjects"),

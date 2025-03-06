@@ -29,28 +29,7 @@ harpoon in alpha nvim
 
 undoredo tree
 
-
-
-clean up lsp files
-
-fix diagnostic error icons/symbols
-
-clean up color
-- tokyo
 - flatten satus bar and make all themes have the same ui so dont have to keep reinitialaizing plugins
-- remove custom styling
-
-
-
-
-
-
-
-
-
-
-
-
 
 for lualine, make sure the file name is always visible and takes prcedence
 - remove all of the right side if too small
