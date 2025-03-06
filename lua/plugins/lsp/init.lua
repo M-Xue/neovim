@@ -2,9 +2,16 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("plugins.language_support.lsp.handlers")
-			require("plugins.language_support.lsp.diagnostics").setup_diagnostics()
-			require("plugins.language_support.lsp.lspconfig")
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+				border = "rounded",
+			})
+
+			vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+				border = "rounded",
+			})
+
+			require("plugins.lsp.diagnostics").setup_diagnostics()
+			require("plugins.lsp.lspconfig")
 		end,
 	},
 	{
@@ -60,5 +67,24 @@ return {
 			autocmd = { enabled = true },
 		},
 	},
-	require("plugins.language_support.lsp.winbar"),
+	{
+		"SmiteshP/nvim-navic",
+		event = "LspAttach",
+		config = function()
+			vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+			-- set_navic_highlights()
+			require("nvim-navic").setup({
+				enabled = true,
+				separator = " > ",
+				highlight = true,
+				depth_limit = 5,
+				depth_limit_indicator = "..",
+				lazy_update_context = true,
+				icons = require("icons.lspkind").icons,
+				format_text = function(text)
+					return " " .. text
+				end,
+			})
+		end,
+	},
 }

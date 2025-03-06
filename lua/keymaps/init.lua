@@ -40,9 +40,7 @@ vim.keymap.set("n", "<leader>R", ":Spectre<cr>", { desc = "Search and replace" }
 -- LSP
 -- g: LSP
 -- e: Diagnostics
---[[
 require("keymaps.git")
 require("keymaps.navigation")
 require("keymaps.telescope")
 require("keymaps.toggleterm")
-]]

@@ -1,6 +1,6 @@
 local M = {}
 
-local init_lsp_keymaps = function(bufnr)
+M.init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>r",
@@ -38,7 +38,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gd",
-        ":Telescope lsp_definitions show_line=false<cr>",
+		":Telescope lsp_definitions show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find definition" }
 	)
 	vim.keymap.set(
@@ -51,7 +51,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gt",
-        ":Telescope lsp_type_definitions show_line=false<cr>",
+		":Telescope lsp_type_definitions show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find type definition" }
 	)
 	vim.keymap.set(
@@ -64,7 +64,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gi",
-        ":Telescope lsp_implementations show_line=false<cr>",
+		":Telescope lsp_implementations show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find implementation" }
 	)
 	vim.keymap.set(
@@ -77,7 +77,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gr",
-        ":Telescope lsp_references show_line=false<cr>",
+		":Telescope lsp_references show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find reference" }
 	)
 	vim.keymap.set(
@@ -90,7 +90,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>gc",
-        ":Telescope lsp_incoming_calls show_line=false<cr>",
+		":Telescope lsp_incoming_calls show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find incoming calls" }
 	)
 	vim.keymap.set(
@@ -103,7 +103,7 @@ local init_lsp_keymaps = function(bufnr)
 	vim.keymap.set(
 		"n",
 		"<leader>go",
-        ":Telescope lsp_outgoing_calls show_line=false<cr>",
+		":Telescope lsp_outgoing_calls show_line=false<cr>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Find outgoing calls" }
 	)
 	vim.keymap.set(
@@ -121,6 +121,43 @@ local init_lsp_keymaps = function(bufnr)
 	)
 end
 
-M.init_lsp_keymaps = init_lsp_keymaps
+M.init_diagnostics_keymaps = function(bufnr)
+	vim.keymap.set(
+		"n",
+		"<leader>ej",
+		vim.diagnostic.goto_next,
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to next diagnostic" }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>ek",
+		vim.diagnostic.goto_prev,
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to previous diagnostic" }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>el",
+		require("telescope.builtin").diagnostics,
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Find diagnostics" }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>eL",
+		"<cmd>Trouble diagnostics<cr>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "List diagnostics" }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>ei",
+		vim.diagnostic.open_float,
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Get diagnostic info" }
+	)
+	-- vim.keymap.set(
+	-- 	"n",
+	-- 	"<leader>ev",
+	-- 	toggle_diagnostics_virtual_text,
+	-- 	{ noremap = true, silent = true, buffer = bufnr, desc = "Toggle diagnostics virtual text" }
+	-- )
+end
 
 return M
