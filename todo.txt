@@ -1,16 +1,92 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+diffview (Diffview filehistory) + telescope on CAPS
+    file history
+    range selection history
 
-move diffview side panel to right
+diffview + ags
+    diff against commit
+    - ags does this for commit message but not hash. hash might as well be in command line and go straight to diffview
+    diff against branch
+
+telescope picker for unstaged files
+- Telescope git_status
+
+GitBrowse browser for current commit
+- currently we only have it for against master?
+
+octovim
+- Review mode
+- keep diffs in review mode
+- add comments
+
+clean up gitsigns config
+
+marks.nvim
+- keymaps to show local marks, show all marks and show global marks
+- bookmarks?
+
+harpoon border radius make rounded
+
+undoredo tree
+
+- flatten satus bar and make all themes have the same ui so dont have to keep reinitialaizing plugins
+
+for lualine, make sure the file name is always visible and takes prcedence
+- remove all of the right side if too small
+- get rid of the lua line fancy styling (pointed arrows and stuff)
+
+for lualine: 
+- octovim mode
+- lsp
+
+open all modified but unsaved files
+
+replace harpoon picker with telescope
+
+setter getter snippets
+
+
+
+
+
+
+telescrope file finder bug
+telescope grepping stuff (exlducing files)
 
 fix ranged formatting
 - https://prettier.io/docs/en/options.html#range
 - https://www.reddit.com/r/neovim/comments/1giylfd/i_cant_make_range_formatting_work/
 
-highlight matching parenthesis
+fix formatting for work and linting for work
+- maybe do custom linting or formatting that just works on my local + linitng from work
+^ need this for both js and c#
 
-errors not working with telescope
+fix root dir in mono repo 
+- affects
+    - pwd
+    - lsp 
+    - linting 
+    - formatting
+
+
+
+
+
+
+c# do this at work
+fix useState caps snippet
+- i think this is a work think not an nvim thing
+
+golang
+
+debugger
+
+
+
+
+
 
 multi cursor understanding
 figureout multiselect and multicursor
@@ -26,47 +102,26 @@ https://www.youtube.com/watch?v=YzVmdJ41Xkg
 can use substitution on multiple lines with call back to stored values like sed
 - 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
+
+
+
+
 Snippets for:
 - Astro 
 - Svelte
 - Markdown
 
-fix telescope file search not showing top results at the top
-- maybe use snacks nvim???
 
-fix root dir in mono repo 
-- affects
-    - pwd
-    - lsp 
-    - linting 
-    - formatting
-    - harpoon name
 
 better cheatsheet labelled with the relevant feature
 
-marks nvim 
-- only show local marks 
-
-clean up colorschemes
-
 copilot + claude??
 avante nvim?
-
-c# do this at work
-
-debugger
-
-octo nvim ?? do this at work
-- review prs in nvim
-
-better pr reviews from editor
 
 
 speed up lazy.vim load up
 Learn lazy nvim and clean up all the plugins
 https://github.com/adibhanna/nvim
-
-
 
 -- this may be the best looking nvim styling I have seen
 -- - https://www.youtube.com/watch?v=NkQnPuidxWY
