@@ -1,17 +1,17 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-functionality
+diffview (Diffview filehistory) + telescope on CAPS
     file history
-    line history
     range selection history
+
+diffview + ags
     diff against commit
+    - ags does this for commit message but not hash. hash might as well be in command line and go straight to diffview
     diff against branch
-    previous commits (commit history) (i.e., go to that commit and see all the diffs)
-implementation
-    telescope 
-    diffview
-    AdvancedGitSearch
+
+telescope picker for unstaged files
+- Telescope git_status
 
 GitBrowse browser for current commit
 - currently we only have it for against master?
@@ -21,11 +21,13 @@ octovim
 - keep diffs in review mode
 - add comments
 
+clean up gitsigns config
+
 marks.nvim
 - keymaps to show local marks, show all marks and show global marks
 - bookmarks?
 
-harpoon in alpha nvim
+harpoon border radius make rounded
 
 undoredo tree
 
@@ -37,9 +39,13 @@ for lualine, make sure the file name is always visible and takes prcedence
 
 for lualine: 
 - octovim mode
-- harpoon?
 - lsp
 
+open all modified but unsaved files
+
+replace harpoon picker with telescope
+
+setter getter snippets
 
 
 
@@ -63,7 +69,6 @@ fix root dir in mono repo
     - lsp 
     - linting 
     - formatting
-    - harpoon name
 
 
 
@@ -71,6 +76,8 @@ fix root dir in mono repo
 
 
 c# do this at work
+fix useState caps snippet
+- i think this is a work think not an nvim thing
 
 golang
 

@@ -28,7 +28,11 @@ return {
 
 			dashboard.section.buttons.val = {
 				dashboard.button("f", "󰈞   Find file", ":Telescope find_files<CR>"),
-				dashboard.button("h", "󰈞   Harpoon", ":Telescope find_files<CR>"),
+				dashboard.button(
+					"h",
+					"󰀱   Harpoon",
+					":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<CR>"
+				),
 				dashboard.button("b", "   Browse files", ":Telescope file_browser<CR><esc>"),
 				dashboard.button("w", "󰬴   Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
 				dashboard.button("t", "   Find todo", ":TodoTelescope<CR>"),
@@ -36,7 +40,10 @@ return {
 				dashboard.button(
 					"c",
 					"   Config",
-					":cd " .. require("config_util").get_config_path() .. "<cr>:Telescope find_files<cr>"
+					":cd " .. require("config_util").get_config_path() .. "<cr>:Telescope find_files<cr>",
+					{
+						silent = true,
+					}
 				),
 				dashboard.button("`", "   Quit NVIM", ":qa<CR>"),
 			}

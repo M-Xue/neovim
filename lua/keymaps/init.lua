@@ -2,18 +2,11 @@ local util = require("config_util")
 
 vim.keymap.set("n", "<leader>.", util.print_attached_clients, { desc = "See attached clients" })
 
---[[
-local colorscheme_picker = require("themes.picker").colorscheme_picker
-vim.keymap.set("n", "<leader>\\", colorscheme_picker, { desc = "Colorscheme menu" })
-local print_curr_theme = require("themes.util").print_curr_theme
-vim.keymap.set("n", "<leader>|", print_curr_theme, { desc = "Current colorscheme" })
-]]
-
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>`", ":wa<CR>:qa<CR>", { desc = "Quit NeoVim" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close buffer" }) -- TODO dont make this close the buffer if it is the last buffer open -- <leader>q closes windows. If you only have one window, you will exit NVim
+vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>p", ":Trouble qflist toggle<CR>", { desc = "Toggle quickfix list" })
 vim.keymap.set("n", "<leader>?", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
 vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
@@ -42,5 +35,7 @@ vim.keymap.set("n", "<leader>R", ":Spectre<cr>", { desc = "Search and replace" }
 -- e: Diagnostics
 require("keymaps.git")
 require("keymaps.navigation")
+require("keymaps.harpoon")
+require("keymaps.marks")
 require("keymaps.telescope")
 require("keymaps.toggleterm")

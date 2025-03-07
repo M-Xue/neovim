@@ -134,12 +134,9 @@ M.init_diagnostics_keymaps = function(bufnr)
 		vim.diagnostic.goto_prev,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to previous diagnostic" }
 	)
-	vim.keymap.set(
-		"n",
-		"<leader>el",
-		require("telescope.builtin").diagnostics,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Find diagnostics" }
-	)
+	vim.keymap.set("n", "<leader>el", function()
+		require("telescope.builtin").diagnostics({ severity_bound = 0 })
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find diagnostics" })
 	vim.keymap.set(
 		"n",
 		"<leader>eL",

@@ -1,5 +1,6 @@
 const fooreact = () => {
   const [test, setTest] = useState("r");
+  const [isActive, setIsActive] = useState("asd");
   return <div></div>;
 };
 
