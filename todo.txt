@@ -1,6 +1,10 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+leader el should just show errors?
+
+fix telescoope showing the wrong file man so annoying
+
 diffview (Diffview filehistory) + telescope on CAPS
     file history
     range selection history

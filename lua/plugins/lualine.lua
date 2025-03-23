@@ -1,3 +1,4 @@
+local window_width_breakpoint = 80
 return {
 	{
 		"nvim-lualine/lualine.nvim",
@@ -8,8 +9,10 @@ return {
 				options = {
 					icons_enabled = true,
 					theme = "auto",
-					component_separators = { left = "", right = "" },
-					section_separators = { left = "", right = "" },
+					-- component_separators = { left = "", right = "" },
+					-- section_separators = { left = "", right = "" },
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
 					disabled_filetypes = {
 						statusline = { "NvimTree", "alpha" },
 						winbar = {},
@@ -58,11 +61,34 @@ return {
 								-- removed = { fg = colors.red },
 							},
 							-- cond = conditions.hide_in_width,
+							cond = function()
+								return vim.fn.winwidth(0) > window_width_breakpoint
+							end,
 						},
-						"filetype",
+						{
+							"filetype",
+							cond = function()
+								return vim.fn.winwidth(0) > window_width_breakpoint
+							end,
+						},
 					},
-					lualine_y = { "progress" },
-					lualine_z = { "location" },
+					lualine_y = {
+						{
+							"progress",
+							cond = function()
+								return vim.fn.winwidth(0) > window_width_breakpoint
+							end,
+						},
+					},
+					lualine_z = {
+						{
+							"location",
+							cond = function()
+								print(vim.fn.winwidth(0) > window_width_breakpoint)
+								return vim.fn.winwidth(0) > window_width_breakpoint
+							end,
+						},
+					},
 				},
 				inactive_sections = {
 					lualine_a = {},
