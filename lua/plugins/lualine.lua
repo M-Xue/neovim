@@ -1,4 +1,4 @@
-local window_width_breakpoint = 80
+local window_width_breakpoint = 90
 return {
 	{
 		"nvim-lualine/lualine.nvim",
@@ -84,7 +84,6 @@ return {
 						{
 							"location",
 							cond = function()
-								print(vim.fn.winwidth(0) > window_width_breakpoint)
 								return vim.fn.winwidth(0) > window_width_breakpoint
 							end,
 						},

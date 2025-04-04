@@ -40,7 +40,7 @@ return {
 				dashboard.button(
 					"c",
 					"   Config",
-					":cd " .. require("config_util").get_config_path() .. "<cr>:Telescope find_files<cr>",
+					":cd " .. require("_util").get_config_path() .. "<cr>:Telescope find_files<cr>",
 					{
 						silent = true,
 					}

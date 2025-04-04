@@ -2,12 +2,30 @@
 Nvim Clean Uptodo
 ==================================================
 leader el should just show errors?
+- shoulld have a way to show different levels of errors 
+- should have a way to show errors just for current file
+
+should be able to grep only harpoon files
+should be able to grep current directory
+
+fix highlighting of cmp menu
+
+telescipe harpoon should just show file name
+- or at least the file name should always be fuully visible
+
+keybind for focusing outline
+    - add other keybinds into cheatsheet
+
+cheatsheet nvimtree
+cheatsheet lazygit
 
 fix telescoope showing the wrong file man so annoying
 
 diffview (Diffview filehistory) + telescope on CAPS
     file history
     range selection history
+
+hotkey for stashing current file???
 
 diffview + ags
     diff against commit
@@ -35,19 +53,11 @@ harpoon border radius make rounded
 
 undoredo tree
 
-- flatten satus bar and make all themes have the same ui so dont have to keep reinitialaizing plugins
-
-for lualine, make sure the file name is always visible and takes prcedence
-- remove all of the right side if too small
-- get rid of the lua line fancy styling (pointed arrows and stuff)
-
 for lualine: 
 - octovim mode
 - lsp
 
-open all modified but unsaved files
-
-replace harpoon picker with telescope
+picker for all modified but unsaved files
 
 setter getter snippets
 
