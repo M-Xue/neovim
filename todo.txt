@@ -18,25 +18,38 @@ keybind for focusing outline
 
 cheatsheet nvimtree
 cheatsheet lazygit
+fix cmp highlighting
 
-fix telescoope showing the wrong file man so annoying
 
-diffview (Diffview filehistory) + telescope on CAPS
-    file history
-    range selection history
+see git history on visual selection
+
+Telescope git pickers built in
+- just add git as arg after
+
+
+
+
 
 hotkey for stashing current file???
 
 diffview + ags
     diff against commit
     - ags does this for commit message but not hash. hash might as well be in command line and go straight to diffview
-    diff against branch
+
+
 
 telescope picker for unstaged files
 - Telescope git_status
+^ turn into keymap
+
+
+
 
 GitBrowse browser for current commit
 - currently we only have it for against master?
+
+
+
 
 octovim
 - Review mode
@@ -66,40 +79,27 @@ setter getter snippets
 
 
 
+
+fix telescoope showing the wrong file man so annoying
 telescrope file finder bug
+
+
+
+
+
+
+
+
+
+
+
+
 telescope grepping stuff (exlducing files)
 
-fix ranged formatting
-- https://prettier.io/docs/en/options.html#range
-- https://www.reddit.com/r/neovim/comments/1giylfd/i_cant_make_range_formatting_work/
+specify a directory path and only grep in there
+https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
 
-fix formatting for work and linting for work
-- maybe do custom linting or formatting that just works on my local + linitng from work
-^ need this for both js and c#
-
-fix root dir in mono repo 
-- affects
-    - pwd
-    - lsp 
-    - linting 
-    - formatting
-
-
-
-
-
-
-c# do this at work
-fix useState caps snippet
-- i think this is a work think not an nvim thing
-
-golang
-
-debugger
-
-
-
-
+remove a lot of the keymaps and put them into cheatsheet instead
 
 
 multi cursor understanding
@@ -116,6 +116,56 @@ https://www.youtube.com/watch?v=YzVmdJ41Xkg
 can use substitution on multiple lines with call back to stored values like sed
 - 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
+better cheatsheet labelled with the relevant feature
+
+
+
+sed arguments in cheathseeet
+
+
+
+
+
+
+
+undoredo tree
+
+for lualine: 
+- octovim mode
+- lsp
+
+
+replace harpoon picker with telescope
+
+setter getter snippets
+
+
+
+
+
+
+
+fix ranged formatting
+- https://prettier.io/docs/en/options.html#range
+- https://www.reddit.com/r/neovim/comments/1giylfd/i_cant_make_range_formatting_work/
+
+fix formatting for work and linting for work
+- maybe do custom linting or formatting that just works on my local + linitng from work
+^ need this for both js and c#
+
+
+c# do this at work
+fix useState caps snippet
+- i think this is a work laptop thing not an nvim thing
+
+golang
+
+debugger
+
+
+
+
+
 
 
 
@@ -127,7 +177,6 @@ Snippets for:
 
 
 
-better cheatsheet labelled with the relevant feature
 
 copilot + claude??
 avante nvim?
