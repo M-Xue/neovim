@@ -7,6 +7,9 @@ return {
 				mappings = {
 					toggle = "<leader>mm",
 					delete_buf = "<leader>md",
+					next = "<leader>mj",
+					prev = "<leader>mk",
+					preview = "<leader>mp",
 				},
 				force_write_shada = true,
 			})
