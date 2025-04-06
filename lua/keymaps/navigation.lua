@@ -4,6 +4,12 @@ vim.keymap.set("n", "<leader>yf", ":NvimTreeFocus<CR>", { noremap = true, desc =
 vim.keymap.set("n", "<leader>yc", ":NvimTreeCollapse<CR>", { noremap = true, desc = "Collapse nvim-tree" })
 vim.keymap.set("n", "<leader>yF", ":NvimTreeFindFile<CR>", { noremap = true, desc = "Find file nvim-tree" })
 
+-- Outline
+vim.keymap.set("n", "<leader>oo", ":Outline<cr>", { desc = " Symbol Outline" })
+vim.keymap.set("n", "<leader>of", ":OutlineFocus<cr>", { desc = " Focus Outline" })
+vim.keymap.set("n", "<leader>oc", ":OutlineFocusCode<cr>", { desc = " Focus Code" })
+vim.keymap.set("n", "<leader>or", ":OutlineRefresh<cr>", { desc = " Refresh symbols" })
+
 -- Window Movement
 vim.keymap.set("n", "<leader>ss", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })

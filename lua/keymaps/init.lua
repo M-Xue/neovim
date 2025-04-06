@@ -12,7 +12,6 @@ vim.keymap.set("n", "<leader>?", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
 vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
 vim.keymap.set("n", "<leader>z", ":NoNeckPain<cr>", { desc = "Zen mode" })
-vim.keymap.set("n", "<leader>o", ":Outline<cr>", { desc = "Symbol Outline" })
 
 vim.keymap.set("v", "<leader>F", require("conform").format, { desc = "Format selection" })
 
