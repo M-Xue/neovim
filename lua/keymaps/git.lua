@@ -48,7 +48,7 @@ vim.keymap.set("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage buffer"
 vim.keymap.set("v", "<leader>hs", visual_stage, { desc = "Stage hunk" })
 
 vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Reset hunk" })
-vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer_index, { desc = "Reset buffer" })
+vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Reset buffer" })
 
 vim.keymap.set("n", "<leader>hj", gitsigns.next_hunk, { desc = "Next hunk" })
 vim.keymap.set("n", "<leader>hk", gitsigns.prev_hunk, { desc = "Prev hunk" })
