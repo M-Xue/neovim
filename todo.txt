@@ -1,10 +1,35 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+add ai
+- copilot 
+    - i want to be able to see the suggestion in cmp AND i want a keybinding to open a suggestion inline
+- avante 
+- augment
+
+
+
+get better at git diff handling (accepting rejecting and viewing) as well as git diff navigations
+- add to cheatsheet
+- i want to be able to hop around and cycle through git diffs 
+- i also want a sidebar to look at all current git diffs
+- i want them to be stacked and INLINE in the file so i dont need to deal with "ghost" buffers that are uneditable
+
+
+opencode and tmux and git worktrees
+
+
+
+
 https://www.reddit.com/r/neovim/comments/1lbzm1z/floaterm_beautiful_terminal_buffer_manager/
 vim-coach
 
-window of modified files or git edited files 
+window of modified files or git edited files in floating window
+move file tree into floating window
+
+try move everything into floating window
+better terminal manager in floating window
+maybe just use term inside nvim but have better terminal managmenet and keybindings
 
 fix cmp and make it look better
 - fix tab highlihgting
@@ -12,6 +37,9 @@ do the same with all the other pop up windows
 - error
 - lsp in insert mode and normal mode 
 - git blame
+
+change font to zeddotdev font
+change color scheme to be more minimal and black
 
 
 FIX TAB ISSUE
