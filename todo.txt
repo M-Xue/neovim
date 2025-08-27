@@ -6,6 +6,19 @@ add ai
     - i want to be able to see the suggestion in cmp AND i want a keybinding to open a suggestion inline
 - avante 
 - augment
+- checkout all ai plugins. there is a github repo 
+- check out code ocmpanion??
+
+the more important thing is to look at all the ai plugins
+you really want 3 things
+- a chatbot that has agent mode
+    - one for general purpose
+    - one for deep knowledge about your code base 
+- an inline code editing agent 
+    - has easy inline diffing for accepting proposed changes and jumping around diffs 
+- an inline autocomplete suggestion 
+    - one in cmp menu + has keybind to show virtual text 
+    - they both should be able to react on a comment you wrote right above it
 
 
 
