@@ -1,6 +1,152 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+add ai
+- copilot 
+    - i want to be able to see the suggestion in cmp AND i want a keybinding to open a suggestion inline
+- avante 
+- augment
+
+
+
+get better at git diff handling (accepting rejecting and viewing) as well as git diff navigations
+- add to cheatsheet
+- i want to be able to hop around and cycle through git diffs 
+- i also want a sidebar to look at all current git diffs
+- i want them to be stacked and INLINE in the file so i dont need to deal with "ghost" buffers that are uneditable
+
+
+opencode and tmux and git worktrees
+
+
+
+
+https://www.reddit.com/r/neovim/comments/1lbzm1z/floaterm_beautiful_terminal_buffer_manager/
+vim-coach
+
+window of modified files or git edited files in floating window
+move file tree into floating window
+
+try move everything into floating window
+better terminal manager in floating window
+maybe just use term inside nvim but have better terminal managmenet and keybindings
+
+fix cmp and make it look better
+- fix tab highlihgting
+do the same with all the other pop up windows
+- error
+- lsp in insert mode and normal mode 
+- git blame
+
+change font to zeddotdev font
+change color scheme to be more minimal and black
+
+
+FIX TAB ISSUE
+i think it has something to do with one of the parentheses plugins
+
+
+SPEED UP LAZY START UPP
+figure out lazy.vim
+- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
+https://www.youtube.com/watch?v=28FmViFye2I&t=154s
+https://www.youtube.com/watch?v=ybUE4D80XSk
+- this one shows events on when to lazy load formatters and linters
+figure out wtf lazy.nvim does
+https://www.youtube.com/watch?v=6mxWayq-s9I
+
+:Lazy profile
+
+
+GIT
+Telescope git pickers built in
+- just add git as arg after
+
+GitBrowse browser for current commit
+
+- currently we only have it for against master?
+clean up gitsigns config
+
+see git history on visual selection
+see git history on visual selection
+
+
+
+PR REVIEW
+octovim start review -> checkout -> diffview master 
+- need keymap for octo pr list "<leader>hO<cr>"
+- need keymap for octo checkout "<leader>hc<cr>"
+- already have keymap to diff agains a branch "hD"
+
+
+
+FIX UP LINTING AND FORMATTING
+Formatting
+- If formatting cant help these issues
+    - https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-trailspace.md
+    - maybe https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-move.md
+    - https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-splitjoin.md
+    - https://github.com/mfussenegger/nvim-lint
+https://www.youtube.com/watch?v=ybUE4D80XSk
+
+
+TELESCOPE HARPOON
+bind telescope version
+
+better telescope harpoon 
+- show file name only (if possible)
+    - always show file name at end if above isnt possible 
+- clear all keymap 
+- clear each keymap
+
+fix highlighting of cmp menu
+
+setter getter snippets
+fix useMemo snippet - its doing too much
+
+
+
+
+
+TELESCOPE GREP AND SED
+be able to sed a single line and replace all characters in that line
+
+
+should be able to grep only harpoon files
+should be able to grep current directory
+telescope grepping stuff (exlducing files)
+telescope grepping stuff (exlducing files)
+specify a directory path and only grep in there
+https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
+check if grep syntax is working for telescope and add the synatx to the tcheatsheet
+get better at sed and grep
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+specify a directory path and only grep in there
+https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
+check if grep syntax is working for telescope and add the synatx to the tcheatsheet
+get better at sed and grep
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+
+
+
+
+
+BETTER TEXT MANIPULATION
+https://linuxjourney.com/lesson/stdout-standard-out-redirect
+https://linuxjourney.com/lesson/regular-expressions-regex
+
+
+
+
+
 PR REVIEW
 octovim start review -> checkout -> diffview master 
 - need keymap for octo pr list "<leader>hO<cr>"
