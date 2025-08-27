@@ -13,3 +13,19 @@ const fooreact = () => {
 };
 
 export default fooreact;
+
+f;
+
+type InitialScreenProps = {
+  handleContinueClick: (event: MouseEvent) => void;
+};
+
+const InitialScreen = ({ handleContinueClick }: InitialScreenProps) => {
+  return (
+    <>
+      <div>
+        <button onClick={handleContinueClick}>...</button>
+      </div>
+    </>
+  );
+};

@@ -153,7 +153,10 @@ octovim start review -> checkout -> diffview master
 - need keymap for octo checkout "<leader>hc<cr>"
 - already have keymap to diff agains a branch "hD"
 
+https://github.com/aaronik/treewalker.nvim
 
+fix tabbing - sometimes when im trying to tab at the start of a line
+    it just takes me to the next PARENTHESIS or something
 
 FIX UP LINTING AND FORMATTING
 Formatting
@@ -176,18 +179,12 @@ https://www.youtube.com/watch?v=6mxWayq-s9I
 
 
 GIT
-Telescope git pickers built in
-- just add git as arg after
-
-GitBrowse browser for current commit
-
-- currently we only have it for against master?
+show keymaps - we have the keymaps but it doesnt show in whichkey??
+- give they keymaps better labels. idk wtf does what
 clean up gitsigns config
-
-see git history on visual selection
 see git history on visual selection
 
-
+UNDO TREE
 
 TELESCOPE HARPOON
 bind telescope version
@@ -198,13 +195,16 @@ better telescope harpoon
 - clear all keymap 
 - clear each keymap
 
-fix highlighting of cmp menu
 
 setter getter snippets
-fix useMemo snippet - its doing too much
 
 
+COLORSCHEMES
+fix up styles
+fix highlighting of cmp menu
 
+
+UNDERSTAND THE TAB PLUGIN AND PARENTHESIS PLUIGIN STIUFF
 
 
 TELESCOPE GREP AND SED
@@ -321,9 +321,12 @@ debugger
 
 
 
+lsp codelense
+https://github.com/ray-x/navigator.lua
 
 
-
+quick fix
+https://www.youtube.com/watch?v=AuXZA-xCv04&t=18s
 
 
 Snippets for:
@@ -348,6 +351,49 @@ https://github.com/adibhanna/nvim
 - more icons here https://docs.astronvim.com/recipes/icons/
 - more icons here https://docs.astronvim.com/recipes/icons/
 - https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
+
+
+==================================================
+GET BETTER AT VIM
+==================================================
+TIPS AND TRICKS
+https://www.youtube.com/watch?v=FrMRyXtiJkc
+https://www.youtube.com/watch?v=X35yfs3yvKw
+https://www.youtube.com/watch?v=yMs97o_TdBU
+https://www.youtube.com/watch?v=Z1o3-PxGa5s
+general vim
+https://www.youtube.com/watch?v=ST_DZ6yIiXY&t=377s
+https://www.youtube.com/watch?v=ixJWAP1L6jc
+https://www.youtube.com/watch?v=G7aWxK4395Y
+https://www.youtube.com/watch?v=HhZJ1kbzkj0
+https://www.youtube.com/watch?v=futay9NjOac
+https://www.youtube.com/watch?v=DtJVwbbicjQ
+
+https://www.youtube.com/watch?v=vdn_pKJUda8
+
+https://www.youtube.com/watch?v=AuXZA-xCv04
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+https://www.youtube.com/watch?v=p4D8-brdrZo
+
+VIM CHEAT SHEETS 
+https://vim.rtorr.com/
+- figure out what all operators are and how to use them with other things
+https://neovim.io/doc/user/motion.html
+
+
+<C-w>T to make new tab on current buffer??
+
+fill out cheatsheet
+- the cheatsheet should cover stuff not in whichkey and should show the base commands in normal mode like shift k or whatever
+- add telescope binding in cheat sheet too (look at telescope file)
+- add tailwind to cheatsheet
+cheatsheet: https://github.com/sudormrfbin/cheatsheet.nvim
+- add cheatsheet hints
+- search cheatsheets and learn internsing vim operations
+- https://github.com/sudormrfbin/cheatsheet.nvim/blob/master/cheatsheets/cheatsheet-default.txt
+- bindings for nvim tree: https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L138
+
+
 
 ==================================================
 Debugger
@@ -441,49 +487,6 @@ figure out what this stuff is for remapping keys
 
 MACROS
 
-lsp codelense
-https://github.com/ray-x/navigator.lua
-
-
-quick fix
-https://www.youtube.com/watch?v=AuXZA-xCv04&t=18s
-
-
-TIPS AND TRICKS
-https://www.youtube.com/watch?v=FrMRyXtiJkc
-https://www.youtube.com/watch?v=X35yfs3yvKw
-https://www.youtube.com/watch?v=yMs97o_TdBU
-https://www.youtube.com/watch?v=Z1o3-PxGa5s
-general vim
-https://www.youtube.com/watch?v=ST_DZ6yIiXY&t=377s
-https://www.youtube.com/watch?v=ixJWAP1L6jc
-https://www.youtube.com/watch?v=G7aWxK4395Y
-https://www.youtube.com/watch?v=HhZJ1kbzkj0
-https://www.youtube.com/watch?v=futay9NjOac
-
-https://www.youtube.com/watch?v=vdn_pKJUda8
-
-https://www.youtube.com/watch?v=AuXZA-xCv04
-https://www.youtube.com/watch?v=YzVmdJ41Xkg
-https://www.youtube.com/watch?v=p4D8-brdrZo
-
-VIM CHEAT SHEETS 
-https://vim.rtorr.com/
-- figure out what all operators are and how to use them with other things
-https://neovim.io/doc/user/motion.html
-
-
-<C-w>T to make new tab on current buffer??
-
-fill out cheatsheet
-- the cheatsheet should cover stuff not in whichkey and should show the base commands in normal mode like shift k or whatever
-- add telescope binding in cheat sheet too (look at telescope file)
-- add tailwind to cheatsheet
-cheatsheet: https://github.com/sudormrfbin/cheatsheet.nvim
-- add cheatsheet hints
-- search cheatsheets and learn internsing vim operations
-- https://github.com/sudormrfbin/cheatsheet.nvim/blob/master/cheatsheets/cheatsheet-default.txt
-- bindings for nvim tree: https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L138
 
 
 

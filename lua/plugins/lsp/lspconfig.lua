@@ -126,3 +126,9 @@ lspconfig.mdx_analyzer.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig.pyright.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	root_dir = lspconfig.util.root_pattern(".git"),
+})
