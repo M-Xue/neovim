@@ -1,3 +1,6 @@
+local HEIGHT_RATIO = 0.8
+local WIDTH_RATIO = 0.5
+
 return {
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -9,96 +12,46 @@ return {
 		config = function()
 			require("nvim-tree").setup({
 				view = {
-					width = 35,
-				},
-				update_focused_file = {
-					enable = true,
-					update_root = true,
+					float = {
+						enable = true,
+						open_win_config = function()
+							local screen_w = vim.opt.columns:get()
+							local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+							local window_w = screen_w * WIDTH_RATIO
+							local window_h = screen_h * HEIGHT_RATIO
+							local window_w_int = math.floor(window_w)
+							local window_h_int = math.floor(window_h)
+							local center_x = (screen_w - window_w) / 2
+							local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+							return {
+								border = "rounded",
+								relative = "editor",
+								row = center_y,
+								col = center_x,
+								width = window_w_int,
+								height = window_h_int,
+							}
+						end,
+					},
 				},
 				renderer = {
-					highlight_diagnostics = true,
-					highlight_modified = "all",
 					indent_markers = {
 						enable = true,
-						inline_arrows = true,
 						icons = {
 							corner = "└",
 							edge = "│",
 							item = "├",
 						},
 					},
-					icons = {
-						web_devicons = {
-							file = {
-								enable = true,
-								color = true,
-							},
-							folder = {
-								enable = false,
-								color = true,
-							},
-						},
-						show = {
-							diagnostics = false,
-						},
-						modified_placement = "after",
-						git_placement = "before",
-						diagnostics_placement = "signcolumn",
-						glyphs = {
-							default = "",
-							symlink = "",
-							bookmark = "",
-							-- modified = "[+]",
-							modified = "",
-							folder = {
-								arrow_closed = "",
-								arrow_open = "",
-								default = "",
-								open = "",
-								empty = "",
-								empty_open = "",
-								symlink = "",
-								symlink_open = "",
-							},
-							git = {
-								unstaged = "󰆣",
-								staged = "󰆤",
-								unmerged = "",
-								renamed = "➜",
-								untracked = "★",
-								deleted = "",
-								ignored = "◌",
-							},
-						},
-					},
 				},
-				git = {
-					enable = false,
-					show_on_dirs = true,
-					show_on_open_dirs = true,
-					ignore = false,
-					timeout = 400,
-				},
-				diagnostics = {
-					enable = false,
-					show_on_dirs = true,
-					show_on_open_dirs = true,
-					debounce_delay = 50,
-					severity = {
-						min = vim.diagnostic.severity.HINT,
-						max = vim.diagnostic.severity.ERROR,
-					},
-					icons = {
-						hint = "",
-						info = "",
-						warning = "",
-						error = "",
-					},
-				},
-				modified = {
+				git = { enable = false },
+				diagnostics = { enable = false },
+				modified = { enable = false },
+				update_focused_file = {
 					enable = true,
-					show_on_dirs = true,
-					show_on_open_dirs = true,
+					update_root = {
+						enable = true,
+					},
 				},
 			})
 		end,
