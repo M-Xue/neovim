@@ -33,3 +33,5 @@ vim.keymap.set("n", "<leader>fz", telescope.current_buffer_fuzzy_find, { desc = 
 -- Navigation
 vim.keymap.set("n", "<leader>fm", telescope.marks, { desc = "Search marks" })
 vim.keymap.set("n", "<leader>fj", telescope.jumplist, { desc = "Telescope jumplist" })
+
+vim.keymap.set("n", "<leader>fs", ":Spectre<CR>", { desc = "Spectre (Search and Replace)" })

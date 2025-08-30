@@ -1,6 +1,16 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+vim-coach
+
+better terminal manager in floating window
+https://www.reddit.com/r/neovim/comments/1lbzm1z/floaterm_beautiful_terminal_buffer_manager/
+
+
+
+
+
+
 add ai
 - copilot 
     - i want to be able to see the suggestion in cmp AND i want a keybinding to open a suggestion inline
@@ -22,41 +32,8 @@ you really want 3 things
 
 
 
-get better at git diff handling (accepting rejecting and viewing) as well as git diff navigations
-- add to cheatsheet
-- i want to be able to hop around and cycle through git diffs 
-- i also want a sidebar to look at all current git diffs
-- i want them to be stacked and INLINE in the file so i dont need to deal with "ghost" buffers that are uneditable
 
 
-opencode and tmux and git worktrees
-
-
-
-
-https://www.reddit.com/r/neovim/comments/1lbzm1z/floaterm_beautiful_terminal_buffer_manager/
-vim-coach
-
-window of modified files or git edited files in floating window
-move file tree into floating window
-
-try move everything into floating window
-better terminal manager in floating window
-maybe just use term inside nvim but have better terminal managmenet and keybindings
-
-fix cmp and make it look better
-- fix tab highlihgting
-do the same with all the other pop up windows
-- error
-- lsp in insert mode and normal mode 
-- git blame
-
-change font to zeddotdev font
-change color scheme to be more minimal and black
-
-
-FIX TAB ISSUE
-i think it has something to do with one of the parentheses plugins
 
 
 SPEED UP LAZY START UPP
@@ -70,49 +47,21 @@ https://www.youtube.com/watch?v=6mxWayq-s9I
 
 :Lazy profile
 
+clean up plugins that arent needed
 
-GIT
-Telescope git pickers built in
-- just add git as arg after
 
-GitBrowse browser for current commit
-
-- currently we only have it for against master?
-clean up gitsigns config
-
-see git history on visual selection
-see git history on visual selection
+quick actions lightbulb
 
 
 
-PR REVIEW
-octovim start review -> checkout -> diffview master 
-- need keymap for octo pr list "<leader>hO<cr>"
-- need keymap for octo checkout "<leader>hc<cr>"
-- already have keymap to diff agains a branch "hD"
 
 
 
-FIX UP LINTING AND FORMATTING
-Formatting
-- If formatting cant help these issues
-    - https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-trailspace.md
-    - maybe https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-move.md
-    - https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-splitjoin.md
-    - https://github.com/mfussenegger/nvim-lint
-https://www.youtube.com/watch?v=ybUE4D80XSk
 
 
-TELESCOPE HARPOON
-bind telescope version
 
-better telescope harpoon 
-- show file name only (if possible)
-    - always show file name at end if above isnt possible 
-- clear all keymap 
-- clear each keymap
 
-fix highlighting of cmp menu
+
 
 setter getter snippets
 fix useMemo snippet - its doing too much
@@ -121,43 +70,36 @@ fix useMemo snippet - its doing too much
 
 
 
-TELESCOPE GREP AND SED
-be able to sed a single line and replace all characters in that line
-
-
-should be able to grep only harpoon files
-should be able to grep current directory
-telescope grepping stuff (exlducing files)
-telescope grepping stuff (exlducing files)
-specify a directory path and only grep in there
-https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
-check if grep syntax is working for telescope and add the synatx to the tcheatsheet
-get better at sed and grep
-subsitutue command 
-search replace
-https://www.youtube.com/watch?v=YzVmdJ41Xkg
-can use substitution on multiple lines with call back to stored values like sed
-- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
-specify a directory path and only grep in there
-https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
-check if grep syntax is working for telescope and add the synatx to the tcheatsheet
-get better at sed and grep
-subsitutue command 
-search replace
-https://www.youtube.com/watch?v=YzVmdJ41Xkg
-can use substitution on multiple lines with call back to stored values like sed
-- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
 
 
+can turn on review mode 
+- have there be an indicator in the status line that you are in review mode 
+- cheatsheet has comment keymap
+- diffview 
+    - cheatsheet has go to file keymap 
+    - accept both keymap 
+    - accept income keymap 
+    - accept current keymap
+    - next diff keymap
+
+you just need diffview but for pr reviews tbh i think that's it
+
+GIT
+GitBrowse browser for current commit
+- currently we only have it for against master?
+clean up gitsigns config
+
+see git history on visual selection
+see history for line 
+see history for file
 
 
-BETTER TEXT MANIPULATION
-https://linuxjourney.com/lesson/stdout-standard-out-redirect
-https://linuxjourney.com/lesson/regular-expressions-regex
-
-
-
+GIT
+show keymaps - we have the keymaps but it doesnt show in whichkey??
+- give they keymaps better labels. idk wtf does what
+clean up gitsigns config
+see git history on visual selection
 
 
 PR REVIEW
@@ -166,10 +108,12 @@ octovim start review -> checkout -> diffview master
 - need keymap for octo checkout "<leader>hc<cr>"
 - already have keymap to diff agains a branch "hD"
 
-https://github.com/aaronik/treewalker.nvim
 
-fix tabbing - sometimes when im trying to tab at the start of a line
-    it just takes me to the next PARENTHESIS or something
+
+
+
+
+
 
 FIX UP LINTING AND FORMATTING
 Formatting
@@ -180,69 +124,6 @@ Formatting
     - https://github.com/mfussenegger/nvim-lint
 https://www.youtube.com/watch?v=ybUE4D80XSk
 
-
-SPEED UP LAZY START UPP
-figure out lazy.vim
-- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
-https://www.youtube.com/watch?v=28FmViFye2I&t=154s
-https://www.youtube.com/watch?v=ybUE4D80XSk
-- this one shows events on when to lazy load formatters and linters
-figure out wtf lazy.nvim does
-https://www.youtube.com/watch?v=6mxWayq-s9I
-
-
-GIT
-show keymaps - we have the keymaps but it doesnt show in whichkey??
-- give they keymaps better labels. idk wtf does what
-clean up gitsigns config
-see git history on visual selection
-
-UNDO TREE
-
-TELESCOPE HARPOON
-bind telescope version
-
-better telescope harpoon 
-- show file name only (if possible)
-    - always show file name at end if above isnt possible 
-- clear all keymap 
-- clear each keymap
-
-
-setter getter snippets
-
-
-COLORSCHEMES
-fix up styles
-fix highlighting of cmp menu
-
-
-UNDERSTAND THE TAB PLUGIN AND PARENTHESIS PLUIGIN STIUFF
-
-
-TELESCOPE GREP AND SED
-should be able to grep only harpoon files
-should be able to grep current directory
-telescope grepping stuff (exlducing files)
-telescope grepping stuff (exlducing files)
-specify a directory path and only grep in there
-https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
-check if grep syntax is working for telescope and add the synatx to the tcheatsheet
-get better at sed and grep
-subsitutue command 
-search replace
-https://www.youtube.com/watch?v=YzVmdJ41Xkg
-can use substitution on multiple lines with call back to stored values like sed
-- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
-specify a directory path and only grep in there
-https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
-check if grep syntax is working for telescope and add the synatx to the tcheatsheet
-get better at sed and grep
-subsitutue command 
-search replace
-https://www.youtube.com/watch?v=YzVmdJ41Xkg
-can use substitution on multiple lines with call back to stored values like sed
-- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
 
 
 
@@ -314,24 +195,6 @@ setter getter snippets
 
 
 
-fix ranged formatting
-- https://prettier.io/docs/en/options.html#range
-- https://www.reddit.com/r/neovim/comments/1giylfd/i_cant_make_range_formatting_work/
-
-fix formatting for work and linting for work
-- maybe do custom linting or formatting that just works on my local + linitng from work
-^ need this for both js and c#
-
-
-c# do this at work
-fix useState caps snippet
-- i think this is a work laptop thing not an nvim thing
-
-golang
-
-debugger
-
-
 
 
 lsp codelense
@@ -340,18 +203,6 @@ https://github.com/ray-x/navigator.lua
 
 quick fix
 https://www.youtube.com/watch?v=AuXZA-xCv04&t=18s
-
-
-Snippets for:
-- Astro 
-- Svelte
-- Markdown
-
-
-
-
-copilot + claude??
-avante nvim?
 
 
 speed up lazy.vim load up
@@ -369,6 +220,66 @@ https://github.com/adibhanna/nvim
 ==================================================
 GET BETTER AT VIM
 ==================================================
+TELESCOPE GREP AND SED
+be able to sed a single line and replace all characters in that line
+
+TELESCOPE GREP AND SED
+should be able to grep only harpoon files
+should be able to grep current directory
+telescope grepping stuff (exlducing files)
+telescope grepping stuff (exlducing files)
+specify a directory path and only grep in there
+https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
+check if grep syntax is working for telescope and add the synatx to the tcheatsheet
+get better at sed and grep
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+specify a directory path and only grep in there
+https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
+check if grep syntax is working for telescope and add the synatx to the tcheatsheet
+get better at sed and grep
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+
+
+
+should be able to grep only harpoon files
+should be able to grep current directory
+telescope grepping stuff (exlducing files)
+telescope grepping stuff (exlducing files)
+specify a directory path and only grep in there
+https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
+check if grep syntax is working for telescope and add the synatx to the tcheatsheet
+get better at sed and grep
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+specify a directory path and only grep in there
+https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#grep-argument-examples
+check if grep syntax is working for telescope and add the synatx to the tcheatsheet
+get better at sed and grep
+subsitutue command 
+search replace
+https://www.youtube.com/watch?v=YzVmdJ41Xkg
+can use substitution on multiple lines with call back to stored values like sed
+- 6:00 https://www.youtube.com/watch?v=uL9oOZStezw
+
+
+
+
+
+BETTER TEXT MANIPULATION
+https://linuxjourney.com/lesson/stdout-standard-out-redirect
+https://linuxjourney.com/lesson/regular-expressions-regex
+
 TIPS AND TRICKS
 https://www.youtube.com/watch?v=FrMRyXtiJkc
 https://www.youtube.com/watch?v=X35yfs3yvKw

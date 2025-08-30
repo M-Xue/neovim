@@ -149,3 +149,13 @@ local icons = {
 -- 	{ name = "DiagnosticSignHint", text = "" },
 -- 	{ name = "DiagnosticSignInfo", text = "" },
 -- }
+--
+-- git = {
+-- 	unstaged = "󰆣",
+-- 	staged = "󰆤",
+-- 	unmerged = "",
+-- 	renamed = "➜",
+-- 	untracked = "★",
+-- 	deleted = "",
+-- 	ignored = "◌",
+-- },

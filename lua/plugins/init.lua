@@ -28,7 +28,6 @@ local plugins = {
 	require("plugins.numb"),
 
 	require("plugins.telescope"),
-	require("plugins."),
 	require("plugins.git"),
 
 	require("plugins.alpha"),
