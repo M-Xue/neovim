@@ -1,4 +1,4 @@
-local _util = require('_util');
+local _util = require("_util")
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
