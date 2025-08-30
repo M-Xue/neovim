@@ -12,25 +12,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	require("plugins.mason"),
 	require("plugins.colorscheme"),
+	require("plugins.mason"),
 	require("plugins.treesitter"),
 	require("plugins.lsp"),
 
 	require("plugins.conform"),
 	require("plugins.nvim-lint").plugins,
 
-	require("plugins.cmp"),
+	require("plugins.autocomplete"),
 
 	require("plugins.nvim-tree"),
 	require("plugins.trouble"),
-	require("plugins.marks"),
 	require("plugins.harpoon"),
 	require("plugins.numb"),
 
 	require("plugins.telescope"),
-	require("plugins.snacks"),
-	require("plugins.spectre"),
+	require("plugins."),
 	require("plugins.git"),
 
 	require("plugins.alpha"),
@@ -42,7 +40,6 @@ local plugins = {
 	require("plugins.textobjects"),
 	require("plugins.parentheses"),
 	require("plugins.comments"),
-	require("plugins.zenmode"),
 	require("plugins.whichkey"),
 	require("plugins.cheatsheet"),
 
