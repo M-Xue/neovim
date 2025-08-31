@@ -6,5 +6,6 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>app", ":Copilot panel toggle<cr>", { desc = "Toggle Copilot suggestion panel" })
 vim.keymap.set("n", "<leader>apr", ":Copilot panel refresh<cr>", { desc = "Refresh Copilot suggestion panel" })
-vim.keymap.set("n", "<leader>aa", ":AvanteAsk<cr>", { desc = "Toggle Avante chat" })
-vim.keymap.set("n", "<leader>am", ":AvanteModels<cr>", { desc = "See Avante models" })
+vim.keymap.set("n", "<leader>aa", ":AvanteAsk<cr>", { desc = "Avante: Toggle chat" })
+vim.keymap.set("n", "<leader>am", ":AvanteModels<cr>", { desc = "Avante: See models" })
+vim.keymap.set("v", "<leader>aa", ":AvanteEdit<cr>", { desc = "Avante: Edit selected blocks" })
