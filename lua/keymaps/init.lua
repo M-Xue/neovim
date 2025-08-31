@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set(
 	"n",
 	"<leader>,",
-	require("plugins.nvim-lint").toggle_spell_check,
+	require("plugins.linter.nvim-lint").toggle_spell_check,
 	{ desc = "Toggle spell check linter" }
 )
 

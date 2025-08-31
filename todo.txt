@@ -1,6 +1,26 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
+
+SPEED UP LAZY START UPP
+figure out lazy.vim
+- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
+https://www.youtube.com/watch?v=28FmViFye2I&t=154s
+https://www.youtube.com/watch?v=ybUE4D80XSk
+- this one shows events on when to lazy load formatters and linters
+figure out wtf lazy.nvim does
+https://www.youtube.com/watch?v=6mxWayq-s9I
+
+:Lazy profile
+
+setter getter snippets
+fix useMemo snippet - its doing too much
+
+=============================
+
+
+
+
 add ai
 - avante 
 - augment
@@ -27,41 +47,12 @@ you really want 3 things
 
 
 
-
-
-better terminal manager in floating window
-https://www.reddit.com/r/neovim/comments/1lbzm1z/floaterm_beautiful_terminal_buffer_manager/
+fix outline behaviour
 
 clean up plugins that arent needed
 
-SPEED UP LAZY START UPP
-figure out lazy.vim
-- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
-https://www.youtube.com/watch?v=28FmViFye2I&t=154s
-https://www.youtube.com/watch?v=ybUE4D80XSk
-- this one shows events on when to lazy load formatters and linters
-figure out wtf lazy.nvim does
-https://www.youtube.com/watch?v=6mxWayq-s9I
 
-:Lazy profile
-
-quick actions lightbulb
-mason lint lsp and formatter
-
-trouble nvim 
-- only show errors
-
-migrate nvim-tree to neotree
-
-setter getter snippets
-fix useMemo snippet - its doing too much
-
-
-
-
-
-
-
+=============================
 neogit
 
 can turn on review mode 

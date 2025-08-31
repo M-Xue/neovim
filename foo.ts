@@ -2,6 +2,10 @@ function fibbonacci(n: number): number {
   if (n <= 1) return n;
   return fibbonacci(n - 1) + fibbonacci(n - 2);
 }
+
+function foo (bar) {
+    
+}       
 console.log(fibbonacc i(10));
 
 function greet(name: string): string {

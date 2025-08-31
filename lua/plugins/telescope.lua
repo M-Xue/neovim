@@ -106,7 +106,7 @@ return {
 				},
 			})
 			telescope.load_extension("file_browser")
-			telescope.load_extension("toggleterm")
+			-- telescope.load_extension("toggleterm")
 			telescope.load_extension("undo")
 			telescope.load_extension("advanced_git_search")
 			telescope.load_extension("live_grep_args")
@@ -120,16 +120,16 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	{
-		"https://git.sr.ht/~havi/telescope-toggleterm.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim",
-			"akinsho/toggleterm.nvim",
-			"nvim-lua/popup.nvim",
-		},
-		event = "TermOpen",
-	},
+	-- {
+	-- 	"https://git.sr.ht/~havi/telescope-toggleterm.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"akinsho/toggleterm.nvim",
+	-- 		"nvim-lua/popup.nvim",
+	-- 	},
+	-- 	event = "TermOpen",
+	-- },
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {

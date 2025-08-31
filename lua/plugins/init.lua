@@ -17,13 +17,13 @@ local plugins = {
 	require("plugins.treesitter"),
 	require("plugins.lsp"),
 
-	require("plugins.conform"),
-	require("plugins.nvim-lint").plugins,
+	require("plugins.formatter"),
+	require("plugins.linter"),
 
 	require("plugins.ai"),
 	require("plugins.autocomplete"),
 
-	require("plugins.nvim-tree"),
+	require("plugins.file-tree"),
 	require("plugins.trouble"),
 	require("plugins.harpoon"),
 	require("plugins.numb"),
@@ -32,10 +32,11 @@ local plugins = {
 	require("plugins.spectre"),
 	require("plugins.git"),
 
-	require("plugins.alpha"),
 	require("plugins.statusline"),
-	require("plugins.tabby"),
 	require("plugins.icons"),
+
+	require("plugins.alpha"),
+	require("plugins.tabby"),
 	require("plugins.indent-blankline"),
 
 	require("plugins.textobjects"),

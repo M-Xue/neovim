@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>fT", telescope.treesitter, { desc = "Find treesitte
 vim.keymap.set("n", "<leader>fu", ":Telescope undo<CR>", { desc = "Undo history" })
 
 -- Terminal
-vim.keymap.set("n", "<leader>ft", ":Telescope toggleterm<CR>", { desc = "Find terminal" })
+-- vim.keymap.set("n", "<leader>ft", ":Telescope toggleterm<CR>", { desc = "Find terminal" })
 
 -- String search
 local telescope_live_grep_args = require("telescope").extensions.live_grep_args
