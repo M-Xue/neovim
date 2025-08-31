@@ -20,6 +20,7 @@ local plugins = {
 	require("plugins.conform"),
 	require("plugins.nvim-lint").plugins,
 
+	require("plugins.ai"),
 	require("plugins.autocomplete"),
 
 	require("plugins.nvim-tree"),
@@ -28,10 +29,11 @@ local plugins = {
 	require("plugins.numb"),
 
 	require("plugins.telescope"),
+	require("plugins.spectre"),
 	require("plugins.git"),
 
 	require("plugins.alpha"),
-	require("plugins.lualine"),
+	require("plugins.statusline"),
 	require("plugins.tabby"),
 	require("plugins.icons"),
 	require("plugins.indent-blankline"),
@@ -39,8 +41,7 @@ local plugins = {
 	require("plugins.textobjects"),
 	require("plugins.parentheses"),
 	require("plugins.comments"),
-	require("plugins.whichkey"),
-	require("plugins.cheatsheet"),
+	require("plugins.help"),
 
 	require("plugins.toggleterm"),
 

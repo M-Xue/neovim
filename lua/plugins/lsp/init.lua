@@ -57,13 +57,18 @@ return {
 		event = "LspAttach",
 		opts = {},
 	},
-	-- {
-	-- 	"kosayoda/nvim-lightbulb",
-	-- 	event = "LspAttach",
-	-- 	opts = {
-	-- 		autocmd = { enabled = true },
-	-- 	},
-	-- },
+	{
+		-- "kosayoda/nvim-lightbulb",
+		-- event = "LspAttach",
+		-- opts = {
+		-- 	-- autocmd = { enabled = true },
+		-- 	-- ignore = {
+		-- 	-- 	ft = { "NvimTree" },
+		-- 	-- 	-- Ignore code actions without a `kind` like refactor.rewrite, quickfix.
+		-- 	-- 	-- actions_without_kind = false,
+		-- 	-- },
+		-- },
+	},
 	{
 		"SmiteshP/nvim-navic",
 		event = "LspAttach",

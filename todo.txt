@@ -1,23 +1,17 @@
 ==================================================
 Nvim Clean Uptodo
 ==================================================
-vim-coach
-
-better terminal manager in floating window
-https://www.reddit.com/r/neovim/comments/1lbzm1z/floaterm_beautiful_terminal_buffer_manager/
-
-
-
-
-
-
 add ai
-- copilot 
-    - i want to be able to see the suggestion in cmp AND i want a keybinding to open a suggestion inline
 - avante 
 - augment
-- checkout all ai plugins. there is a github repo 
-- check out code ocmpanion??
+
+
+
+avante 
+- visual highligh add and edit
+- chat window with ability to add context 
+- manage multiple chat sessions
+
 
 the more important thing is to look at all the ai plugins
 you really want 3 things
@@ -35,6 +29,10 @@ you really want 3 things
 
 
 
+better terminal manager in floating window
+https://www.reddit.com/r/neovim/comments/1lbzm1z/floaterm_beautiful_terminal_buffer_manager/
+
+clean up plugins that arent needed
 
 SPEED UP LAZY START UPP
 figure out lazy.vim
@@ -47,21 +45,13 @@ https://www.youtube.com/watch?v=6mxWayq-s9I
 
 :Lazy profile
 
-clean up plugins that arent needed
-
-
 quick actions lightbulb
+mason lint lsp and formatter
 
+trouble nvim 
+- only show errors
 
-
-
-
-
-
-
-
-
-
+migrate nvim-tree to neotree
 
 setter getter snippets
 fix useMemo snippet - its doing too much
@@ -72,6 +62,7 @@ fix useMemo snippet - its doing too much
 
 
 
+neogit
 
 can turn on review mode 
 - have there be an indicator in the status line that you are in review mode 
@@ -136,14 +127,6 @@ https://www.youtube.com/watch?v=ybUE4D80XSk
 
 
 
-
-
-marks.nvim
-- bookmarks?
-
-
-undoredo tree
-- telescope-undo??
 
 
 
@@ -220,6 +203,8 @@ https://github.com/adibhanna/nvim
 ==================================================
 GET BETTER AT VIM
 ==================================================
+vim-coach plugin
+
 TELESCOPE GREP AND SED
 be able to sed a single line and replace all characters in that line
 
