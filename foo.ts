@@ -2,7 +2,15 @@ function fibbonacci(n: number): number {
   if (n <= 1) return n;
   return fibbonacci(n - 1) + fibbonacci(n - 2);
 }
-
+const b = {
+_selection: [];
+    get selection() {
+        return this._selection;
+    }
+    set selection (value) {
+        this._selection = value;
+    }   
+}
 function foo (bar) {
     
 }       
