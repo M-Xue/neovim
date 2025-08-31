@@ -11,7 +11,6 @@ vim.keymap.set("n", "<leader>p", ":Trouble qflist toggle<CR>", { desc = "Toggle 
 vim.keymap.set("n", "<leader>?", ":Cheatsheet<CR>", { desc = "Cheatsheet" })
 vim.keymap.set("n", "<leader>c", ":cd ", { desc = "Change directory" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Undo tree" })
-vim.keymap.set("n", "<leader>z", ":NoNeckPain<cr>", { desc = "Zen mode" })
 
 vim.keymap.set("v", "<leader>F", require("conform").format, { desc = "Format selection" })
 
@@ -23,11 +22,9 @@ vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set(
 	"n",
 	"<leader>,",
-	require("plugins.nvim-lint").toggle_spell_check,
+	require("plugins.linter.nvim-lint").toggle_spell_check,
 	{ desc = "Toggle spell check linter" }
 )
-
-vim.keymap.set("n", "<leader>R", ":Spectre<cr>", { desc = "Search and replace" })
 
 -- LSP
 -- g: LSP
@@ -35,6 +32,5 @@ vim.keymap.set("n", "<leader>R", ":Spectre<cr>", { desc = "Search and replace" }
 require("keymaps.git")
 require("keymaps.navigation")
 require("keymaps.harpoon")
-require("keymaps.marks")
 require("keymaps.telescope")
-require("keymaps.toggleterm")
+require("keymaps.ai")

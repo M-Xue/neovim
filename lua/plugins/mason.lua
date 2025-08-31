@@ -1,6 +1,6 @@
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		opts = {
 			ui = {
 				border = "none",
@@ -15,31 +15,33 @@ return {
 		},
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		dependencies = {
-			"williamboman/mason.nvim",
+			"mason-org/mason.nvim",
 			"neovim/nvim-lspconfig",
 		},
-		opts = {
-			ensure_installed = {
-				"marksman",
-				"mdx_analyzer",
+		config = function()
+			require("mason-lspconfig").setup({
+				automatic_enable = {
+					"marksman",
+					"mdx_analyzer",
 
-				"html",
-				"emmet_language_server",
-				"cssls",
-				"cssmodules_ls",
-				"tailwindcss",
-				"jsonls",
-				"astro",
-				"svelte",
-				"ts_ls",
+					"html",
+					"emmet_language_server",
+					"cssls",
+					"cssmodules_ls",
+					"tailwindcss",
+					"jsonls",
+					"astro",
+					"svelte",
+					"ts_ls",
 
-				"gopls",
-				"lua_ls",
-			},
-			automatic_installation = true,
-		},
+					"gopls",
+					"lua_ls",
+					"vimls",
+				},
+			})
+		end,
 	},
 	{
 		"zapling/mason-conform.nvim",
@@ -70,8 +72,8 @@ return {
 			ensure_installed = {
 				"eslint_d",
 				"stylelint",
-				"golangci-lint",
-				"markdownlint-cli2",
+				-- "golangci-lint", -- These two are bugged for some reason
+				-- "markdownlint-cli2",
 				"cspell",
 			},
 			automatic_installation = true,

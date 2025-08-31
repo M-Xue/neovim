@@ -3,6 +3,19 @@ const fooreact = () => {
   const [isActive, setIsActive] = useState("asd");
   return <div></div>;
 };
+fooreact();
+
+const [input, setInput] = useState(test);
+
+const [input, setInput] = useState(0);
+
+console.log("daasd");
+
+/**
+ * test
+ */
+function testfunc(a: number, b: string) {}
+testfunc();
 
 promise.catch((error) => {});
 foo.then((value) => {});

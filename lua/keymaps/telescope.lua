@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>fT", telescope.treesitter, { desc = "Find treesitte
 vim.keymap.set("n", "<leader>fu", ":Telescope undo<CR>", { desc = "Undo history" })
 
 -- Terminal
-vim.keymap.set("n", "<leader>ft", ":Telescope toggleterm<CR>", { desc = "Find terminal" })
+-- vim.keymap.set("n", "<leader>ft", ":Telescope toggleterm<CR>", { desc = "Find terminal" })
 
 -- String search
 local telescope_live_grep_args = require("telescope").extensions.live_grep_args
@@ -33,3 +33,5 @@ vim.keymap.set("n", "<leader>fz", telescope.current_buffer_fuzzy_find, { desc = 
 -- Navigation
 vim.keymap.set("n", "<leader>fm", telescope.marks, { desc = "Search marks" })
 vim.keymap.set("n", "<leader>fj", telescope.jumplist, { desc = "Telescope jumplist" })
+
+vim.keymap.set("n", "<leader>fs", ":Spectre<CR>", { desc = "Spectre (Search and Replace)" })
