@@ -38,6 +38,7 @@ M.icons = {
 	Reference = "",
 	Keyword = "",
 	Event = "",
+	-- Copilot = "",
 }
 
 M.colors = {

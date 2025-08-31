@@ -24,6 +24,10 @@ return {
 					})
 				end,
 			},
+			{
+				"giuxtaposition/blink-cmp-copilot",
+				dependencies = "zbirenbaum/copilot.lua",
+			},
 		},
 	},
 	version = "1.*",
@@ -60,7 +64,15 @@ return {
 			},
 		},
 		sources = {
-			default = { "lsp", "snippets", "path", "buffer" },
+			default = { "lsp", "snippets", "copilot", "path", "buffer" },
+			providers = {
+				copilot = {
+					name = "copilot",
+					module = "blink-cmp-copilot",
+					score_offset = 100,
+					async = true,
+				},
+			},
 		},
 		snippets = { preset = "luasnip" },
 		signature = { enabled = true },
