@@ -43,8 +43,6 @@ local plugins = {
 	require("plugins.comments"),
 	require("plugins.help"),
 
-	require("plugins.toggleterm"),
-
 	{ "RRethy/vim-illuminate" },
 	{ "unblevable/quick-scope" }, -- Unqiue character highlight
 }
