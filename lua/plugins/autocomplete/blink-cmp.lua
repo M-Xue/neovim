@@ -24,10 +24,10 @@ return {
 					})
 				end,
 			},
-			{
-				"giuxtaposition/blink-cmp-copilot",
-				dependencies = "zbirenbaum/copilot.lua",
-			},
+		},
+		{
+			"giuxtaposition/blink-cmp-copilot",
+			dependencies = "zbirenbaum/copilot.lua",
 		},
 	},
 	version = "1.*",
