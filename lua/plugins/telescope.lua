@@ -78,9 +78,9 @@ return {
 					color_devicons = true,
 				},
 				extensions = {
-					file_browser = {
-						hijack_netrw = true,
-					},
+					-- file_browser = {
+					-- 	hijack_netrw = true,
+					-- },
 					advanced_git_search = {
 						diff_plugin = "diffview",
 					},
@@ -105,7 +105,7 @@ return {
 					},
 				},
 			})
-			telescope.load_extension("file_browser")
+			-- telescope.load_extension("file_browser")
 			-- telescope.load_extension("toggleterm")
 			telescope.load_extension("undo")
 			telescope.load_extension("advanced_git_search")
@@ -113,13 +113,13 @@ return {
 			telescope.load_extension("fzf")
 		end,
 	},
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim",
-		},
-	},
+	-- {
+	-- 	"nvim-telescope/telescope-file-browser.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- },
 	-- {
 	-- 	"https://git.sr.ht/~havi/telescope-toggleterm.nvim",
 	-- 	dependencies = {

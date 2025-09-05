@@ -10,6 +10,7 @@ vim.opt.linebreak = true
 vim.opt.pumheight = 15
 vim.g.loaded_matchparen = 0
 
+vim.o.winborder = "solid"
 -- if _util.get_os() == 'windows' then
 --     vim.o.shell = "powershell.exe"
 -- end

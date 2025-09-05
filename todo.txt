@@ -2,54 +2,11 @@
 Nvim Clean Uptodo
 ==================================================
 
-SPEED UP LAZY START UPP
-figure out lazy.vim
-- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
-https://www.youtube.com/watch?v=28FmViFye2I&t=154s
-https://www.youtube.com/watch?v=ybUE4D80XSk
-- this one shows events on when to lazy load formatters and linters
-figure out wtf lazy.nvim does
-https://www.youtube.com/watch?v=6mxWayq-s9I
+Augment AI  
 
-:Lazy profile
+add files to avante context from neotree
 
-=============================
-
-
-
-
-add ai
-- avante 
-- augment
-
-
-
-avante 
-- visual highligh add and edit
-- chat window with ability to add context 
-- manage multiple chat sessions
-
-
-the more important thing is to look at all the ai plugins
-you really want 3 things
-- a chatbot that has agent mode
-    - one for general purpose
-    - one for deep knowledge about your code base 
-- an inline code editing agent 
-    - has easy inline diffing for accepting proposed changes and jumping around diffs 
-- an inline autocomplete suggestion 
-    - one in cmp menu + has keybind to show virtual text 
-    - they both should be able to react on a comment you wrote right above it
-
-
-
-
-fix outline behaviour
-
-clean up plugins that arent needed
-
-
-=============================
+==================================================
 neogit
 
 can turn on review mode 
@@ -88,10 +45,30 @@ octovim start review -> checkout -> diffview master
 - already have keymap to diff agains a branch "hD"
 
 
+for lualine: 
+- octovim mode 
+- lsp
+https://github.com/AndreM222/copilot-lualine
 
+clean up git whichkey 
+- simplify it. you dont need everything
 
+==================================================
 
+remove a lot of the keymaps and put them into cheatsheet instead
+better cheatsheet labelled with the relevant feature
 
+lsp codelense
+https://github.com/ray-x/navigator.lua
+
+https://github.com/adibhanna/nvim
+
+-- this may be the best looking nvim styling I have seen
+-- - https://www.youtube.com/watch?v=NkQnPuidxWY
+- special icons for special directories like test and git
+- more icons here https://docs.astronvim.com/recipes/icons/
+- more icons here https://docs.astronvim.com/recipes/icons/
+- https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
 
 
 FIX UP LINTING AND FORMATTING
@@ -104,94 +81,12 @@ Formatting
 https://www.youtube.com/watch?v=ybUE4D80XSk
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-remove a lot of the keymaps and put them into cheatsheet instead
-
-
-multi cursor understanding
-figureout multiselect and multicursor
-https://github.com/mg979/vim-visual-multi
-- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
-multcursor nvim
-
-
-
-better cheatsheet labelled with the relevant feature
-
-
-
-sed arguments in cheathseeet
-
-
-
-
-
-
-
-undoredo tree
-
-for lualine: 
-- octovim mode
-- lsp
-
-
-replace harpoon picker with telescope
-
-setter getter snippets
-
-
-
-
-
-
-
-
-
-lsp codelense
-https://github.com/ray-x/navigator.lua
-
-
-quick fix
-https://www.youtube.com/watch?v=AuXZA-xCv04&t=18s
-
-
-speed up lazy.vim load up
-Learn lazy nvim and clean up all the plugins
-https://github.com/adibhanna/nvim
-
--- this may be the best looking nvim styling I have seen
--- - https://www.youtube.com/watch?v=NkQnPuidxWY
-- special icons for special directories like test and git
-- more icons here https://docs.astronvim.com/recipes/icons/
-- more icons here https://docs.astronvim.com/recipes/icons/
-- https://github.com/rachartier/tiny-devicons-auto-colors.nvim maybe good inspo?
-
-
 ==================================================
 GET BETTER AT VIM
 ==================================================
 vim-coach plugin
+https://github.com/m4xshen/hardtime.nvim
+https://github.com/saxon1964/neovim-tips
 
 TELESCOPE GREP AND SED
 be able to sed a single line and replace all characters in that line
@@ -291,6 +186,17 @@ cheatsheet: https://github.com/sudormrfbin/cheatsheet.nvim
 - bindings for nvim tree: https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L138
 
 
+multi cursor understanding
+figureout multiselect and multicursor
+https://github.com/mg979/vim-visual-multi
+https://github.com/jake-stewart/multicursor.nvim ??
+- can def multi edit line. google it. it just doesnt visually show it. can dl plugin for it i think
+multcursor nvim
+
+sed arguments in cheathseeet
+
+quick fix
+https://www.youtube.com/watch?v=AuXZA-xCv04&t=18s
 
 ==================================================
 Debugger
@@ -327,6 +233,17 @@ look into terminal integration in awesome nvim
 
 
 
+SPEED UP LAZY START UPP
+figure out lazy.vim
+- https://www.youtube.com/watch?v=2ahI8lYUYgw&t=181s
+https://www.youtube.com/watch?v=28FmViFye2I&t=154s
+https://www.youtube.com/watch?v=ybUE4D80XSk
+- this one shows events on when to lazy load formatters and linters
+https://www.youtube.com/watch?v=6mxWayq-s9I
+
+:Lazy profile
+
+=============================
 
 
 

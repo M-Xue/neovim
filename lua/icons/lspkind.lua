@@ -80,6 +80,7 @@ M.colors = {
 	Event = "red",
 }
 
+                        -- renamed   = "󰁕",
 return M
 
 -- Struct = "",

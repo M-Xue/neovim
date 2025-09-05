@@ -2,14 +2,15 @@ return {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
+        event = "VeryLazy",
 		opts = true,
 	},
 	{
 		"numToStr/Comment.nvim",
-		lazy = false,
 		dependencies = {
 			{ "JoosepAlviste/nvim-ts-context-commentstring" },
 		},
+        event = "VeryLazy",
 		config = function()
 			require("Comment").setup({
 				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
@@ -29,6 +30,7 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+        event = "VeryLazy",
 		opts = true,
 	},
 }

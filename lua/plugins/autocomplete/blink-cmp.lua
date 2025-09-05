@@ -5,10 +5,12 @@ local source_icons = {
 	Snippets = "",
 	Buffer = "",
 	Path = "󰝰",
+	Copilot = "",
 }
 
 return {
 	"saghen/blink.cmp",
+    event = "InsertEnter",
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
@@ -37,12 +39,13 @@ return {
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		keymap = {
 			preset = "enter",
+			["<C-l>"] = { "show" },
 			["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 			["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
 		},
 		appearance = {
 			nerd_font_variant = "mono",
-			kind_icons = icons,
+			-- kind_icons = icons,
 		},
 		completion = {
 			documentation = { auto_show = true },
@@ -54,6 +57,11 @@ return {
 						{ "source_name" },
 					},
 					components = {
+						kind_icon = {
+							text = function(ctx)
+								return icons[ctx.kind]
+							end,
+						},
 						source_name = {
 							text = function(ctx)
 								return source_icons[ctx.source_name]
