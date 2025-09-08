@@ -12,7 +12,8 @@ return {
 			instructions_file = "avante.md",
 			providers = {
 				copilot = {
-					model = "gpt-5",
+					-- model = "gpt-5",
+					model = "claude-sonnet-4",
 				},
 			},
 			provider = "copilot",
