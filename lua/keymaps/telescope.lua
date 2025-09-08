@@ -2,12 +2,12 @@
 local telescope = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Find files" })
 vim.keymap.set("n", "<leader>fb", telescope.buffers, { desc = "Search buffers" })
-vim.keymap.set(
-	"n",
-	"<leader>fy",
-	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-	{ desc = "File browser current buffer" }
-)
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>fy",
+-- 	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+-- 	{ desc = "File browser current buffer" }
+-- )
 
 -- Editing
 vim.keymap.set("n", "<leader>fr", telescope.registers, { desc = "Search registers" })

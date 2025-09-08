@@ -1,4 +1,5 @@
 -- TODO LOTS OF ICONS HERE https://docs.astronvim.com/recipes/icons/
+-- https://github.com/nvim-mini/mini.icons
 
 local foo = {
 	git = {

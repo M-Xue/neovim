@@ -8,6 +8,7 @@ return {
 	},
 	{
 		"abecodes/tabout.nvim",
+		event = "InsertEnter",
 		opts = {
 			tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
 			backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
@@ -32,7 +33,7 @@ return {
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
+		event = "InsertEnter",
 		config = function()
 			require("nvim-surround").setup({})
 		end,

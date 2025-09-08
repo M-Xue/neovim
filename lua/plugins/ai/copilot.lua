@@ -20,7 +20,7 @@ return {
 					debounce = 75,
 					trigger_on_accept = true,
 					keymap = {
-						accept = "<C-Tab>",
+						accept = "<C-A>",
 					},
 				},
 				filetypes = {

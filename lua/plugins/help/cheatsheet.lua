@@ -6,6 +6,7 @@ return {
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-lua/plenary.nvim" },
 		},
+        event = "VeryLazy",
 		opts = {
 			bundled_cheatsheets = false,
 			bundled_plugin_cheatsheets = false,

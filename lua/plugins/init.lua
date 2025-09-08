@@ -44,8 +44,14 @@ local plugins = {
 	require("plugins.comments"),
 	require("plugins.help"),
 
-	{ "RRethy/vim-illuminate" },
-	{ "unblevable/quick-scope" }, -- Unqiue character highlight
+	{
+        "RRethy/vim-illuminate",
+        event = "VeryLazy",
+    },
+	{
+        "unblevable/quick-scope", -- Unqiue character highlight
+        event = "VeryLazy",
+    },
 }
 
 require("lazy").setup(plugins)
