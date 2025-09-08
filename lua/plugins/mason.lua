@@ -39,6 +39,8 @@ return {
 	-- 				"gopls",
 	-- 				"lua_ls",
 	-- 				"vimls",
+
+	-- 				"pyright",
 	-- 			},
 	-- 		})
 	-- 	end,
