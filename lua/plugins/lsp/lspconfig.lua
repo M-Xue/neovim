@@ -133,4 +133,4 @@ lspconfig.pyright.setup({
 	root_dir = lspconfig.util.root_pattern(".git"),
 })
 
-vim.lsp.enable('pyright')
+-- vim.lsp.enable('pyright')
