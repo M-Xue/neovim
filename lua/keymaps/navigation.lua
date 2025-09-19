@@ -29,10 +29,10 @@ vim.keymap.set("n", "<leader>s=", "<C-w>=", { desc = "Make all windows equal siz
 vim.keymap.set("n", "<leader>sq", ":close<cr>", { desc = "Close window" })
 
 -- Tab Movement
-vim.keymap.set("n", "<leader>kl", ":tabnew %<CR>", { desc = "Create new tab" })
+vim.keymap.set("n", "<leader>kk", ":tabnew %<CR>", { desc = "Create new tab" })
 vim.keymap.set("n", "<leader>kq", ":tabc<CR>", { desc = "Close tab" })
-vim.keymap.set("n", "<leader>kj", ":tabn<CR>", { desc = "Move to next tab" })
-vim.keymap.set("n", "<leader>kk", ":tabp<CR>", { desc = "Move to prev tab" })
+vim.keymap.set("n", "<leader>kl", ":tabn<CR>", { desc = "Move to next tab" })
+vim.keymap.set("n", "<leader>kj", ":tabp<CR>", { desc = "Move to prev tab" })
 
 -- Window Resize
 -- Source: https://www.reddit.com/r/neovim/comments/10wru1c/how_do_i_resize_windows/
