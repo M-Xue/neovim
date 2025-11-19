@@ -3,6 +3,42 @@ Nvim Clean Uptodo
 ==================================================
 
 replace octo vim with snacks gh
+fix treesitter error 
+fix linter and formatter 
+migrate lsp 
+remove telescope and get alternatvie file picker 
+get rid of neo tree and find another file explorere ?? idk maybe juust imporve neo tree
+fix augement ai
+remove avante
+make copilot come after lsp completions and snippets
+- imporve copilot experence
+make the lsp signatre windows 80 char max 
+- auto complete and ctrl K
+remove some of the git short cuts 
+
+better error list 
+- by default, i want to see errors only. no warnings or info
+- leader ee is errors 
+- leader ew is warnings 
+- idk what the rest is but check it out
+
+remove specter 
+figure out a better way to do rippgrep 
+- there was some thing in snack nvim that looked interesting
+
+fix start up times
+
+better bookmarks?
+better pr reviews
+
+
+
+
+
+
+
+
+Augment AI  
 
 remove telescope and get alternatvie file picker 
 https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#-sources
