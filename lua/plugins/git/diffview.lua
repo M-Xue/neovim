@@ -1,4 +1,6 @@
 -- :DiffviewOpen origin/main...HEAD
+-- Use git merge-base [feature-branch] [master or main] to get the commit hash 
+-- and then :DiffviewOpen [commit hash] 
 return {
 	{
 		"sindrets/diffview.nvim",
