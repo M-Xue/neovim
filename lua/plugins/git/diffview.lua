@@ -1,7 +1,8 @@
+-- :DiffviewOpen origin/main...HEAD
 return {
 	{
 		"sindrets/diffview.nvim",
-        cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
 		config = function()
 			local diffview = require("diffview")
 			diffview.setup({

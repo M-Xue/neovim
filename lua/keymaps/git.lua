@@ -1,29 +1,30 @@
 local gitsigns = require("gitsigns")
 
+-- Stage buffer
+-- Toggle deleted
+-- Undo stage hunk
+--
+-- Current branch changes - this is what we are looking for in PR reviews but try find a better UX for it
+--
+-- change preview hunk to be inline just to see how we feel about it
+
+-- try get these in diffview
+-- git history for line
+-- git history for file
+-- git history for all commits in diffview? this will allow me to check commit diffs
+-- git histroy between current branch particular commit
+-- even better if its against where it branched off master
+
 vim.keymap.set("n", "<leader>hh", ":LazyGit<cr>", { desc = "Open LazyGit" })
 
 -- Hunks
-vim.keymap.set("n", "<leader>ht", gitsigns.toggle_deleted, { desc = "Toggle deleted" })
-vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview hunk" })
-vim.keymap.set("n", "<leader>hP", gitsigns.preview_hunk_inline, { desc = "Preview hunk inline" })
 vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Toggle stage hunk" })
-vim.keymap.set("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Undo stage hunk" })
-vim.keymap.set("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage buffer" })
 vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Reset hunk" })
 vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Reset buffer" })
 vim.keymap.set("n", "<leader>hj", gitsigns.next_hunk, { desc = "Next hunk" })
 vim.keymap.set("n", "<leader>hk", gitsigns.prev_hunk, { desc = "Prev hunk" })
-
-local function visual_stage()
-	-- https://www.reddit.com/r/neovim/comments/vlc9sc/how_to_define_a_user_command_to_partially_stage/?sort=new
-	-- Comment by andrewfz
-	local first_line = vim.fn.line("v")
-	local last_line = vim.fn.getpos(".")[2]
-	gitsigns.stage_hunk({ first_line, last_line })
-	-- Switch back to normal mode, there may be a cleaner way to do this
-	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "t", false)
-end
-vim.keymap.set("v", "<leader>hs", visual_stage, { desc = "Stage hunk" })
+vim.keymap.set("n", "<leader>hP", gitsigns.preview_hunk, { desc = "Preview hunk in float" })
+vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk_inline, { desc = "Preview hunk inline" })
 
 -- Permalink
 vim.keymap.set({ "n", "v" }, "<leader>hl", ":.GBrowse master:%", { desc = "Open permalink in remote" })
@@ -36,9 +37,10 @@ local function toggle_diffview()
 		vim.cmd("DiffviewClose")
 	end
 end
-vim.keymap.set("n", "<leader>hd", toggle_diffview, { desc = "Diff file" })
-vim.keymap.set("n", "<leader>hD", ":DiffviewOpen ", { desc = "Diff file (commit/branch)" })
+vim.keymap.set("n", "<leader>hd", toggle_diffview, { desc = "Diff index" })
+vim.keymap.set("n", "<leader>hm", ":DiffviewOpen origin/master...HEAD", { desc = "Diff merge base" })
 
+-- Blame
 vim.keymap.set("n", "<leader>hb", gitsigns.blame_line, { desc = "Git blame line" })
 vim.keymap.set(
 	"n",
