@@ -17,38 +17,25 @@ better error list
 
 remove some of the git short cuts 
 
-
 merge work branch with home branch
-
-
-
-
-terminal manager
-
-remove augement ai
 
 migrate lsp 
 make the lsp signatre windows 80 char max 
 - auto complete and ctrl K
 
-fix treesitter error 
+===========================================
 
+fix treesitter error 
 fix start up times
 
+===========================================
 
-
-
+terminal manager
 fix linter and formatter 
 
-
-
 better bookmarks?
-better pr reviews
-
 
 Augment AI  
-
-add files to avante context from neotree
 
 ==================================================
 neogit
