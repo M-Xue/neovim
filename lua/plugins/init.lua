@@ -29,7 +29,6 @@ local plugins = {
 	require("plugins.numb"),
 
 	require("plugins.telescope"),
-	require("plugins.spectre"),
 	require("plugins.git"),
 
 	require("plugins.statusline"),
@@ -45,13 +44,13 @@ local plugins = {
 	require("plugins.help"),
 
 	{
-        "RRethy/vim-illuminate",
-        event = "VeryLazy",
-    },
+		"RRethy/vim-illuminate",
+		event = "VeryLazy",
+	},
 	{
-        "unblevable/quick-scope", -- Unqiue character highlight
-        event = "VeryLazy",
-    },
+		"unblevable/quick-scope", -- Unqiue character highlight
+		event = "VeryLazy",
+	},
 }
 
 require("lazy").setup(plugins)
