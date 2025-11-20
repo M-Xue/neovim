@@ -10,7 +10,7 @@ local source_icons = {
 
 return {
 	"saghen/blink.cmp",
-    event = "InsertEnter",
+	event = "InsertEnter",
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
@@ -74,10 +74,16 @@ return {
 		sources = {
 			default = { "lsp", "snippets", "copilot", "path", "buffer" },
 			providers = {
+				lsp = {
+					score_offset = 2,
+				},
+				snippets = {
+					score_offset = 2,
+				},
 				copilot = {
 					name = "copilot",
 					module = "blink-cmp-copilot",
-					score_offset = 100,
+					score_offset = 1,
 					async = true,
 				},
 			},
