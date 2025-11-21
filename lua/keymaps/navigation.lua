@@ -1,8 +1,32 @@
--- NvimTree
-vim.keymap.set("n", "<leader>yy", ":Neotree float reveal<CR>", { noremap = true, desc = "Toggle file tree" })
--- vim.keymap.set("n", "<leader>yf", ":NvimTreeFocus<CR>", { noremap = true, desc = "Focus nvim-tree" })
--- vim.keymap.set("n", "<leader>yc", ":NvimTreeCollapse<CR>", { noremap = true, desc = "Collapse nvim-tree" })
--- vim.keymap.set("n", "<leader>yF", ":NvimTreeFindFile<CR>", { noremap = true, desc = "Find file nvim-tree" })
+-- Find files
+vim.keymap.set("n", "<leader>ff", function()
+	Snacks.picker.files()
+end, { desc = "Find files" })
+
+vim.keymap.set("n", "<leader>fb", function()
+	Snacks.picker.buffers()
+end, { desc = "Search buffers" })
+
+vim.keymap.set("n", "<leader>fr", function()
+	Snacks.picker.registers()
+end, { desc = "Search registers" })
+
+vim.keymap.set("n", "<leader>fl", function()
+	Snacks.picker.lines()
+end, { desc = "Search buffer lines" })
+
+vim.keymap.set("n", "<leader>fm", function()
+	Snacks.picker.marks()
+end, { desc = "Search marks" })
+
+vim.keymap.set("n", "<leader>fg", function()
+	Snacks.picker.git_files()
+end, { desc = "Find Git Files" })
+
+-- File tree
+vim.keymap.set("n", "<leader>yy", function()
+	Snacks.explorer({ layout = "float", focus = "list" })
+end, { noremap = true, desc = "Toggle file tree" })
 
 -- Outline
 vim.keymap.set("n", "<leader>oo", ":Outline<cr>", { desc = " Symbol Outline" })

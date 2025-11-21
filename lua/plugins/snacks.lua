@@ -9,7 +9,7 @@ return {
 			picker = {
 				enabled = true,
 				layouts = {
-					foo = {
+					float = {
 						layout = {
 							backdrop = false,
 							width = 0.5,
@@ -20,6 +20,7 @@ return {
 							border = true,
 							title = "{title} {live} {flags}",
 							title_pos = "center",
+							{ win = "input", height = 1, border = "bottom" },
 							{ win = "list", border = "none" },
 						},
 					},

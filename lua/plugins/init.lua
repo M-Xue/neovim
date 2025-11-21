@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	require("plugins.snacks"),
 	require("plugins.colorscheme"),
 	require("plugins.mason"),
 	require("plugins.treesitter"),
@@ -23,13 +24,11 @@ local plugins = {
 	require("plugins.ai"),
 	require("plugins.autocomplete"),
 
-	require("plugins.file-tree"),
 	require("plugins.trouble"),
 	require("plugins.harpoon"),
 	require("plugins.numb"),
 
 	require("plugins.telescope"),
-	require("plugins.snacks"),
 	require("plugins.git"),
 
 	require("plugins.statusline"),
