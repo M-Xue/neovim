@@ -5,7 +5,6 @@ return {
 		lazy = false,
 		---@type snacks.Config
 		opts = {
-			explorer = { enabled = true },
 			picker = {
 				enabled = true,
 				layouts = {
@@ -25,11 +24,34 @@ return {
 						},
 					},
 				},
-				sources = {
-					explorer = {
-						focus = "input",
-						auto_close = true,
+				formatters = {
+					selected = {
+						show_always = true,
+						unselected = false,
 					},
+				},
+				icons = {
+					ui = {
+						selected = " ",
+					},
+				},
+				sources = {
+					lines = { layout = "float", focus = "input" },
+					registers = { layout = "float", focus = "input" },
+					explorer = {
+						focus = "list",
+						auto_close = true,
+						layout = "float",
+					},
+				},
+				actions = {
+					confirm = function(picker)
+						local item = picker:current()
+						if item then
+							picker:close()
+							vim.cmd("edit " .. item.file)
+						end
+					end,
 				},
 			},
 		},

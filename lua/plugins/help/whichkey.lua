@@ -8,7 +8,7 @@ return {
 		end,
 		opts = {
 			spec = {
-				{ "<leader>f", group = "Telescope" },
+				{ "<leader>f", group = "Find" },
 				{ "<leader>s", group = "Window" },
 				{ "<leader>k", group = "Tab" },
 				{ "<leader>h", group = "Git" },

@@ -41,3 +41,6 @@ vim.keymap.set(
 	{ desc = "Git commit history for file" }
 )
 vim.keymap.set("n", "<leader>ho", ":DiffviewFileHistory<cr>", { desc = "Git log" })
+vim.keymap.set("n", "<leader>hO", function()
+	Snacks.picker.git_log()
+end, { desc = "Git log checkout" })

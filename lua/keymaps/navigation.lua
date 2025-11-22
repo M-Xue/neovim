@@ -20,12 +20,12 @@ vim.keymap.set("n", "<leader>fm", function()
 end, { desc = "Search marks" })
 
 vim.keymap.set("n", "<leader>fg", function()
-	Snacks.picker.git_files()
-end, { desc = "Find Git Files" })
+	Snacks.picker.grep()
+end, { desc = "Grep" })
 
 -- File tree
 vim.keymap.set("n", "<leader>yy", function()
-	Snacks.explorer({ layout = "float", focus = "list" })
+	Snacks.explorer()
 end, { noremap = true, desc = "Toggle file tree" })
 
 -- Outline
