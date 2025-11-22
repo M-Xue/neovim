@@ -8,20 +8,15 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Rename" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"K",
-		vim.lsp.buf.hover,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Documentation" }
-	)
+	vim.keymap.set("n", "K", function()
+		vim.lsp.buf.hover({ max_width = 80 })
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Documentation" })
 	-- Use "K" again to go into the float window.
 
-	vim.keymap.set(
-		{ "n", "i" },
-		"<c-k>",
-		vim.lsp.buf.signature_help,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Get signature" }
-	)
+	vim.keymap.set({ "n", "i" }, "<c-k>", function()
+		vim.lsp.buf.signature_help({ max_width = 80 })
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Get signature" })
+
 	vim.keymap.set(
 		"n",
 		"<leader>gl",
