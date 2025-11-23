@@ -6,7 +6,15 @@ return {
 		---@type snacks.Config
 		opts = {
 			picker = {
-				enabled = true,
+				actions = {
+					confirm = function(picker)
+						local item = picker:current()
+						if item then
+							picker:close()
+							vim.cmd("edit " .. item.file)
+						end
+					end,
+				},
 				layouts = {
 					float = {
 						layout = {
@@ -43,15 +51,9 @@ return {
 						auto_close = true,
 						layout = "float",
 					},
-				},
-				actions = {
-					confirm = function(picker)
-						local item = picker:current()
-						if item then
-							picker:close()
-							vim.cmd("edit " .. item.file)
-						end
-					end,
+					marks = {
+						global = false,
+					},
 				},
 			},
 		},

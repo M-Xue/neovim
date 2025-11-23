@@ -44,7 +44,7 @@ local plugins = {
 	require("plugins.help"),
 
 	{
-		"RRethy/vim-illuminate",
+		"RRethy/vim-illuminate", -- Highlight other uses of the word under the cursor
 		event = "VeryLazy",
 	},
 	{

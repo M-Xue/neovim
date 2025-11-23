@@ -2,46 +2,31 @@
 Nvim Clean Uptodo
 ==================================================
 
-replace octo vim with snacks gh
-
-remove telescope and get alternatvie file picker 
-https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#-sources
-^^ bunch of stuff to replace with
-
-
-better error list 
-- by default, i want to see errors only. no warnings or info
-- leader ee is errors 
-- leader ew is warnings 
-- idk what the rest is but check it out
-
-remove some of the git short cuts 
-
-merge work branch with home branch
-
 migrate lsp 
-make the lsp signatre windows 80 char max 
-- auto complete and ctrl K
-
-===========================================
+clean up mason
+fix copilot
 
 fix treesitter error 
-fix start up times
 
 ===========================================
 
-terminal manager
 fix linter and formatter 
 
-better bookmarks?
+fix start up times
+- do at work
+- use snacks nvim profiler
+
+add in sessions 
+
+===========================================
+
+trouble qfl 
+- file picker with snacks integration
+
+===========================================
 
 Augment AI  
 
-==================================================
-neogit
-
-can turn on review mode 
-- have there be an indicator in the status line that you are in review mode 
 - cheatsheet has comment keymap
 - diffview 
     - cheatsheet has go to file keymap 
@@ -50,39 +35,9 @@ can turn on review mode
     - accept current keymap
     - next diff keymap
 
-you just need diffview but for pr reviews tbh i think that's it
-
-GIT
-GitBrowse browser for current commit
-- currently we only have it for against master?
-clean up gitsigns config
-
-see git history on visual selection
-see history for line 
-see history for file
-
-
-GIT
-show keymaps - we have the keymaps but it doesnt show in whichkey??
-- give they keymaps better labels. idk wtf does what
-clean up gitsigns config
-see git history on visual selection
-
-
-PR REVIEW
-octovim start review -> checkout -> diffview master 
-- need keymap for octo pr list "<leader>hO<cr>"
-- need keymap for octo checkout "<leader>hc<cr>"
-- already have keymap to diff agains a branch "hD"
-
-
 for lualine: 
-- octovim mode 
 - lsp
 https://github.com/AndreM222/copilot-lualine
-
-clean up git whichkey 
-- simplify it. you dont need everything
 
 ==================================================
 

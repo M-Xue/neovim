@@ -1,5 +1,3 @@
-local _util = require("_util")
-
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -19,6 +17,9 @@ vim.opt.winborder = "solid"
 
 vim.opt.wrap = true
 vim.opt.breakindent = true
+
+-- vim.o.autoindent = true
+-- vim.o.smartindent = true
 
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
