@@ -143,12 +143,9 @@ M.init_diagnostics_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "List diagnostics" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"<leader>ei",
-		vim.diagnostic.open_float,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Get diagnostic info" }
-	)
+	vim.keymap.set("n", "<leader>ei", function()
+		vim.diagnostic.open_float({ width = 80 })
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Get diagnostic info" })
 end
 
 return M

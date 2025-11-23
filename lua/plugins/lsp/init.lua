@@ -1,31 +1,84 @@
+-- local capabilities = require("blink.cmp").get_lsp_capabilities()
+-- local wk = require("which-key")
+-- local navic = require("nvim-navic")
+
+local function configure_diagnostics()
+	-- Documentation -> :help vim.diagnostic
+	vim.diagnostic.config({
+		virtual_text = false,
+		signs = {
+			text = {
+				[vim.diagnostic.severity.ERROR] = "E",
+				[vim.diagnostic.severity.WARN] = "W",
+				[vim.diagnostic.severity.INFO] = "I",
+				[vim.diagnostic.severity.HINT] = "H",
+			},
+		},
+
+		update_in_insert = false,
+		severity_sort = true,
+		float = {
+			focusable = true,
+			style = "minimal",
+			source = true,
+			header = "",
+			prefix = "",
+		},
+	})
+end
+
+local function enable_lsp()
+	vim.lsp.enable({
+		"lua_ls",
+		"ts_ls",
+		"gopls",
+		"pyright",
+		-- "rust_analyzer",
+
+		"html",
+		"jsonls",
+		"marksman",
+		"mdx_analyzer",
+
+		"emmet_language_server",
+		"cssls",
+		"cssmodules_ls",
+		"tailwindcss",
+		"astro",
+		"svelte",
+	})
+end
+
+local function configure_lsp()
+	-- This function is used for passing in information about the LSP client after
+	-- it attaches to a buffer.
+	local on_attach = function(client, bufnr)
+		wk.add({
+			{ "<leader>e", group = "Diagnostics" },
+			{ "<leader>g", group = "LSP" },
+		})
+		require("plugins.lsp.keymaps").init_lsp_keymaps(bufnr)
+		require("plugins.lsp.keymaps").init_diagnostics_keymaps(bufnr)
+
+		if client.supports_method("textDocument/documentSymbol") then
+			navic.attach(client, bufnr)
+		end
+	end
+
+	vim.lsp.config("*", {
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+end
+
 return {
 	{
 		"neovim/nvim-lspconfig",
 		event = "VeryLazy",
 		config = function()
-			-- For documentation, use the following command -> :help vim.diagnostic
-			vim.diagnostic.config({
-				virtual_text = false,
-				signs = {
-					text = {
-						[vim.diagnostic.severity.ERROR] = "",
-						[vim.diagnostic.severity.WARN] = "",
-						[vim.diagnostic.severity.INFO] = "",
-						[vim.diagnostic.severity.HINT] = "",
-					},
-				},
-
-				update_in_insert = false,
-				severity_sort = true,
-				float = {
-					focusable = true,
-					style = "minimal",
-					source = true,
-					header = "",
-					prefix = "",
-				},
-			})
-
+			configure_diagnostics()
+			-- enable_lsp()
+			-- configure_lsp()
 			require("plugins.lsp.lspconfig")
 		end,
 	},
