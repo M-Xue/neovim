@@ -30,12 +30,10 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Get code actions" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"<leader>gd",
-		":Telescope lsp_definitions show_line=false<cr>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Find definition" }
-	)
+	vim.keymap.set("n", "<leader>gd", function()
+		Snacks.picker.lsp_definitions()
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find definition" })
+
 	vim.keymap.set(
 		"n",
 		"<leader>gD",
@@ -43,12 +41,10 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Definitions list" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"<leader>gt",
-		":Telescope lsp_type_definitions show_line=false<cr>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Find type definition" }
-	)
+	vim.keymap.set("n", "<leader>gt", function()
+		Snacks.picker.lsp_type_definitions()
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find type definition" })
+
 	vim.keymap.set(
 		"n",
 		"<leader>gT",
@@ -56,12 +52,10 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Type definitions list" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"<leader>gi",
-		":Telescope lsp_implementations show_line=false<cr>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Find implementation" }
-	)
+	vim.keymap.set("n", "<leader>gi", function()
+		Snacks.picker.lsp_implementations()
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find implementation" })
+
 	vim.keymap.set(
 		"n",
 		"<leader>gI",
@@ -69,12 +63,10 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Implementations list" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"<leader>gr",
-		":Telescope lsp_references show_line=false<cr>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Find reference" }
-	)
+	vim.keymap.set("n", "<leader>gr", function()
+		Snacks.picker.lsp_references()
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find reference" })
+
 	vim.keymap.set(
 		"n",
 		"<leader>gR",
@@ -82,12 +74,10 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "References list" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"<leader>gc",
-		":Telescope lsp_incoming_calls show_line=false<cr>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Find incoming calls" }
-	)
+	vim.keymap.set("n", "<leader>gc", function()
+		Snacks.picker.lsp_incoming_calls()
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find incoming calls" })
+
 	vim.keymap.set(
 		"n",
 		"<leader>gC",
@@ -95,12 +85,10 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Incoming calls list" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"<leader>go",
-		":Telescope lsp_outgoing_calls show_line=false<cr>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Find outgoing calls" }
-	)
+	vim.keymap.set("n", "<leader>go", function()
+		Snacks.picker.lsp_outgoing_calls()
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find outgoing calls" })
+
 	vim.keymap.set(
 		"n",
 		"<leader>gO",
@@ -108,42 +96,44 @@ M.init_lsp_keymaps = function(bufnr)
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Outgoing calls list" }
 	)
 
-	vim.keymap.set(
-		"n",
-		"<leader>gs",
-		require("telescope.builtin").lsp_workspace_symbols,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Search LSP symbols" }
-	)
+	vim.keymap.set("n", "<leader>gs", function()
+		Snacks.picker.lsp_workspace_symbols()
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Search LSP symbols" })
 end
 
 M.init_diagnostics_keymaps = function(bufnr)
-	vim.keymap.set(
-		"n",
-		"<leader>ej",
-		vim.diagnostic.goto_next,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to next diagnostic" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>ek",
-		vim.diagnostic.goto_prev,
-		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to previous diagnostic" }
-	)
+	vim.keymap.set("n", "<leader>ej", function()
+		vim.diagnostic.jump({ count = 1 })
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Go to next diagnostic" })
+
+	vim.keymap.set("n", "<leader>ek", function()
+		vim.diagnostic.jump({ count = -1 })
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Go to previous diagnostic" })
 
 	vim.keymap.set("n", "<leader>el", function()
-		require("telescope.builtin").diagnostics({ severity_bound = 0 })
+		Snacks.picker.diagnostics()
 	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find diagnostics" })
 
 	vim.keymap.set("n", "<leader>eE", function()
-		require("telescope.builtin").diagnostics({ severity = "error" })
+		Snacks.picker.diagnostics({ severity = vim.diagnostic.severity.ERROR })
 	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find all errors" })
 
 	vim.keymap.set("n", "<leader>ee", function()
-		require("telescope.builtin").diagnostics({ severity = "error", bufnr = 0 })
+		Snacks.picker.diagnostics({
+			severity = vim.diagnostic.severity.ERROR,
+			bufnr = 0,
+		})
 	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find errors in current buffer" })
 
+	vim.keymap.set("n", "<leader>ew", function()
+		Snacks.picker.diagnostics({
+			severity = vim.diagnostic.severity.WARN,
+			bufnr = 0,
+		})
+	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find warnings in current buffer" })
+
 	vim.keymap.set("n", "<leader>eb", function()
-		require("telescope.builtin").diagnostics({ severity_bound = 0, bufnr = 0 })
+		Snacks.picker.diagnostics({ bufnr = 0 })
 	end, { noremap = true, silent = true, buffer = bufnr, desc = "Find diagnostics in current buffer" })
 
 	vim.keymap.set(
@@ -159,12 +149,6 @@ M.init_diagnostics_keymaps = function(bufnr)
 		vim.diagnostic.open_float,
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Get diagnostic info" }
 	)
-	-- vim.keymap.set(
-	-- 	"n",
-	-- 	"<leader>ev",
-	-- 	toggle_diagnostics_virtual_text,
-	-- 	{ noremap = true, silent = true, buffer = bufnr, desc = "Toggle diagnostics virtual text" }
-	-- )
 end
 
 return M

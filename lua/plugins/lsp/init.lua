@@ -1,15 +1,8 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-        event = "VeryLazy",
+		event = "VeryLazy",
 		config = function()
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "rounded",
-			})
-			vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-				border = "rounded",
-			})
-
 			-- For documentation, use the following command -> :help vim.diagnostic
 			vim.diagnostic.config({
 				virtual_text = false,
@@ -22,12 +15,11 @@ return {
 					},
 				},
 
-				update_in_insert = true,
+				update_in_insert = false,
 				severity_sort = true,
 				float = {
-					focusable = false,
+					focusable = true,
 					style = "minimal",
-					border = "rounded",
 					source = true,
 					header = "",
 					prefix = "",
@@ -37,57 +29,5 @@ return {
 			require("plugins.lsp.lspconfig")
 		end,
 	},
-	{
-		"hedyhli/outline.nvim",
-		event = "LspAttach",
-		opts = {
-			outline_window = {
-				position = "right",
-				width = 60,
-				relative_width = false,
-			},
-			symbols = {
-				icon_fetcher = function(kind, bufnr)
-					return require("icons.lspkind").icons[kind]
-				end,
-			},
-		},
-	},
-	{
-		"j-hui/fidget.nvim",
-		event = "LspAttach",
-		opts = {},
-	},
-	{
-		"kosayoda/nvim-lightbulb",
-		event = "LspAttach",
-		opts = {
-			autocmd = { enabled = true },
-			-- ignore = {
-			-- 	ft = { "NvimTree" },
-			-- 	-- Ignore code actions without a `kind` like refactor.rewrite, quickfix.
-			-- 	-- actions_without_kind = false,
-			-- },
-		},
-	},
-	{
-		"SmiteshP/nvim-navic",
-		event = "LspAttach",
-		config = function()
-			vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-			-- set_navic_highlights()
-			require("nvim-navic").setup({
-				enabled = true,
-				separator = " > ",
-				highlight = true,
-				depth_limit = 5,
-				depth_limit_indicator = "..",
-				lazy_update_context = true,
-				icons = require("icons.lspkind").icons,
-				format_text = function(text)
-					return " " .. text
-				end,
-			})
-		end,
-	},
+	require("plugins.lsp.plugins"),
 }
