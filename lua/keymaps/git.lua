@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>hk", gitsigns.prev_hunk, { desc = "Prev hunk" })
 vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk_inline, { desc = "Preview hunk" })
 
 -- Permalink
-vim.keymap.set({ "n", "v" }, "<leader>hl", ":.GBrowse master:%", { desc = "Open permalink in remote" })
+vim.keymap.set({ "n", "v" }, "<leader>hL", ":.GBrowse master:%", { desc = "Open permalink in remote" })
 
 -- Diffs
 local function toggle_diffview()

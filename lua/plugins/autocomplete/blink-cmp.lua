@@ -39,7 +39,7 @@ return {
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		keymap = {
 			preset = "enter",
-			["<C-l>"] = { "show" },
+			["<C-leader>"] = { "show" },
 			["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 			["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
 		},
@@ -74,16 +74,10 @@ return {
 		sources = {
 			default = { "lsp", "snippets", "copilot", "path", "buffer" },
 			providers = {
-				lsp = {
-					score_offset = 2,
-				},
-				snippets = {
-					score_offset = 2,
-				},
 				copilot = {
 					name = "copilot",
 					module = "blink-cmp-copilot",
-					score_offset = 1,
+					score_offset = 1000,
 					async = true,
 				},
 			},
