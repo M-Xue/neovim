@@ -10,3 +10,5 @@ vim.keymap.set("n", "<leader>aa", ":AvanteAsk<cr>", { desc = "Avante: Toggle cha
 vim.keymap.set("n", "<leader>an", ":AvanteChatNew<cr>", { desc = "Avante: New chat" })
 vim.keymap.set("n", "<leader>am", ":AvanteModels<cr>", { desc = "Avante: See Togglemodels" })
 vim.keymap.set("v", "<leader>aa", ":AvanteEdit<cr>", { desc = "Avante: Edit selected blocks" })
+
+vim.keymap.set("n", "<leader>aA", ":Augment chat<cr>", { desc = "Augment: Toggle chat" })

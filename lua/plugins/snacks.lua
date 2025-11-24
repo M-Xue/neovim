@@ -6,15 +6,6 @@ return {
 		---@type snacks.Config
 		opts = {
 			picker = {
-				actions = {
-					confirm = function(picker)
-						local item = picker:current()
-						if item then
-							picker:close()
-							vim.cmd("edit " .. item.file)
-						end
-					end,
-				},
 				layouts = {
 					float = {
 						layout = {
@@ -43,17 +34,56 @@ return {
 						selected = " ",
 					},
 				},
+                win = {
+                    input = {
+                        keys = {
+                            ["<Tab>"] = { "list_down", mode = { "i", "n" } },
+                            ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
+                            ["<Down>"] = { "select_and_next", mode = { "i", "n" } },
+                            ["<Up>"] = { "select_and_prev", mode = { "i", "n" } },
+                        },
+                    }
+                },
+                -- auto_confirm = false,
 				sources = {
-					lines = { layout = "float", focus = "input" },
-					registers = { layout = "float", focus = "input" },
 					explorer = {
 						focus = "list",
 						auto_close = true,
 						layout = "float",
 					},
+
+                    files = {},
+                    buffers = {},
+					registers = { layout = "float", focus = "input" },
+					lines = { layout = "float", focus = "input" },
 					marks = {
 						global = false,
 					},
+                    grep = {},
+
+                    -- lsp_declarations = {},
+                    lsp_definitions = {
+                        include_current = true,
+                    },
+                    lsp_type_definitions = {
+                        include_current = true,
+                    },
+                    lsp_implementations = {
+                        include_current = true,
+                    },
+                    lsp_references = {
+                        include_current = true,
+                    },
+                    lsp_incoming_calls = {
+                        include_current = true,
+                    },
+                    lsp_outgoing_calls = {
+                        include_current = true,
+                    },
+                    lsp_workspace_symbols = {
+                    },
+                    diagnostics = {
+                    },
 				},
 			},
 		},
