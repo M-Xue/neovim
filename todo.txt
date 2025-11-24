@@ -3,8 +3,6 @@ Nvim Clean Uptodo
 ==================================================
 
 fix treesitter error 
-update all plugins
-
 fix copilot
 
 ===========================================
@@ -14,8 +12,6 @@ fix linter and formatter
 fix start up times
 - do at work
 - use snacks nvim profiler
-
-add in sessions 
 
 ===========================================
 

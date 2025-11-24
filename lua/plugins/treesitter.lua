@@ -87,8 +87,8 @@ local ts_textobj_config = {
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-        lazy = false,
-        branch = "master",
+		lazy = false,
+		branch = "master",
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
@@ -124,15 +124,15 @@ return {
 			})
 		end,
 	},
-    {
-        "nvim-treesitter/nvim-treesitter-textobjects",
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
-        event = "InsertEnter",
-    },
+		event = "InsertEnter",
+	},
 	{
 		"windwp/nvim-ts-autotag", -- For automatically closing HTML tags
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
-        event = "InsertEnter",
+		event = "InsertEnter",
 		opts = {
 			autotag = {
 				enable = true,
