@@ -24,7 +24,7 @@ end
 M.plugins = {
 	{
 		"mfussenegger/nvim-lint",
-        event = "VeryLazy",
+		event = "VeryLazy",
 		config = function()
 			local lint = require("lint")
 			lint.linters_by_ft = M.linters_by_ft

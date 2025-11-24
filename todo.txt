@@ -2,11 +2,10 @@
 Nvim Clean Uptodo
 ==================================================
 
-migrate lsp 
-clean up mason
-fix copilot
-
 fix treesitter error 
+update all plugins
+
+fix copilot
 
 ===========================================
 

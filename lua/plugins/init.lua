@@ -15,8 +15,9 @@ local plugins = {
 	require("plugins.snacks"),
 	require("plugins.colorscheme"),
 	require("plugins.mason"),
-	require("plugins.treesitter"),
+
 	require("plugins.autocomplete"),
+	require("plugins.treesitter"),
 	require("plugins.lsp"),
 
 	require("plugins.formatter"),

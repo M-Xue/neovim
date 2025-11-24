@@ -23,28 +23,6 @@ local function configure_diagnostics()
 	})
 end
 
-local function enable_lsp()
-	vim.lsp.enable({
-		"lua_ls",
-		"ts_ls",
-		"gopls",
-		"pyright",
-		"rust_analyzer",
-
-		"html",
-		"jsonls",
-		"marksman",
-		"mdx_analyzer",
-
-		"emmet_language_server",
-		"cssls",
-		"cssmodules_ls",
-		"tailwindcss",
-		"astro",
-		"svelte",
-	})
-end
-
 local function configure_lsp()
 	local capabilities = require("blink.cmp").get_lsp_capabilities()
 	local wk = require("which-key")
@@ -77,7 +55,6 @@ return {
 		event = "VeryLazy",
 		config = function()
 			configure_diagnostics()
-			enable_lsp()
 			configure_lsp()
 		end,
 	},
