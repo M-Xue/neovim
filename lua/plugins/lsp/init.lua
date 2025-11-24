@@ -1,7 +1,3 @@
--- local capabilities = require("blink.cmp").get_lsp_capabilities()
--- local wk = require("which-key")
--- local navic = require("nvim-navic")
-
 local function configure_diagnostics()
 	-- Documentation -> :help vim.diagnostic
 	vim.diagnostic.config({
@@ -33,7 +29,7 @@ local function enable_lsp()
 		"ts_ls",
 		"gopls",
 		"pyright",
-		-- "rust_analyzer",
+		"rust_analyzer",
 
 		"html",
 		"jsonls",
@@ -50,6 +46,10 @@ local function enable_lsp()
 end
 
 local function configure_lsp()
+	local capabilities = require("blink.cmp").get_lsp_capabilities()
+	local wk = require("which-key")
+	local navic = require("nvim-navic")
+
 	-- This function is used for passing in information about the LSP client after
 	-- it attaches to a buffer.
 	local on_attach = function(client, bufnr)
@@ -77,9 +77,8 @@ return {
 		event = "VeryLazy",
 		config = function()
 			configure_diagnostics()
-			-- enable_lsp()
-			-- configure_lsp()
-			require("plugins.lsp.lspconfig")
+			enable_lsp()
+			configure_lsp()
 		end,
 	},
 	require("plugins.lsp.plugins"),
