@@ -16,13 +16,13 @@ local plugins = {
 	require("plugins.colorscheme"),
 	require("plugins.mason"),
 	require("plugins.treesitter"),
+	require("plugins.autocomplete"),
 	require("plugins.lsp"),
 
 	require("plugins.formatter"),
 	require("plugins.linter"),
 
 	require("plugins.ai"),
-	require("plugins.autocomplete"),
 
 	require("plugins.trouble"),
 	require("plugins.harpoon"),

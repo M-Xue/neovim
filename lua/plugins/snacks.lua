@@ -34,17 +34,17 @@ return {
 						selected = " ",
 					},
 				},
-                win = {
-                    input = {
-                        keys = {
-                            ["<Tab>"] = { "list_down", mode = { "i", "n" } },
-                            ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
-                            ["<Down>"] = { "select_and_next", mode = { "i", "n" } },
-                            ["<Up>"] = { "select_and_prev", mode = { "i", "n" } },
-                        },
-                    }
-                },
-                -- auto_confirm = false,
+				win = {
+					input = {
+						keys = {
+							["<Tab>"] = { "list_down", mode = { "i", "n" } },
+							["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
+							["<Down>"] = { "select_and_next", mode = { "i", "n" } },
+							["<Up>"] = { "select_and_prev", mode = { "i", "n" } },
+						},
+					},
+				},
+				-- auto_confirm = false,
 				sources = {
 					explorer = {
 						focus = "list",
@@ -52,38 +52,36 @@ return {
 						layout = "float",
 					},
 
-                    files = {},
-                    buffers = {},
+					files = {},
+					buffers = {},
 					registers = { layout = "float", focus = "input" },
 					lines = { layout = "float", focus = "input" },
 					marks = {
 						global = false,
 					},
-                    grep = {},
+					grep = {},
 
-                    -- lsp_declarations = {},
-                    lsp_definitions = {
-                        include_current = true,
-                    },
-                    lsp_type_definitions = {
-                        include_current = true,
-                    },
-                    lsp_implementations = {
-                        include_current = true,
-                    },
-                    lsp_references = {
-                        include_current = true,
-                    },
-                    lsp_incoming_calls = {
-                        include_current = true,
-                    },
-                    lsp_outgoing_calls = {
-                        include_current = true,
-                    },
-                    lsp_workspace_symbols = {
-                    },
-                    diagnostics = {
-                    },
+					-- lsp_declarations = {},
+					lsp_definitions = {
+						include_current = true,
+					},
+					lsp_type_definitions = {
+						include_current = true,
+					},
+					lsp_implementations = {
+						include_current = true,
+					},
+					lsp_references = {
+						include_current = true,
+					},
+					lsp_incoming_calls = {
+						include_current = true,
+					},
+					lsp_outgoing_calls = {
+						include_current = true,
+					},
+					lsp_workspace_symbols = {},
+					diagnostics = {},
 				},
 			},
 		},
