@@ -339,10 +339,6 @@ fi
 # `fzf --bash` and `fzf --zsh` are 0.48+, so the apt build cannot do this.
 ensure_rc_line 'eval "$(fzf --bash)"' 'eval "$(fzf --zsh)"'
 
-# nf: fuzzy-find a file and open it in nvim. Same line for both shells; the
-# zsh copy lives in zsh/.zshrc, which the grep in ensure_rc_line finds.
-ensure_rc_line "nf() { local f; f=\$(fzf --preview 'bat --color=always --style=numbers {}') && nvim \"\$f\"; }"
-
 # =================================================================== btop ===
 #
 # The release tarball has no version in its name, so /latest/download/ works.
@@ -398,8 +394,6 @@ fi
 
 info "Linking ~/dotfiles/eza -> ~/.config/eza"
 ln -sfn ~/dotfiles/eza ~/.config/eza
-
-ensure_rc_line "alias eza='eza -la --git --header --git-repos'"
 
 # ================================================================== delta ===
 #
@@ -476,18 +470,50 @@ ensure_rc_line 'export PATH="$HOME/.local/bin:$PATH"'
 
 export PATH="$HOME/.local/bin:$PATH"    # and for the rest of this run
 
-# Aliases. ensure_rc_line appends, which matters for more than tidiness: under
+# --- aliases ---------------------------------------------------------------
+#
+# Every alias and shell function the installers add, grouped by the tool it
+# wraps. None of them need the tool present at install time - the lines are
+# only read when a shell starts - so they live together here rather than next
+# to each install.
+#
+# ensure_rc_line appends, which matters for more than tidiness: under
 # oh-my-zsh, theme-and-appearance.zsh defines its own `ls` and the git plugin
 # its own `g`, so an alias set before `source $ZSH/oh-my-zsh.sh` is silently
 # overwritten. Landing at the end of the file puts these after it.
+
+# --- ls ---
 ensure_rc_line 'alias ls="ls -la --color=auto"'   # GNU ls color; BSD -G on macOS
+
+# --- eza ---
+ensure_rc_line "alias eza='eza -la --git --header --git-repos'"
+
+# --- git ---
 ensure_rc_line 'alias g="git"'
-ensure_rc_line 'alias p="pnpm"'
 
 # `git log` -> `git log --stat`. Has to be a shell function: git refuses to
 # let an [alias] shadow a builtin command, and zsh aliases cannot span two
 # words. `g log` also lands here, since `g` expands back to `git`.
 ensure_rc_line 'git() { if [[ $1 == log ]]; then command git log --stat "${@:2}"; else command git "$@"; fi }'
+
+# --- pnpm ---
+ensure_rc_line 'alias p="pnpm"'
+ensure_rc_line 'alias dev="pnpm webpack-dev-server -e home -p prod"'
+
+# --- fzf ---
+# nf: fuzzy-find a file and open it in nvim. Same line for both shells; the
+# zsh copy lives in zsh/.zshrc, which the grep in ensure_rc_line finds.
+ensure_rc_line "nf() { local f; f=\$(fzf --preview 'bat --color=always --style=numbers {}') && nvim \"\$f\"; }"
+
+# --- taz ---
+# Default flags for three subcommands. A function for the same reason as git:
+# a zsh alias cannot span two words. Anything else passes straight through.
+ensure_rc_line 'taz() { case "$1" in ci) command taz ci --prefer-pr-comment "${@:2}" ;; check) command taz check --fix "${@:2}" ;; submit) command taz submit --publish "${@:2}" ;; *) command taz "$@" ;; esac }'
+
+# --- claude code ---
+# Force Fable 5 - Canva org policy otherwise resets the default to Sonnet 5.
+# No [1m] suffix as on opus: Fable 5's context window is 1M by default.
+ensure_rc_line 'alias claude="claude --model fable"'
 
 # --- claude code -----------------------------------------------------------
 #
@@ -501,10 +527,6 @@ else
   info "Installing claude code"
   run bash -c 'curl -fsSL https://claude.ai/install.sh | bash'
 fi
-
-# Force Fable 5 - Canva org policy otherwise resets the default to Sonnet 5.
-# No [1m] suffix as on opus: Fable 5's context window is 1M by default.
-ensure_rc_line 'alias claude="claude --model fable"'
 
 # ~/.claude also holds sessions, history and projects, so the directory itself
 # cannot be linked - that would hide all of it.
