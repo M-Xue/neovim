@@ -50,13 +50,12 @@ have() { command -v "$1" >/dev/null 2>&1; }
 # are: each apt install below fails on its own, loudly, if a repo it actually
 # needs is the broken one.
 apt_update() {
-  local start
-  start=$(wc -l < "$LOG")    # so the summary below covers only this apt update
-  printf '\n$ sudo apt update\n' >> "$LOG"
-  if ! sudo apt update >> "$LOG" 2>&1; then
+  local out rc=0
+  out=$(sudo apt update 2>&1) || rc=$?
+  printf '\n$ sudo apt update\n%s\n' "$out" >> "$LOG"
+  if [ "$rc" -ne 0 ]; then
     warn "apt update reported errors - continuing with the package lists as they are"
-    warn "Failing sources (see $LOG):"
-    tail -n +"$((start + 1))" "$LOG" | grep -E '^(E|Err):' >&2 || true
+    grep -E '^(E|Err):' <<<"$out" >&2 || true
   fi
 }
 
