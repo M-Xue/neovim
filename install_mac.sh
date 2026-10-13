@@ -316,6 +316,11 @@ ensure_rc_line 'taz() { case "$1" in ci) command taz ci --prefer-pr-comment "${@
 # No [1m] suffix as on opus: Fable 5's context window is 1M by default.
 ensure_rc_line 'alias claude="claude --model fable"'
 
+# --- devbox ---
+# Pick a coder workspace from `coder list` and ssh into it. Points at the repo
+# checkout rather than copying the script, so edits here take effect directly.
+ensure_rc_line 'alias devbox="$HOME/dotfiles/scripts/devbox.sh"'
+
 # --- lunch ---
 # macOS only: `open` is the macOS URL opener.
 ensure_rc_line "alias lunch='open \"https://contractors.canva.site/the-communal-table-sydney\"'"
