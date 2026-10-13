@@ -43,6 +43,23 @@ run() {
 
 have() { command -v "$1" >/dev/null 2>&1; }
 
+# apt update exits non-zero when *any* configured source fails to fetch, even
+# though every other source was refreshed fine. A stale third-party repo left
+# on the host (one this script never added) would otherwise abort the whole
+# install before it did anything. Warn and carry on with the lists as they
+# are: each apt install below fails on its own, loudly, if a repo it actually
+# needs is the broken one.
+apt_update() {
+  local start
+  start=$(wc -l < "$LOG")    # so the summary below covers only this apt update
+  printf '\n$ sudo apt update\n' >> "$LOG"
+  if ! sudo apt update >> "$LOG" 2>&1; then
+    warn "apt update reported errors - continuing with the package lists as they are"
+    warn "Failing sources (see $LOG):"
+    tail -n +"$((start + 1))" "$LOG" | grep -E '^(E|Err):' >&2 || true
+  fi
+}
+
 # Latest release version for a GitHub repo, leading "v" stripped:
 # BurntSushi/ripgrep -> 14.1.1, tmux/tmux -> 3.5a
 gh_latest_version() {
@@ -138,7 +155,7 @@ ensure_rc_line() {
 # cloned to ~/dotfiles.
 
 info "Updating apt package lists"
-run sudo apt update
+apt_update
 
 mkdir -p ~/.config    # ln won't create parents; -p is a no-op if it exists
 
@@ -426,7 +443,7 @@ else
   run sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
   run bash -c "echo 'deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main' \
     | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null"
-  run sudo apt update    # the repo just added is not in the lists from setup yet
+  apt_update    # the repo just added is not in the lists from setup yet
 fi
 
 info "Installing gh"
@@ -443,7 +460,8 @@ if apt_source_exists git-core/ppa; then
 else
   info "Adding the git-core PPA"
   run sudo apt install -y software-properties-common    # provides add-apt-repository
-  run sudo add-apt-repository -y ppa:git-core/ppa       # runs apt update itself
+  run sudo add-apt-repository -y --no-update ppa:git-core/ppa
+  apt_update    # done here rather than by add-apt-repository so a bad unrelated repo cannot abort
 fi
 
 info "Installing git"
